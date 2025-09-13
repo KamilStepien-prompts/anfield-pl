@@ -1,0 +1,13 @@
+# system/edytory
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# build/cache (gdyby kiedyś doszedł bundler)
+dist/
+.cache/
+node_modules/
+
+# obrazy generowane tymczasowo
+*.tmp

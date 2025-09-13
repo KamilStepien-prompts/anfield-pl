@@ -1,0 +1,139 @@
+/* Article layout */
+.feature-article {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
+  line-height: 1.7;
+}
+
+/* Lead */
+.feature-article .lead {
+  font-size: var(--fs-lg);
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+/* Headings inside article */
+.feature-article h1 {
+  font-size: var(--fs-2xl);
+  margin-bottom: 1rem;
+}
+.feature-article h2 {
+  font-size: var(--fs-xl);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--red);
+}
+.feature-article h3 {
+  font-size: var(--fs-lg);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.meta {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 2rem;
+}
+/* Paragraphs */
+.feature-article p {
+  margin: 0 0 1.2rem;
+}
+
+/* Blockquotes */
+.feature-article blockquote {
+  border-left: 4px solid var(--red);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Epilog / footer of article */
+.feature-article footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+.post-list article {
+  margin-bottom: 2rem;
+}
+.post-list h3 {
+  font-size: var(--fs-lg);
+  margin-bottom: 0.5rem;
+}
+.post-list .lead {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+.post-footer-nav {
+  margin-top: 2rem;
+}
+
+.post-footer-nav .btn {
+  font-size: var(--fs-sm);
+  padding: 0.5rem 0.9rem;
+}
+#comments {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#comments h2 {
+  font-size: var(--fs-lg);
+  margin-bottom: 0.75rem;
+}
+
+#comments a {
+  color: var(--red-2);
+  font-weight: 600;
+}
+#comments a:hover {
+  text-decoration: underline;
+}
+.post-list article {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.post-list h3 {
+  font-size: var(--fs-lg);
+  margin-bottom: 0.5rem;
+}
+.post-list .lead {
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+.read-next {
+  margin: 32px 0 0;
+  padding: 16px;
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  background: #121214;
+}
+.read-next h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+.read-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.read-list a {
+  font-weight: 600;
+}
+.read-list .why {
+  opacity: 0.8;
+  margin-left: 6px;
+  font-size: 14px;
+}
+.read-list a:hover {
+  text-decoration: underline;
+}

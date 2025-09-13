@@ -1,0 +1,56 @@
+[
+  {
+    "id": 6,
+    "title": "Wyróżnienie od Anfield.PL – USA rządzi Premier League",
+    "date": "2025-09-09",
+    "excerpt": "Felieton o tym, dlaczego Premier League przyciąga kapitał i technologie ze Stanów Zjednoczonych. Amerykańscy właściciele, półautomatyczny spalony i mikrofon sędziego zmieniają futbol na Wyspach.",
+    "url": "/felieton/wrzesien25/felieton-06-usa-premier-league/index.html",
+    "tag": "Felieton",
+    "priority": 0.9
+  },
+  {
+    "id": 5,
+    "title": "Zwycięstwo w Chorzowie - w kadrze widać dobrą zmianę",
+    "date": "2025-09-07",
+    "excerpt": "O zwycięstwie reprezentacji Polski nad Finlandią. Matty Cash znowu z golem. Robert Lewandowski z życzeniami dla żony.",
+    "url": "/felieton/wrzesien25/felieton-05-zwyciestwo-w-chorzowie-kadra/index.html",
+    "tag": "Komentarz",
+    "priority": 0.8
+  },
+  {
+    "id": 4,
+    "title": "Golden boy odchodzi do Aston Villi.",
+    "date": "2025-09-06",
+    "excerpt": "Harvey Elliott opuszcza Liverpool. Analiza wypożyczenia z obowiązkiem zakupu oraz klauzuli buy-back w kontekście angielskiego talentu.",
+    "url": "/felieton/wrzesien25/felieton-04-harvey-elliott-odejscie-aston-villa/index.html",
+    "tag": "Analiza",
+    "priority": 0.5
+  },
+  {
+    "id": 3,
+    "title": "Punkt z Holandią. Debiut Urbana — Polska wraca do gry",
+    "date": "2025-09-04",
+    "excerpt": "Niespodziewany remis Polski z Holandią. Remis, który był lekcją charakteru. Sprawdź, jak Jan Urban odmienił kadrę i co oznacza gol Matty'ego Casha.",
+    "url": "/felieton/wrzesien25/felieton-03-punkt-z-holandia-debiut/index.html",
+    "tag": "Komentarz",
+    "priority": 0.5
+  },
+  {
+    "id": 2,
+    "title": "Dominik Szoboszlai — madziarski maestro na Anfield",
+    "date": "2025-09-05",
+    "excerpt": "Dominik Szoboszlai łączy błysk z dyscypliną, a gwiazdorską twarz z robotniczym etosem. Sprawdź, dlaczego jego gol z rzutu wolnego jest tylko początkiem.",
+    "url": "/felieton/wrzesien25/felieton-02-dominik-szoboszlai-oczekiwania/index.html",
+    "tag": "Opinia",
+    "priority": 0.6
+  },
+  {
+    "id": 1,
+    "title": "Isak najdroższy w historii Liverpoolu. Salah przypomina o tym co nie ma ceny",
+    "date": "2025-09-05",
+    "excerpt": "Mohamed Salah przypomniał, że futbol to nie tylko rekordy transferowe. Czy nastała nowa era na Anfield? Przeczytaj analizę transferów i przyszłości Liverpoolu.",
+    "url": "/felieton/wrzesien25/felieton-01-salah-vs-isak-wartosci-vs-rekord/index.html",
+    "tag": "Felieton",
+    "priority": 0.7
+  }
+]

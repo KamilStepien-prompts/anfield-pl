@@ -1,0 +1,354 @@
+/* Reset + zmienne + utilsy */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --bg: #0b0b0c;
+  --panel: #120e12;
+  --red: #e11d48; /* primary */
+  --red-2: #fb7185; /* gradient/highlight */
+  --text: #e5e7eb;
+  --muted: #a1a1aa;
+  --ring: hsla(348, 85%, 54%, 0.5);
+  --radius: 16px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-lg: 1.25rem;
+  --fs-xl: 1.5rem;
+  --fs-2xl: 2rem;
+  --fs-3xl: 2.5rem;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 400 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 0.5em;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: var(--fs-3xl);
+}
+h2 {
+  font-size: var(--fs-2xl);
+  color: var(--red);
+}
+h3 {
+  font-size: var(--fs-xl);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+.container {
+  width: min(1080px, 100%);
+  padding-inline: 16px;
+  margin-inline: auto;
+}
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.2s;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn-primary {
+  background: linear-gradient(90deg, var(--red), var(--red-2));
+  border-color: transparent;
+  color: #fff;
+}
+.btn-ghost {
+  background: transparent;
+}
+.badge {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #ffe4e6;
+}
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  background: #111;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 6px;
+  z-index: 1000;
+}
+.skip-link:focus {
+  left: 8px;
+  top: 8px;
+  outline: 2px solid #fff;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* odstęp pod sekcją feature */
+#feature {
+  margin-bottom: 2rem;
+}
+/* odstępy między button a nagłówkiem */
+.spacer {
+  height: 48px;
+}
+/* odstępy między felietonami w archiwum */
+.post-list article {
+  margin-top: 4rem;
+}
+
+.site-footer {
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.site-footer a {
+  color: var(--red-2);
+}
+/* Accessibility: Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ---- NAV ---- */
+.nav {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  padding: 0.35rem 0.5rem;
+  border-radius: 6px;
+}
+.nav a:hover {
+  background: rgba(5, 0, 0, 0.93);
+}
+
+/* ---- MOBILE MENU ---- */
+/* Hamburger button */
+.hamb {
+  display: none; /* Ukryty domyślnie */
+  background: transparent;
+  border: 0;
+  padding: 0.35rem;
+  cursor: pointer;
+}
+.hamb__bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  box-shadow: 0 6px 0 var(--text), 0 -6px 0 var(--text);
+}
+
+/* Off-canvas menu panel */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+.mobile-nav__panel {
+  width: 280px;
+  max-width: 90vw;
+  background: #070708; /* Ustawienie tła */
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.6);
+  pointer-events: auto;
+  padding: 1.5rem;
+  transform: translateX(100%); /* Start poza ekranem */
+  border-left: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 16px 0 0 16px;
+  transition: transform 0.3s ease-out; /* Dodanie płynnego przejścia */
+}
+.site-header.is-open .mobile-nav__panel {
+  transform: translateX(0); /* Pokazanie menu */
+}
+
+/* close X button */
+.mobile-nav__close {
+  background: transparent;
+  border: none;
+  font-size: 1.6rem;
+  color: #fff;
+  position: absolute;
+  right: 18px;
+  top: 12px;
+  cursor: pointer;
+}
+
+/* menu list */
+.mobile-nav__list {
+  list-style: none;
+  padding: 56px 6px 20px;
+  margin: 0;
+  display: block;
+}
+.mobile-nav__list li {
+  margin-bottom: 8px;
+}
+.mobile-nav__list a,
+.mobile-nav__list button.sub-toggle {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #eee;
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.mobile-nav__list a:hover {
+  background: rgba(255, 255, 255, 0.02);
+  color: #fff;
+}
+.mobile-nav__list button.sub-toggle {
+  background: transparent;
+  border: 0;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* submenu */
+.has-sub .sub-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 260ms ease;
+  margin-top: 6px;
+  padding-left: 6px;
+}
+.has-sub.open .sub-menu {
+  max-height: 240px;
+}
+.sub-menu li a {
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-left: 18px;
+  color: #ddd;
+}
+
+/* footer area */
+.mobile-nav__foot {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 28px;
+}
+.btn-contact {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(12, 1, 2, 0.945),
+    rgba(255, 46, 77, 0.04)
+  );
+  color: var(--accent);
+  border: 1px solid rgba(255, 46, 77, 0.06);
+  font-weight: 700;
+}
+
+/* backdrop */
+.mobile-nav-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 65;
+  background: rgba(0, 0, 0, 0.72) !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 260ms;
+}
+.site-header.is-open + .mobile-nav-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Media queries */
+@media (max-width: 1024px) {
+  .nav {
+    display: none;
+  }
+  .hamb {
+    display: block;
+  }
+}
+
+@media (min-width: 920px) {
+  .hamb,
+  .mobile-nav,
+  .mobile-nav-backdrop {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
