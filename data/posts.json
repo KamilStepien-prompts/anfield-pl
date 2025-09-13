@@ -1,12 +1,21 @@
 [
   {
+    "id": 7,
+    "title": "Derby Manchasteru - kiedyś bezdyskusyjny hit, dziś mecz o przetrwanie?",
+    "date": "2025-09-13",
+    "excerpt": "Analiza obecnej sytuacji City i United przed nadchodzącym derbami. Czy oba kluby są w stanie rywalizować na najwyższym poziomie?",
+    "url": "/felieton/wrzesien25/felieton-07-derby-manchesteru-hit-czy-kit/index.html",
+    "tag": "Subiektywnie",
+    "priority": 0.9
+  },
+  {
     "id": 6,
     "title": "Wyróżnienie od Anfield.PL – USA rządzi Premier League",
     "date": "2025-09-09",
     "excerpt": "Felieton o tym, dlaczego Premier League przyciąga kapitał i technologie ze Stanów Zjednoczonych. Amerykańscy właściciele, półautomatyczny spalony i mikrofon sędziego zmieniają futbol na Wyspach.",
     "url": "/felieton/wrzesien25/felieton-06-wiatr-zmian-premier-league-kapital-usa/index.html",
     "tag": "Felieton",
-    "priority": 0.8
+    "priority": 0.7
   },
   {
     "id": 5,
