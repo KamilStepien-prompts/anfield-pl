@@ -8,8 +8,8 @@ async function loadPosts() {
     // sort (najnowsze pierwsze)
     posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
-    // opcjonalne filtrowanie (tak jak miałeś, 14 dni)
-    const maxAgeInDays = 14;
+    // opcjonalne filtrowanie
+    const maxAgeInDays = 14; // np. 7 dni
     const today = new Date();
     const recentPosts = posts.filter((p) => {
       const pd = new Date(p.date);
@@ -76,11 +76,11 @@ async function loadPosts() {
       content.appendChild(p);
       article.appendChild(content);
 
-      // is-new logic (last 7 days)
+      // is-new logic (last 3 days)
       const daysDiff = Math.floor(
         (new Date() - new Date(post.date)) / (1000 * 60 * 60 * 24)
       );
-      if (daysDiff >= 0 && daysDiff <= 7) article.classList.add("is-new");
+      if (daysDiff >= 0 && daysDiff <= 3) article.classList.add("is-new");
 
       // animation stagger
       article.classList.add("animated");
