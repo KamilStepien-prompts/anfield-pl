@@ -177,11 +177,22 @@ a:hover {
   padding: 14px 16px;
   margin: 18px 0;
 }
-.match-event.goal {
+.match-event.card {
   border-left-color: var(--lfc);
   background: #191313;
   box-shadow: var(--shadow);
 }
+.match-event.penalty {
+  border-left-color: var(--lfc);
+  background: #1a1a1a;
+  box-shadow: var(--shadow);
+}
+.match-event.goal {
+  border-left-color: #080;
+  background: var(--line);
+  box-shadow: var(--shadow);
+}
+
 .match-event em {
   color: #e5e5e5;
 }

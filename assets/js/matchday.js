@@ -7,11 +7,11 @@
 const MATCH_CFG = {
   // Data i godzina rozpoczęcia MECZU w UTC (ważne: literka "Z" na końcu!)
   // Przykład: 2025-09-14 17:00 czasu polskiego = 15:00 UTC
-  kickoffUTC: "2025-09-14T13:00:00Z",
+  kickoffUTC: "2025-09-17T19:00:00Z",
 
-  opponentLabel: "Burnley vs Liverpool",
-  venue: "Turf Moor",
-  competition: "Premier League",
+  opponentLabel: "Liverpool vs Atlético Madrid",
+  venue: "Anfield",
+  competition: "Champions League",
 
   // Szacowany czas trwania meczu (minuty) — dla przełączenia na FT po ostatnim gwizdku
   matchDurationMin: 115, // 90 + przerwa + doliczony czas
