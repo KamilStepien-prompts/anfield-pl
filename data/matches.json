@@ -32,7 +32,7 @@
     "round": "Gameweek 6"
   },
   {
-    "id": 4,
+    "id": 5,
     "competition": "Champions League",
     "date": "2025-09-30T21:00:00+02:00",
     "opponent": "Galatasaray",
@@ -40,7 +40,7 @@
     "round": "Group Stage - Matchday 2"
   },
   {
-    "id": 4,
+    "id": 6,
     "competition": "Premier League",
     "date": "2025-10-04T18:30:00+02:00",
     "opponent": "Chelsea",
@@ -48,7 +48,7 @@
     "round": "Gameweek 7"
   },
   {
-    "id": 4,
+    "id": 7,
     "competition": "Premier League",
     "date": "2025-10-19T17:30:00+02:00",
     "opponent": "Man United",
