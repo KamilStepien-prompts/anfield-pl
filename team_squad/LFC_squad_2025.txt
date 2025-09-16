@@ -1,0 +1,136 @@
+<ul class="squad" role="list">
+<!-- GK / DEF / MID / FWD – prosta lista z pozycją i nazwiskiem -->
+<li>
+<span class="num">1</span>
+<span class="name">Alisson</span>
+<span class="pos">GK</span>
+</li>
+
+DEF 
+
+<li>
+<span class="num">8</span>
+<span class="name">Dominik Szoboszlai</span>
+<span class="pos">RB</span>
+</li>
+
+<li>
+<span class="num">5</span>
+<span class="name">Ibrahima Konaté</span>
+<span class="pos">CB</span>
+</li>
+
+<li>
+<span class="num">4</span>
+<span class="name">Virgil van Dijk
+<span class="tag tag--c" title="Kapitan">C</span>
+</span><span class="pos">CB</span>
+</li>
+
+<li>
+<span class="num">26</span
+><span class="name">Andy Robertson</span
+><span class="pos">LB</span>
+</li>
+
+MID 
+
+<li>
+<span class="num">10</span
+><span class="name">Alexis Mac Allister</span
+><span class="pos">CM</span>
+</li>
+
+<li>
+<span class="num">38</span
+><span class="name">Ryan Gravenberch</span
+><span class="pos">CM</span>
+</li>
+
+<li>
+<span class="num">7</span
+><span class="name">Florian Wirtz</span
+><span class="pos">CM</span>
+</li>
+
+<li>
+<span class="num">18</span>
+<span class="name">Cody Gakpo</span
+><span class="pos">LW</span>
+</li>
+
+<li>
+<span class="num">22</span
+><span class="name">Hugo Ekitike</span
+><span class="pos">ST</span>
+</li>
+
+<li>
+<span class="num">11</span
+><span class="name">Mohamed Salah</span
+><span class="pos">RW</span>
+</li>
+
+</ul>
+
+<!-- ŁAWKA REZERWOWYCH-->
+<details class="bench">
+<summary>Rezerwowi</summary>
+<ul role="list">
+
+<li>
+  <span class="num">25</span
+  ><span class="name">Giorgi Mamardashvili</span
+  ><span class="pos">GK</span>
+</li>
+
+<li>
+  <span class="num">2</span>
+  <span class="name">Joe Gomez</span
+  ><span class="pos">DF</span>
+</li>
+
+<li>
+  <span class="num">12</span>
+  <span class="name">Conor Bradley</span
+  ><span class="pos">RB</span>
+</li>
+
+<li>
+  <span class="num">6</span>
+  <span class="name">Milos Kerkez</span>
+  <span class="pos">LB</span>
+</li>
+
+<li>
+  <span class="num">30</span>
+  <span class="name">Jeremie Frimpong</span>
+  <span class="pos">RB</span>
+</li>
+
+<li>
+  <span class="num">3</span
+  ><span class="name">Wataru Endō</span
+  ><span class="pos">DM</span>
+</li>
+
+<li>
+  <span class="num">73</span>
+  <span class="name">Rio Ngumoha</span>
+  <span class="pos">LS</span>
+</li>
+
+<li>
+  <span class="num">9</span>
+  <span class="name">Akexander Isak</span>
+  <span class="pos">ST</span>
+</li>
+
+<li>
+<span class="num">15</span>
+<span class="name">Giovanni Leoni</span>
+<span class="pos">CB</span>
+</li>
+
+</ul>
+</details>

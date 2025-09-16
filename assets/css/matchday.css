@@ -82,6 +82,17 @@
   box-shadow: 0 0 12px rgba(227, 27, 35, 0.4);
   transition: width 0.95s linear; /* zwężanie co sekundę */
 }
+/* CTA pod zapowiedzią w panelu aside */
+.matchday__cta {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+}
+.btn-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
 
 /* status badge (LIVE/FT) – jeżeli JS dodaje .status-badge wewnątrz .matchday__opponent */
 .matchday__opponent .status-badge {

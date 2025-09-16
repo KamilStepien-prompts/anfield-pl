@@ -59,6 +59,204 @@
   border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
+/* Intro felieton (smaczek + kontekst) */
+.livematch .match-intro {
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--ink);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.22)
+  );
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  padding: 1rem 1rem 0.9rem;
+  margin: 0 0 1.2rem;
+}
+
+.livematch .match-intro h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.12rem;
+  line-height: 1.25;
+}
+
+.livematch .match-intro p {
+  margin: 0.55rem 0;
+  color: var(--ink);
+}
+
+.livematch .match-intro em {
+  font-style: italic;
+  opacity: 0.95;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.18);
+}
+
+/* drobne ściśnięcie na małych ekranach */
+@media (max-width: 640px) {
+  .livematch .match-intro {
+    padding: 0.85rem 0.85rem 0.8rem;
+    border-left-width: 5px;
+  }
+  .livematch .match-intro h2 {
+    font-size: 1.05rem;
+  }
+}
+
+/* Lineups – wrapper */
+.livematch .lineups {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  margin: 0 0 1.2rem;
+}
+.livematch .lineups > h2 {
+  margin: 0 0 0.6rem;
+  font-size: 1.1rem;
+}
+
+/* Grid: 1 kolumna mobile, 2 kolumny desktop */
+.livematch .lineups__grid {
+  display: grid;
+  gap: 12px;
+}
+@media (min-width: 760px) {
+  .livematch .lineups__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Team card */
+.livematch .team {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.2)
+  );
+  padding: 0.8rem;
+}
+.livematch .team--lfc {
+  border-left: 6px solid var(--card-red);
+}
+.livematch .team--atm {
+  border-left: 6px solid rgba(255, 255, 255, 0.16);
+}
+
+/* Team header */
+.livematch .team__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  margin-bottom: 6px;
+}
+.livematch .team__name {
+  margin: 0;
+  font-size: 1.05rem;
+}
+.livematch .formation {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Squad list */
+.livematch .squad {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+.livematch .squad li {
+  display: grid;
+  grid-template-columns: 34px 1fr auto; /* num | name | pos */
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+.livematch .num {
+  display: inline-grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.06);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+.livematch .name {
+  font-weight: 600;
+}
+.livematch .pos {
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #e8e8ea;
+}
+
+/* Badges (kapitan, debiut etc.) */
+.livematch .tag {
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+}
+.livematch .tag--c {
+  border-color: rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.18);
+  color: #ffd7d7;
+}
+
+/* Bench (details/summary) */
+.livematch .bench {
+  margin-top: 6px;
+}
+.livematch .bench > summary {
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--ink);
+}
+.livematch .bench[open] > summary {
+  background: rgba(255, 255, 255, 0.08);
+}
+.livematch .bench ul {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+/* Manager line */
+.livematch .manager {
+  margin: 8px 0 0;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
 /* TL;DR */
 .livematch .match-essay {
   border: 1px solid var(--line);
@@ -352,6 +550,90 @@
   max-width: 860px;
   margin: 0 auto;
   padding: 0 1rem;
+}
+.livematch .comments h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+.livematch .comments {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+.livematch .comments {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+.livematch .comments h2 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+.livematch .comments-cta {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  padding: 12px;
+  box-shadow: var(--shadow);
+}
+
+/* Preview news (plotki i aktualności) */
+.livematch .preview-news {
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--card-red);
+  border-radius: 12px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  padding: 0.9rem 1rem;
+  margin: 1.2rem 0;
+}
+.livematch .preview-news h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.05rem;
+  line-height: 1.25;
+}
+.livematch .preview-news ul {
+  margin: 0;
+  padding-left: 1.05rem; /* delikatny wcięty bullet */
+  display: grid;
+  gap: 10px;
+}
+.livematch .preview-news li {
+  position: relative;
+  padding: 0.35rem 0.55rem 0.35rem 0.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+
+/* link do źródła – subtelny, nie krzyczy */
+.livematch .preview-news a {
+  font-size: 0.88rem;
+  color: var(--muted);
+  margin-left: 6px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
+  text-underline-offset: 2px;
+}
+.livematch .preview-news a:hover {
+  color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.5);
+}
+
+/* wzmocnienie leadów w punktach */
+.livematch .preview-news li > strong {
+  color: #ffe1e1;
+}
+
+/* mobile squeeze */
+@media (max-width: 640px) {
+  .livematch .preview-news {
+    padding: 0.8rem 0.85rem;
+    border-left-width: 5px;
+  }
 }
 
 /* Hero image full width on mobile, centered on larger screens */
