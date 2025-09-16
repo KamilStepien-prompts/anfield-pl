@@ -462,9 +462,3 @@
 }
 
 /* Przyciski na końcu posta – odrobina gravitas na desktopie */
-@media (min-width: 1024px) {
-  .post-footer-nav .btn {
-    padding: 0.7rem 1rem;
-    font-weight: 600;
-  }
-}

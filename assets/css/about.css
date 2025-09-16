@@ -20,6 +20,7 @@ a {
   color: #fecaca;
   text-decoration: none;
 }
+
 .container {
   max-width: 980px;
   margin-inline: auto;
@@ -48,6 +49,7 @@ a {
   color: #ffd7d7cc;
   margin-left: 1rem;
 }
+
 .hero {
   padding: 3.2rem 0 2.2rem;
   background: radial-gradient(
@@ -67,6 +69,7 @@ h1 {
   margin: 0.6rem auto 0;
   color: #ffd7d7cc;
 }
+
 section {
   padding: 2.2rem 0;
 }
@@ -78,6 +81,7 @@ section {
 .prose p {
   margin: 0.6rem 0;
 }
+
 .grid {
   display: grid;
   gap: 1rem;
@@ -104,6 +108,7 @@ section {
   font-size: 0.72rem;
   color: #ffd7d7cc;
 }
+
 .photo {
   width: 100%;
   border-radius: 16px;
@@ -115,6 +120,7 @@ section {
 .thumb {
   aspect-ratio: 4/3;
 }
+
 .timeline {
   border-left: 2px solid rgba(225, 29, 72, 0.35);
   padding-left: 1rem;
@@ -122,6 +128,7 @@ section {
 .timeline .t {
   margin: 0.6rem 0;
 }
+
 footer {
   border-top: 1px solid rgba(225, 29, 72, 0.25);
   padding: 2.2rem 0;

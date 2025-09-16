@@ -1,0 +1,362 @@
+/* =========================================================
+   Live Match / Post-match stylesheet (scoped)
+   Scope: .livematch …
+   ========================================================= */
+
+/* Local tokens (custom properties) */
+.livematch {
+  --card-red: #ef4444; /* lokalny czerwony (nie nadpisuje --red z base.css) */
+  --card-red-2: #ff6b6b;
+  --ink: #e5e7eb;
+  --muted: #a1a1aa;
+  --panel: rgba(255, 255, 255, 0.03);
+  --panel-2: rgba(255, 255, 255, 0.06);
+  --line: rgba(255, 255, 255, 0.12);
+  --shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+
+  /* event colors */
+  --c-goal: #16a34a;
+  --c-pen: #f59e0b;
+  --c-var: #38bdf8;
+  --c-yellow: #fbbf24;
+  --c-red: #ef4444;
+  --c-sub: #a78bfa;
+}
+
+/* Title + subtitle */
+.livematch .page-title {
+  margin: 0.25rem 0 0.25rem;
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+  line-height: 1.2;
+}
+.livematch .page-subtitle {
+  margin: 0 0 1rem;
+  color: var(--muted);
+  font-size: 0.98rem;
+}
+
+/* Hero image */
+.livematch .matchday_image {
+  margin: 0 0 1.2rem;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+.livematch .matchday_image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  filter: grayscale(8%) contrast(1.03) brightness(0.98);
+}
+.livematch .matchday_image figcaption {
+  padding: 0.55rem 0.9rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* TL;DR */
+.livematch .match-essay {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.18)
+  );
+  box-shadow: var(--shadow);
+}
+.livematch .match-essay h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+.livematch .key-points {
+  margin: 0;
+  padding-left: 1rem;
+}
+.livematch .key-points li {
+  margin: 0.3rem 0;
+}
+
+/* Timeline (events list) */
+.livematch .timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  border-left: 2px solid var(--line);
+}
+.livematch .timeline li {
+  position: relative;
+  margin: 0.85rem 0 0.85rem 0;
+  padding: 0.35rem 0.75rem 0.35rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+.livematch .timeline li::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 14px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--card-red);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+.livematch .timeline time {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-right: 0.5rem;
+  min-width: 2.2rem;
+}
+
+/* Event color accents */
+.livematch .timeline li.goal {
+  border-color: rgba(22, 163, 74, 0.28);
+}
+.livematch .timeline li.goal::before {
+  background: var(--c-goal);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.18);
+}
+
+.livematch .timeline li.penalty {
+  border-color: rgba(245, 158, 11, 0.28);
+}
+.livematch .timeline li.penalty::before {
+  background: var(--c-pen);
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.18);
+}
+
+.livematch .timeline li.var {
+  border-color: rgba(56, 189, 248, 0.28);
+}
+.livematch .timeline li.var::before {
+  background: var(--c-var);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.18);
+}
+
+.livematch .timeline li.yellow {
+  border-color: rgba(251, 191, 36, 0.28);
+}
+.livematch .timeline li.yellow::before {
+  background: var(--c-yellow);
+  box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.18);
+}
+
+.livematch .timeline li.red {
+  border-color: rgba(239, 68, 68, 0.32);
+}
+.livematch .timeline li.red::before {
+  background: var(--c-red);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.livematch .timeline li.sub {
+  border-color: rgba(167, 139, 250, 0.28);
+}
+.livematch .timeline li.sub::before {
+  background: var(--c-sub);
+  box-shadow: 0 0 0 3px rgba(167, 139, 250, 0.18);
+}
+
+/* Timeline badges (use global .badge from base.css as base) */
+.livematch .badge {
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.livematch .badge--goal {
+  background: rgba(22, 163, 74, 0.15);
+  color: #cdeed8;
+  border-color: rgba(22, 163, 74, 0.25);
+}
+.livematch .badge--pen {
+  background: rgba(245, 158, 11, 0.15);
+  color: #ffe9bf;
+  border-color: rgba(245, 158, 11, 0.25);
+}
+.livematch .badge--var {
+  background: rgba(56, 189, 248, 0.15);
+  color: #cfefff;
+  border-color: rgba(56, 189, 248, 0.25);
+}
+.livematch .badge--yellow {
+  background: rgba(251, 191, 36, 0.15);
+  color: #fff1c2;
+  border-color: rgba(251, 191, 36, 0.28);
+}
+.livematch .badge--red {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ffd1d1;
+  border-color: rgba(239, 68, 68, 0.28);
+}
+.livematch .badge--sub {
+  background: rgba(167, 139, 250, 0.15);
+  color: #e6ddff;
+  border-color: rgba(167, 139, 250, 0.28);
+}
+
+/* Highlighted match events (longer blocks) */
+.livematch .match-event {
+  position: relative;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--card-red);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(0, 0, 0, 0.22)
+  );
+  padding: 1rem 0.9rem 0.9rem 1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.livematch .match-event + .match-event {
+  margin-top: 1rem;
+}
+.livematch .match-event .label {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.25rem;
+  background: rgba(239, 68, 68, 0.18);
+  color: #ffd7d7;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+}
+.livematch .match-event h3 {
+  margin: 0.1rem 0 0.35rem;
+  font-size: 1.1rem;
+}
+.livematch .match-event.goal {
+  border-left-color: var(--c-goal);
+}
+.livematch .match-event.goal .label {
+  background: rgba(22, 163, 74, 0.18);
+  color: #d6f5e2;
+  border-color: rgba(22, 163, 74, 0.35);
+}
+.livematch .match-event.red {
+  border-left-color: var(--c-red);
+}
+.livematch .match-event.yellow {
+  border-left-color: var(--c-yellow);
+}
+.livematch .match-event.var {
+  border-left-color: var(--c-var);
+}
+.livematch .match-event.penalty {
+  border-left-color: var(--c-pen);
+}
+.livematch .match-event.sub {
+  border-left-color: var(--c-sub);
+}
+
+/* Stats table */
+.livematch .stats-box {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--panel);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.livematch .stats-box h2 {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 1.1rem;
+  background: rgba(0, 0, 0, 0.25);
+}
+.livematch .stats-box table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+.livematch .stats-box th,
+.livematch .stats-box td {
+  padding: 0.7rem 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.livematch .stats-box tbody tr:last-child td {
+  border-bottom: 0;
+}
+.livematch .stats-box th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 600;
+}
+.livematch .stats-box td:nth-child(2),
+.livematch .stats-box td:nth-child(3) {
+  text-align: center;
+}
+
+/* Pull-quote */
+.livematch .pull-quote blockquote {
+  margin: 0;
+  border-left: 4px solid var(--card-red);
+  padding: 0.5rem 0.9rem;
+  font-size: 1.05rem;
+  color: #ffd7d7;
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.08), transparent);
+  border-radius: 6px;
+}
+
+/* Read Next (scoped) */
+.livematch .read-next {
+  margin: 16px 0 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #121214;
+  box-shadow: var(--shadow);
+}
+.livematch .read-next h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+.livematch .read-next ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.livematch .read-next a {
+  font-weight: 600;
+}
+.livematch .read-next .why {
+  opacity: 0.8;
+  margin-left: 6px;
+  font-size: 14px;
+}
+
+/* Small screens polish */
+@media (max-width: 640px) {
+  .livematch .stats-box th,
+  .livematch .stats-box td {
+    padding: 0.6rem 0.7rem;
+  }
+  .livematch .timeline li {
+    padding: 0.35rem 0.6rem 0.35rem 0.9rem;
+  }
+}
+/* Centered article layout on desktop */
+.livematch .article {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Hero image full width on mobile, centered on larger screens */
+@media (min-width: 900px) {
+  .livematch .matchday_image img {
+    border-radius: 14px;
+  }
+}

@@ -1,192 +1,197 @@
 /* assets/js/matchday.js
- * Match Day — prosty licznik z auto-trybem LIVE/FT.
- * Ustaw tylko CONFIG poniżej. Reszta działa sama.
+ * MatchDay: dane z /data/matches.json + countdown + progres + LIVE/FT
  */
+(function () {
+  // ---- helpers / DOM ----
+  const $ = (s) => document.querySelector(s);
+  const el = {
+    type: $("#matchday-type"),
+    badge: $("#matchday-badge"),
+    opp: $("#matchday-opponent"),
+    meta: $("#matchday-meta"),
+    d: $("#md-days"),
+    h: $("#md-hours"),
+    m: $("#md-mins"),
+    s: $("#md-secs"),
+    bar: $("#matchday-bar"),
+    progress: $(".matchday__progress"),
+  };
+  if (
+    !el.type ||
+    !el.badge ||
+    !el.opp ||
+    !el.meta ||
+    !el.d ||
+    !el.h ||
+    !el.m ||
+    !el.s ||
+    !el.bar
+  )
+    return;
 
-// ======== CONFIG ========
-const MATCH_CFG = {
-  // Data i godzina rozpoczęcia MECZU w UTC (ważne: literka "Z" na końcu!)
-  // Przykład: 2025-09-14 17:00 czasu polskiego = 15:00 UTC
-  kickoffUTC: "2025-09-17T19:00:00Z",
+  // Ustaw aria dla paska
+  if (el.progress) {
+    el.progress.setAttribute("role", "progressbar");
+    el.progress.setAttribute("aria-valuemin", "0");
+    el.progress.setAttribute("aria-valuemax", "100");
+    el.progress.setAttribute("aria-valuenow", "100");
+  }
 
-  opponentLabel: "Liverpool vs Atlético Madrid",
-  venue: "Anfield",
-  competition: "Champions League",
+  const LOCALE = "pl-PL";
+  const TZONE = "Europe/Warsaw";
+  const MATCH_DURATION_MIN = 115; // 90 + przerwy + doliczony
 
-  // Szacowany czas trwania meczu (minuty) — dla przełączenia na FT po ostatnim gwizdku
-  matchDurationMin: 115, // 90 + przerwa + doliczony czas
+  const dni = ["niedz.", "pon.", "wt.", "śr.", "czw.", "pt.", "sob."];
+  const mies = [
+    "sty",
+    "lut",
+    "mar",
+    "kwi",
+    "maj",
+    "cze",
+    "lip",
+    "sie",
+    "wrz",
+    "paź",
+    "lis",
+    "gru",
+  ];
 
-  // Strefa do wyświetlania daty/godziny dla użytkownika
-  displayTimeZone: "Europe/Warsaw",
-  locale: "pl-PL",
-};
-// ========================
+  const pad2 = (n) => String(n).padStart(2, "0");
 
-const els = {
-  days: document.getElementById("md-days"),
-  hours: document.getElementById("md-hours"),
-  mins: document.getElementById("md-mins"),
-  secs: document.getElementById("md-secs"),
-  opponent: document.getElementById("matchday-opponent"),
-  meta: document.getElementById("matchday-meta"),
-  box: document.getElementById("matchday"),
-};
+  const fmtDateShort = (iso) => {
+    const d = new Date(iso);
+    const dz = dni[d.getDay()];
+    const dd = pad2(d.getDate());
+    const mm = mies[d.getMonth()];
+    const hh = pad2(d.getHours());
+    const mi = pad2(d.getMinutes());
+    return `${dz}, ${dd} ${mm} • ${hh}:${mi}`;
+  };
 
-const bar = document.getElementById("matchday-bar");
-function setProgress(pct) {
-  if (!bar) return;
-  const safe = Math.max(0, Math.min(100, pct));
-  bar.style.width = safe + "%";
-  bar.parentElement?.setAttribute("aria-valuenow", String(Math.round(safe)));
-}
+  const setProgress = (pct) => {
+    const safe = Math.max(0, Math.min(100, pct));
+    el.bar.style.width = safe.toFixed(3) + "%";
+    if (el.progress)
+      el.progress.setAttribute("aria-valuenow", String(Math.round(safe)));
+  };
 
-function fmtDateLocal(dt) {
-  return dt.toLocaleString(MATCH_CFG.locale, {
-    weekday: "long",
-    day: "2-digit",
-    month: "long",
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: MATCH_CFG.displayTimeZone,
-  });
-}
+  const clearStatusBadges = () => {
+    el.opp.querySelectorAll(".status-badge").forEach((n) => n.remove());
+  };
 
-function pad2(n) {
-  return String(n).padStart(2, "0");
-}
+  const addStatusBadge = (txt, bg) => {
+    const span = document.createElement("span");
+    span.className = "status-badge";
+    span.textContent = txt;
+    span.style.display = "inline-block";
+    span.style.marginLeft = ".5rem";
+    span.style.padding = ".1rem .5rem";
+    span.style.borderRadius = "8px";
+    span.style.fontSize = ".85rem";
+    span.style.letterSpacing = ".02em";
+    span.style.background = bg;
+    span.style.color = "#fff";
+    span.style.verticalAlign = "middle";
+    el.opp.appendChild(span);
+  };
 
-function setCountdown(d, h, m, s) {
-  if (els.days) els.days.textContent = String(d);
-  if (els.hours) els.hours.textContent = pad2(h);
-  if (els.mins) els.mins.textContent = pad2(m);
-  if (els.secs) els.secs.textContent = pad2(s);
-}
+  // ---- render + timers ----
+  const applyMatch = (m) => {
+    // label ligi
+    el.type.textContent = m.competition || "";
 
-function statusBadge(text) {
-  const span = document.createElement("span");
-  span.textContent = text;
-  span.style.display = "inline-block";
-  span.style.marginLeft = ".5rem";
-  span.style.padding = ".1rem .5rem";
-  span.style.borderRadius = "8px";
-  span.style.fontSize = ".85rem";
-  span.style.letterSpacing = ".02em";
-  span.style.background = text === "LIVE" ? "#c62828" : "#2e7d32";
-  span.style.color = "#fff";
-  span.style.verticalAlign = "middle";
-  return span;
-}
+    // kto vs kto (home decyduje o kolejności)
+    const title = m.home
+      ? `Liverpool vs ${m.opponent}`
+      : `${m.opponent} vs Liverpool`;
+    el.opp.textContent = title;
 
-function updateMeta() {
-  if (!els.opponent || !els.meta) return;
-  els.opponent.textContent = MATCH_CFG.opponentLabel;
+    // stadion (fallback: Anfield przy home true)
+    const place = m.stadium || (m.home ? "Anfield" : "Wyjazd");
+    el.badge.textContent = `Najbliższe starcie - ${place}`;
 
-  const ko = new Date(MATCH_CFG.kickoffUTC);
-  els.meta.textContent = `${MATCH_CFG.competition} • ${
-    MATCH_CFG.venue
-  } • ${fmtDateLocal(ko)}`;
-}
+    // meta: liga • stadion • data (PL)
+    el.meta.textContent = `${m.competition} • ${place} • ${fmtDateShort(
+      m.date
+    )}`;
 
-function tick() {
-  const now = new Date();
-  const ko = new Date(MATCH_CFG.kickoffUTC);
-  const ft = new Date(ko.getTime() + MATCH_CFG.matchDurationMin * 60 * 1000);
+    // timery
+    startTimers(new Date(m.date));
+  };
 
-  const untilKOms = ko - now;
-  const untilFTms = ft - now;
+  const startTimers = (ko) => {
+    const ft = new Date(ko.getTime() + MATCH_DURATION_MIN * 60 * 1000);
 
-  function tick() {
-    const now = new Date();
-    const ko = new Date(MATCH_CFG.kickoffUTC);
-    const ft = new Date(ko.getTime() + MATCH_CFG.matchDurationMin * 60 * 1000);
+    // Pasek ma się ZWĘŻAĆ do 0 dokładnie o KO — liczymy od momentu załadowania.
+    const startTs = Date.now();
+    const untilKO0 = Math.max(ko.getTime() - startTs, 1);
 
-    const untilKOms = ko - now;
-    const untilFTms = ft - now;
+    const tick = () => {
+      const now = new Date();
+      const toKO = ko - now;
+      const toFT = ft - now;
 
-    // progress: przed meczem 0→100, w trakcie 0→100 do FT
-    if (untilKOms > 0) {
-      // PRZED MECZEM — ile % minęło od "dziś–7d" do KO (ładna dynamika)
-      const windowStart = new Date(ko.getTime() - 7 * 24 * 3600 * 1000); // 7 dni okna
-      const total = ko - windowStart;
-      const elapsed = now - windowStart;
-      const pct = total > 0 ? (elapsed / total) * 100 : 0;
-      setProgress(pct);
-      // countdown
-      const totalSecs = Math.floor(untilKOms / 1000);
+      // COUNTDOWN do KO
+      const left = Math.max(toKO, 0);
+      const totalSecs = Math.floor(left / 1000);
       const days = Math.floor(totalSecs / 86400);
       const hours = Math.floor((totalSecs % 86400) / 3600);
       const mins = Math.floor((totalSecs % 3600) / 60);
       const secs = totalSecs % 60;
-      setCountdown(days, hours, mins, secs);
-      // remove badges
-      const existing = els.opponent?.querySelector(".status-badge");
-      if (existing) existing.remove();
-      return;
-    }
 
-    if (untilKOms <= 0 && untilFTms > 0) {
-      // LIVE
-      setCountdown(0, 0, 0, 0);
-      const totalLive = ft - ko;
-      const elapsedLive = now - ko;
-      const pctLive = totalLive > 0 ? (elapsedLive / totalLive) * 100 : 0;
-      setProgress(pctLive);
-      if (els.opponent && !els.opponent.querySelector(".status-badge")) {
-        els.opponent.appendChild(statusBadge("LIVE"));
+      el.d.textContent = String(days);
+      el.h.textContent = pad2(hours);
+      el.m.textContent = pad2(mins);
+      el.s.textContent = pad2(secs);
+
+      clearStatusBadges();
+
+      if (toKO > 0) {
+        // PRZED MECZEM — bar 100% -> 0% liniowo do KO
+        const elapsed = Date.now() - startTs;
+        const pct = 100 - (elapsed / untilKO0) * 100;
+        setProgress(pct);
+        return;
       }
-      return;
-    }
 
-    // FT
-    setCountdown(0, 0, 0, 0);
-    setProgress(100);
-    if (els.opponent) {
-      const liveBadge = els.opponent.querySelector(".status-badge");
-      if (liveBadge) liveBadge.remove();
-      if (!els.opponent.querySelector(".status-badge")) {
-        const ftb = statusBadge("FT");
-        ftb.style.background = "#2e7d32";
-        els.opponent.appendChild(ftb);
+      if (toKO <= 0 && toFT > 0) {
+        // W TRAKCIE MECZU — LIVE, bar 0% -> 100% do FT
+        setProgress(
+          ((ft - now) / (ft - ko)) * 0 + ((now - ko) / (ft - ko)) * 100
+        ); // 0→100
+        addStatusBadge("LIVE", "#c62828");
+        return;
       }
-    }
-  }
 
-  // PRZED MECZEM — odliczanie
-  if (untilKOms > 0) {
-    const totalSecs = Math.floor(untilKOms / 1000);
-    const days = Math.floor(totalSecs / 86400);
-    const hours = Math.floor((totalSecs % 86400) / 3600);
-    const mins = Math.floor((totalSecs % 3600) / 60);
-    const secs = totalSecs % 60;
-    setCountdown(days, hours, mins, secs);
+      // PO MECZU — FT
+      setProgress(100);
+      addStatusBadge("FT", "#2e7d32");
+      clearInterval(tmr);
+    };
 
-    // Usuń ewentualne badge gdy odliczamy
-    const existing = els.opponent?.querySelector("span");
-    if (existing) existing.remove();
-    return;
-  }
+    tick();
+    const tmr = setInterval(tick, 1000);
+  };
 
-  // W TRAKCIE MECZU — LIVE
-  if (untilKOms <= 0 && untilFTms > 0) {
-    setCountdown(0, 0, 0, 0);
-    if (els.opponent && !els.opponent.querySelector("span")) {
-      els.opponent.appendChild(statusBadge("LIVE"));
-    }
-    return;
-  }
+  // ---- choose upcoming ----
+  const pickUpcoming = (arr) => {
+    const now = Date.now();
+    return arr
+      .map((x) => ({ ...x, ts: new Date(x.date).getTime() }))
+      .filter((x) => x.ts > now)
+      .sort((a, b) => a.ts - b.ts)[0];
+  };
 
-  // PO MECZU — FT (full time)
-  setCountdown(0, 0, 0, 0);
-  if (els.opponent) {
-    const liveBadge = els.opponent.querySelector("span");
-    if (liveBadge) liveBadge.remove();
-    if (!els.opponent.querySelector("span")) {
-      els.opponent.appendChild(statusBadge("FT"));
-    }
-  }
-}
-
-// Inicjalizacja
-updateMeta();
-tick();
-setInterval(tick, 1000);
+  // ---- fetch data ----
+  fetch("/data/matches.json", { cache: "no-store" })
+    .then((r) => r.json())
+    .then((list) => {
+      if (!Array.isArray(list) || list.length === 0) return;
+      const m = pickUpcoming(list);
+      if (m) applyMatch(m);
+    })
+    .catch(() => {
+      /* fallback: zostaw statyczny HTML */
+    });
+})();

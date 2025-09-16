@@ -39,6 +39,8 @@
   <link rel="stylesheet" href="/assets/css/base.css" />
   <link rel="stylesheet" href="/assets/css/header.css" />
   <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/matchday.css" />
+
 
   <!-- === STRUCTURED DATA (JSON-LD) === -->
   <script type="application/ld+json">
@@ -95,7 +97,7 @@
       <a href="#latest-title">Felieton</a>
       <a href="#newsroom-section">Newsroom</a>
       <a href="/archive.html">Archiwum</a>
-      <a href="/about.html">O mnie</a>
+      <a href="/about.html">O nas</a>
     </nav>
         <!-- Mobile nav toggle -->
         <button
@@ -117,7 +119,7 @@
           <a href="#latest-felieton">Felieton</a>
           <a href="#newsroom-section">Newsroom</a>
           <a href="/archive.html">Archiwum</a>
-          <a href="/about.html">O mnie</a>
+          <a href="/about.html">O nas</a>
       </nav>
         </div>
       </div>
@@ -140,15 +142,15 @@
 <!-- HERO (grid: main, feature, aside) -->
 <!-- LEWA KOLUMNA (main content) -->
           <div class="spacer"></div>
-          <div class="badge">Liverpool FC • Polska ⚽ DoubleBrain™ • "You'll Never Code Alone" </div>
-          <h1>Anfield.PL to więcej niż portal o piłce nożnej. </h1>
+          <div class="badge">Liverpool FC • Premier League • Polska </div>
+          <h1>Anfield.PL - autorski i niezależny serwis dla kibiców Liverpool FC. </h1>
           <p class="lead">
-            Felietony, analizy, opinie i komentarze. Piszemy o Liverpool FC i Premier League — z pamięcią o historii i chłodną analizą tego co dziś. 
+            Felietony, analizy, opinie i komentarze. Z pamięcią o historii i chłodną analizą tego co dziś. 
           </p>
-          <p class="why">Anfield.PL to niezależny serwis stworzony przez kibica dla kibiców. W świecie, gdzie teksty kopiuje się jednym kliknięciem, ja stawiam na autorskie felietony, pogłębione analizy i szczere opinie o The Reds i Premier League. Nie tłumaczę z angielskiego nie swoich treści i nie robię kalki. Tworzę z pasją i chłodną analizą własne materiały.
+          <p class="why">Anfield.PL to serwis stworzony przez kibica dla kibiców. W świecie, gdzie teksty kopiuje się jednym kliknięciem, ja stawiam na autorskie felietony, pogłębione analizy i szczere opinie o The Reds i Premier League. Nie tłumaczę z angielskiego nie swoich treści i nie robię punktu ksero. Tworzę z pasją własne materiały.
           </p>
-          <p><strong>MatchDay</strong> — zapowiedzi i komentarze nadchodzących meczów. Analizy i wrażenia po spotkaniach.
-          <br> <strong>Newsroom</strong> — najświeższe informacje o LFC i Premier League jako wybór redakcji Anfield.PL, żeby być na bieżąco z tym co dzieje się w klubie i lidze. 
+          <p><strong>matchDay</strong> — analizy i wrażenia po spotkaniach. Gorący komentarz tworzony w trakcie meczu i publikowany tuż po ostatnim gwizdku.
+          <br> <strong>Newsroom</strong> — research informacji. Wybór redakcji najciekawszych newsów z sieci abyś ty nie musiał szukać.
             </p>
           <p class="muted">
             U nas nie znajdziesz reklam ani clickbaitu. Tylko rzetelne treści stworzone od podstaw – dla kibiców Liverpool FC.</p>
@@ -162,70 +164,45 @@
         <!-- ASIDE: MatchDay + Newsroom (visually on right on desktop) -->
           <aside class="hero__aside" aria-label="Panel boczny">
           <!-- MATCHDAY -->
-          <section class="section--tight" aria-labelledby="matchday-title">
-            <h2 id="matchday-title" class="visually-hidden">Match Day</h2>
-            <div id="matchday" class="matchday matchday--hero">
+          <section class="matchday" aria-labelledby="matchday-title">
+            
+            <div class="matchday__types" id="matchday-type"></div>
               <div class="matchday__header">
-                <div class="matchday__label">Match Day</div>
-                <div class="matchday__badge" aria-hidden="true">Najbliższe starcie - Anfield</div>
-              <div class="matchday__opponent" id="matchday-opponent">
-                Liverpool vs ???
-              </div>
-              <div class="matchday__meta" id="matchday-meta">—</div>
-
-              <div
-                class="matchday__countdown"
-                id="matchday-countdown"
-                aria-live="polite"
-              >
+                <div class="matchday__badge" id="matchday-badge"></div>
+                  <!-- NOWE: przeciwnik (wymagane przez JS) -->
+              <div class="matchday__opponent" id="matchday-opponent"></div>
+                <div class="matchday__meta" id="matchday-meta">
+                </div>
+              
+                <div class="matchday__countdown" id="matchday-countdown" aria-live="polite">
                 <span id="md-days">–</span><small>d</small>
                 <span id="md-hours">–</span><small>h</small>
                 <span id="md-mins">–</span><small>m</small>
                 <span id="md-secs">–</span><small>s</small>
               </div>
 
-              <div
-                class="matchday__progress"
-                role="progressbar"
-                aria-valuemin="0"
-                aria-valuemax="100"
-              >
-                <div
-                  class="matchday__bar"
-                  id="matchday-bar"
-                  style="width: 0%"
-                ></div>
+              <div class="matchday__progress" role="progressbar" aria-valuemin="0"aria-valuemax="100">
+                <div class="matchday__bar" id="matchday-bar" >
+                </div>
               </div>
+            
               <!-- odstęp -->
               <!-- MATCH DAY -->
           <div class="spacer"></div>
               <h3 class="matchday__status" id="matchday-status">Zapowiedź:</h3>
-<p id="matchday-commentary" class="matchday__commentary">
-  Pierwszy mecz w europejskich pucharach. Na Anfield Liverpool zmierzy się z Atlético Madrid.
-</p>
-
-<p>
-  Perfekcyjny start Arne Slota – drużyna nie straciła jeszcze punktu w lidze i teraz otwiera nowy rozdział w Champions League. 
-</p>
-
-<p>
-  W poprzednim sezonie wygranie fazy ligowej było pocałunkiem śmierci. Teraz pytanie brzmi: czy warto gryźć trawę w każdym meczu, czy lepiej rotować i zarządzać energią? 
-</p>
-
-<p>
-  Atlético po 4 kolejkach La Liga zajmuje dopiero 11. miejsce w tabeli. Liverpool po udanym przełamaniu Burnley jedzie na fali pewności siebie. 
-</p>
-
-<p>
-  <strong>Nowy numer 9 – Alexander Isak</strong> czeka na debiut. Czy Slot wypuści go choć na kilka minut u boku Egipskiego Króla Anfield przeciwko drużynie Diego Simeone? 
-</p>
-
-<p>
-  Odpowiedzi poznamy w środowy wieczór. Relacja tradycyjnie w dziale <strong>matchDay</strong>.
-</p>
+          <p id="matchday-commentary" class="matchday__commentary">
+            Pierwszy mecz w europejskich pucharach. Format w jakim obecnie wyglądają te rozgrywki premiuję chłodne wyrachowanie? Tylko zwycięstwo? A może lepiej dokonać rotacji w składzie nawet kosztem utraty kilku punktów. 
+          </p>
+          <p>
+            Atlético po 4 kolejkach La Liga zajmuje dopiero 11. miejsce w tabeli. Liverpool po udanym przełamaniu Burnley jedzie na fali pewności siebie. 
+          </p>
+          <p>
+            <strong>9 – Alexander Isak</strong> czeka na debiut. Czy zobaczymy go na boisku? Odpowiedzi na te i inne pytania poznamy w środowy wieczór. Relacja w dziale <strong>matchDay</strong>.
+          </p>
 
             </div>
           </section>
+    
           
     <!-- NEWSROOM -->
   <section class="newsroom" aria-labelledby="newsroom-title" id="newsroom-section">
@@ -245,7 +222,7 @@
         <section id="feature" class="hero__feature">
           <article class="feature-article">
             <header>
-              <h2 id="latest-felieton">Anfield.PL ⚽ matchDay:</h2>
+              <h2 id="latest-felieton"> matchDay ⚽ zapis relacji:</h2>
                 <a
                   href="/felieton/wrzesien25/felieton-08-wiatr-tough-moor/index.html"
                 >

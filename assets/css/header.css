@@ -1,4 +1,4 @@
-/* Header + hero */
+/* Header + nav + off-canvas */
 .site-header {
   position: sticky;
   top: 0;
@@ -13,6 +13,7 @@
   justify-content: space-between;
   min-height: 64px;
 }
+
 .brand {
   display: flex;
   gap: 0.5rem;
@@ -28,7 +29,7 @@
   box-shadow: 0 0 16px var(--red);
 }
 
-/* desktop nav (ukryte na mobile) */
+/* desktop nav */
 .nav {
   display: none;
 }
@@ -84,7 +85,7 @@
   opacity: 0;
 }
 
-/* OFFCANVAS */
+/* Off-canvas (mobile menu) */
 html.lock {
   overflow: hidden;
 }
@@ -107,8 +108,10 @@ html.lock {
   background: var(--panel);
   border-top: 1px solid rgba(225, 29, 72, 0.25);
   padding: 12px 16px 20px;
-  transform: translateY(-8px); /* delikatny drop w dół */
+  transform: translateY(-8px);
   transition: transform 0.22s ease;
+  border-radius: 0 0 16px 16px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
 .off__nav a {
   display: block;
@@ -129,116 +132,16 @@ html.lock {
   height: 36px;
   border-radius: 10px;
 }
-
 .off.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
-.off__panel {
-  border-radius: 0 0 16px 16px;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
-}
 .off.is-open .off__panel {
   transform: translateY(0);
 }
 
-/* HERO */
-.hero {
-  padding: 48px 0 56px;
-  background: radial-gradient(
-    1200px 400px at 50% -120px,
-    rgba(225, 29, 72, 0.24),
-    transparent 70%
-  );
-}
-.hero h1 {
-  font-size: clamp(28px, 4vw, 44px);
-  line-height: 1.15;
-  margin: 0.35rem 0;
-}
-.hero .lead {
-  font-size: clamp(16px, 2.5vw, 18px);
-  max-width: 82ch;
-  color: #d6d6d6;
-}
-.hero .cta {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-/* HERO */
-.hero {
-  padding: 64px 0 32px;
-  background: radial-gradient(
-      1200px 400px at 10% -10%,
-      rgba(225, 29, 72, 0.15),
-      transparent 60%
-    ),
-    radial-gradient(
-      1200px 400px at 90% -20%,
-      rgba(251, 113, 133, 0.15),
-      transparent 60%
-    );
-}
-.hero h1 {
-  margin-top: 0.75rem;
-  max-width: 66h;
-}
-.hero .lead {
-  margin-top: 0.75rem;
-  max-width: 66ch;
-}
-
-/* Akcenty marki */
-.gradient-text {
-  background: linear-gradient(90deg, var(--red), var(--red-2));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  font-weight: 800;
-}
-.brand-link {
-  font-weight: 700;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.25);
-}
-.brand-link:hover {
-  border-bottom-color: rgba(255, 255, 255, 0.5);
-  text-decoration: none;
-}
-
-/* Sub-badge pod leadem */
-.subbadge {
-  display: inline-block;
-  margin-top: 0.75rem;
-  padding: 0.25rem 0.6rem;
-  font-size: var(--fs-sm);
-  color: #ffe4e6;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 999px;
-  opacity: 0.9;
-}
-
-/* CTA spacing */
-.hero .cta {
-  margin-top: 1.25rem;
-}
-
-/* Mobile polish */
-@media (max-width: 640px) {
-  .hero {
-    padding: 40px 0 24px;
-  }
-  .hero h1 {
-    max-width: 72ch;
-  }
-  .hero .lead {
-    max-width: 60ch;
-  }
-}
-
-/* desktop ≥ 960px */
+/* breakpoints */
 @media (min-width: 960px) {
   .hamb {
     display: none;
@@ -249,8 +152,5 @@ html.lock {
   }
   .off {
     display: none !important;
-  }
-  .hero {
-    padding: 72px 0 84px;
   }
 }
