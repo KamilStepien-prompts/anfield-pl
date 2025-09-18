@@ -809,3 +809,65 @@
   line-height: 1.5;
   font-style: italic;
 }
+/* Scorebox – responsive */
+.livematch .scorebox {
+  padding: 0.9rem 0.9rem;
+}
+.livematch .scorebox__teams {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+}
+.livematch .scorebox__team {
+  flex: 1 1 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: clamp(0.85rem, 2.8vw, 1rem);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.livematch .scorebox__score {
+  font-weight: 800;
+  line-height: 1;
+  font-size: clamp(1.6rem, 9vw, 2.3rem);
+}
+
+/* <= 600px: ciaśniej */
+@media (max-width: 600px) {
+  .livematch .scorebox {
+    padding: 0.75rem 0.8rem;
+  }
+  .livematch .scorebox__teams {
+    gap: 0.6rem;
+  }
+}
+
+/* <= 400px: grid, jeszcze ciaśniej */
+@media (max-width: 400px) {
+  .livematch .scorebox__teams {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+  }
+  .livematch .scorebox__team {
+    letter-spacing: 0.02em;
+    font-size: 0.86rem;
+  }
+  .livematch .scorebox__score {
+    font-size: 1.9rem;
+    padding: 0 0.2rem;
+  }
+}
+
+/* <= 360px: automatyczna zamiana na skrót (LIV/ATL) */
+@media (max-width: 360px) {
+  .livematch .scorebox__team .full {
+    display: none;
+  }
+  .livematch .scorebox__team::after {
+    content: attr(data-abbr);
+  }
+}
