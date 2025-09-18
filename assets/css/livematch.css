@@ -695,3 +695,49 @@
   font-size: 2.1rem;
   color: #fff;
 }
+/* MOTM card */
+.livematch .motm {
+  margin: 1.2rem 0;
+  padding: 1rem 1rem 0.9rem;
+  border: 1px solid var(--line);
+  border-left: 6px solid var(--card-red);
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(0, 0, 0, 0.22)
+  );
+  box-shadow: var(--shadow);
+}
+.livematch .motm__head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.livematch .motm h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+.livematch .motm .label {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  background: rgba(239, 68, 68, 0.18);
+  color: #ffd7d7;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+}
+.livematch .motm__facts {
+  margin: 0.3rem 0 0.6rem;
+  padding-left: 1.1rem;
+}
+.livematch .motm__facts li {
+  margin: 0.15rem 0;
+}
+.livematch .motm__why {
+  color: var(--ink);
+  opacity: 0.95;
+}
