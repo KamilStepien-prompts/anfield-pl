@@ -456,6 +456,14 @@
 .livematch .match-event.sub {
   border-left-color: var(--c-sub);
 }
+/* KEY POINTS (TL;DR) */
+.key-points {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.key-points li {
+  margin: 0.25rem 0;
+}
 
 /* Stats table */
 .livematch .stats-box {
