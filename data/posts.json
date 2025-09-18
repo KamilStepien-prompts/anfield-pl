@@ -1,9 +1,27 @@
 [
   {
+    "id": 11,
+    "title": "Derby Merseyside",
+    "date": "2025-09-18",
+    "excerpt": "This City is Ours. O serialu HBO, którego akcja dzieje się w Liverpoolu. Serial mówi więcej niż chciałbyś wiedzieć",
+    "url": "/felieton/wrzesien25/felieton-10-derby-liverpool/zapowiedz.html",
+    "tag": "",
+    "priority": 1
+  },
+  {
+    "id": 10,
+    "title": "Liverpool vs Atletico",
+    "date": "2025-09-18",
+    "excerpt": "Relacja ze spotkanie w Champions League. Diego Simeone i jego twarde materace. Los ponownie sprzyja The Reds",
+    "url": "/felieton/wrzesien25/felieton-09-liverpool-atletico/index.html",
+    "tag": "",
+    "priority": 1
+  },
+  {
     "id": 9,
     "title": "Liga Mistrzów",
     "date": "2025-09-16",
-    "excerpt": "Przewidywane składy. Jak zagra dryżyna The Reds w środowy wieczór w Lidze Mistrzów. Zapowiedź",
+    "excerpt": "Przewidywane składy. Jak zagra dryżyna w meczu przeciwko Atletico w środowy wieczór w Lidze Mistrzów. Zapowiedź",
     "url": "/felieton/wrzesien25/felieton-09-liverpool-atletico/zapowiedz.html",
     "tag": "",
     "priority": 0.7
@@ -23,7 +41,7 @@
     "date": "2025-09-13",
     "excerpt": "City i United. Czy oba kluby są w stanie rywalizować na najwyższym poziomie?",
     "url": "/felieton/wrzesien25/felieton-07-manchester-circus/index.html",
-    "tag": "Subiektywnie",
+    "tag": "Opinia",
     "priority": 0.4
   },
   {
