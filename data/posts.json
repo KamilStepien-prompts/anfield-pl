@@ -1,12 +1,30 @@
 [
   {
+    "id": 9,
+    "title": "Liga Mistrzów",
+    "date": "2025-09-16",
+    "excerpt": "Zapowiedź meczu i przewidywane składy",
+    "url": "/felieton/wrzesien25/felieton-08-tough-moor/zapowiedz.html",
+    "tag": "",
+    "priority": 0.7
+  },
+  {
+    "id": 8,
+    "title": "Tough Moor",
+    "date": "2025-09-14",
+    "excerpt": "Toogh Moor - twierdza zdobyta rzutem na taśme?",
+    "url": "/felieton/wrzesien25/felieton-08-tough-moor/index.html",
+    "tag": "matchDay",
+    "priority": 0.9
+  },
+  {
     "id": 7,
     "title": "Manchaster Circus",
     "date": "2025-09-13",
     "excerpt": "City i United. Czy oba kluby są w stanie rywalizować na najwyższym poziomie?",
     "url": "/felieton/wrzesien25/felieton-07-manchester-circus/index.html",
     "tag": "",
-    "priority": 0.9
+    "priority": 0.4
   },
   {
     "id": 6,
@@ -15,7 +33,7 @@
     "excerpt": "Premier League przyciąga kapitał i technologie ze Stanów Zjednoczonych.",
     "url": "/felieton/wrzesien25/felieton-06-wiatr-zmian-premier-league-kapital-usa/index.html",
     "tag": "Felieton",
-    "priority": 0.7
+    "priority": 0.6
   },
   {
     "id": 5,
