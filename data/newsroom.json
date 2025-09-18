@@ -2,20 +2,30 @@
   {
     "title": "Champions League",
     "tag": "Liga Mistrzów",
-    "time": "2025-09-15T12:00:00Z",
-    "excerpt": "W tegorocznej Lidze Mistrzów zobaczymy aż 6 drużyn z Premier League.",
-    "url": "https://www.premierleague.com/en/news/4412793/preview-all-you-need-to-know-for-this-weeks-champions-league-ties",
-    "source": "PremierLeague.com"
+    "time": "2025-09-17T23:23:15Z",
+    "excerpt": "Konferencja prasowa Arne Slot'a po meczu",
+    "url": "https://www.youtube.com/watch?v=SN2p5-hzS_8&t=8s",
+    "source": "ThisIsAnfield"
   },
 
   {
-    "title": "Liverpool ma 28,9% szans na obronę tytułu",
-    "tag": "Klub",
-    "time": "2025-09-10T12:00:00Z",
-    "excerpt": "BBC przedstawia ranking w wyścigu o mistrzostwo.",
-    "url": "https://www.bbc.com/sport/football/articles/cly143xqpx8o",
+    "title": "Champions League",
+    "tag": "Liga Mistrzów",
+    "time": "2025-09-18T12:25:15Z",
+    "excerpt": "UEFA zajmie się sytuacją z Diego SImeone w roli głównej",
+    "url": "https://www.bbc.com/sport/football/articles/c5y4knqz11vo",
     "source": "BBC Sport"
   },
+
+  {
+    "title": "Champions League",
+    "tag": "Liga Mistrzów",
+    "time": "2025-09-17T12:23:30Z",
+    "excerpt": "Diego Simeone tłumaczy się po czerwonej kartce jaką otrzymał od sędziego",
+    "url": "https://www.liverpoolecho.co.uk/sport/football/football-news/liverpool-diego-simeone-slot-atletico-32500556",
+    "source": "LiverpoolEcho"
+  },
+
   {
     "title": "Gol z Burnley zapisze się w historii.",
     "tag": "Rekordy",
@@ -25,27 +35,11 @@
     "source": "transfermarkt.com"
   },
   {
-    "title": "Henderson i Carvalho. Brentford kontra Chelsea",
-    "tag": "LFC w piłkarskim CV",
-    "time": "2025-09-13T18:00:00Z",
-    "excerpt": "Byli piłkarze The Reds grają główne role w meczu. Henderson asysta. Carvalho z golem na wagę remisu.",
-    "url": "https://www.premierleague.com/en/news/4406948/brentford-2-chelsea-2-match-report-premier-league-13-september-2025",
-    "source": "PremierLeague.com"
-  },
-  {
-    "title": "Jednostronne derby Manchesteru. Erling Haaland niezawodzi",
-    "tag": "Premier League",
-    "time": "2025-09-14T19:30:00Z",
-    "excerpt": "City zdominowało United w derbach. Norweg ponownie błysnął, zdobywając dwie bramki.",
-    "url": "https://przegladsportowy.onet.pl/pilka-nozna/premier-league/jednostronne-derby-manchesteru-erling-haaland-dal-piekny-popis/d4pcens",
-    "source": "Przegladsportowy.onet.pl"
-  },
-  {
-    "title": "Premier League - tabela",
-    "tag": "Tabela",
-    "time": "2025-09-14T20:00:00Z",
-    "excerpt": "Tabela po 4. kolejce. Liverpool na czele z 12 pkt., Arsenal, Tott i Bourneouth po 9 pkt.",
-    "url": "https://www.fotmob.com/pl/leagues/47/overview/premier-league",
-    "source": "Fotmob.com"
+    "title": "Arne Slot ocenia występ Alexandra Isaka",
+    "tag": "Ocena",
+    "time": "2025-09-18T14:00:00Z",
+    "excerpt": "Jak wypadł debiut nowej 9 okiem trenera",
+    "url": "https://www.standard.co.uk/sport/football/alexander-isak-liverpool-debut-slot-b1248320.html",
+    "source": "The Standard"
   }
 ]
