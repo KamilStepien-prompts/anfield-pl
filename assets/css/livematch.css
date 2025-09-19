@@ -296,6 +296,26 @@
     transform: translateY(-50%) scaleX(-1);
   }
 }
+.match-banner .team {
+  flex: 0 0 clamp(110px, 12vw, 160px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.match-banner .team__logo {
+  width: clamp(90px, 12vw, 140px);
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+.match-banner .team__logo:hover {
+  transform: translateY(-2px) scale(1.06);
+}
+.match-banner .match-meta {
+  flex: 0 1 auto;
+  min-width: clamp(220px, 36vw, 420px);
+  text-align: center;
+}
 
 .livematch .squad li {
   transition: background 0.25s ease, transform 0.12s ease;
