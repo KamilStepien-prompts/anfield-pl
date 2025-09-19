@@ -94,10 +94,10 @@
 
           <!-- Desktop nav (root-relative links!) -->
     <nav class="nav" aria-label="Główna nawigacja">
-      <a href="#latest-title">Felieton</a>
-      <a href="#newsroom-section">Newsroom</a>
-      <a href="/archive.html">Archiwum</a>
-      <a href="/about.html">O nas</a>
+      <a href="https://anfield.pl/#feature">Artykuły</a>
+      <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+      <a href="https://anfield.pl/archive">Archiwum</a>
+      <a href="https://anfield.pl/about">O nas</a>
     </nav>
         <!-- Mobile nav toggle -->
         <button
@@ -115,99 +115,100 @@
           <button class="off__close" data-nav-close aria-label="Zamknij menu">
             ✕
           </button>
-              <nav aria-label="Menu mobilne" class="off__nav">
-          <a href="#latest-felieton">Felieton</a>
-          <a href="#newsroom-section">Newsroom</a>
-          <a href="/archive.html">Archiwum</a>
-          <a href="/about.html">O nas</a>
-      </nav>
+        <nav aria-label="Menu mobilne" class="off__nav">
+          <a href="https://anfield.pl/#feature">Artykuły</a>
+          <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+          <a href="https://anfield.pl/archive">Archiwum</a>
+          <a href="https://anfield.pl/about">O nas</a>
+          </nav>
         </div>
       </div>
     </header>
 
   <!-- HERO -->
+  
     <!-- HERO IMAGE -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <div class="hero__main">
-          
-          <div class="hero__image">
-            <img src="/assets/img/social/og-anfield.jpg"
-                  alt="Anfield.pl — niezależny portal kibica Liverpool FC"
-                  width="1200"
-                  height="630"
-                  loading="eager"
-                  style="width:100%; height:auto; display:block;">
-            </div>
+<section class="hero">
+<div class="container hero__grid">
+<div class="hero__main">
+
+<div class="hero__image">
+<img src="/assets/img/social/og-anfield.jpg"
+    alt="Anfield.pl — niezależny portal kibica Liverpool FC"
+    width="1200"
+    height="630"
+    loading="eager"
+    style="width:100%; height:auto; display:block;">
+</div>
 <!-- HERO (grid: main, feature, aside) -->
 <!-- LEWA KOLUMNA (main content) -->
-          <div class="spacer"></div>
-          <div class="badge">Liverpool FC • Premier League • Polska </div>
-          <h1>Anfield.PL - autorski i niezależny serwis dla kibiców Liverpool FC. </h1>
-          <p class="lead">
-            Felietony, analizy, opinie i komentarze. Z pamięcią o historii i chłodną analizą tego co dziś. 
-          </p>
-          <p class="why">Anfield.PL to serwis stworzony przez kibica dla kibiców. W świecie, gdzie teksty kopiuje się jednym kliknięciem, ja stawiam na autorskie felietony, pogłębione analizy i szczere opinie o The Reds i Premier League. Nie tłumaczę z angielskiego nie swoich treści i nie robię punktu ksero. Tworzę z pasją własne materiały.
-          </p>
-          <p><strong>matchDay</strong> — analizy i wrażenia po spotkaniach. Gorący komentarz tworzony w trakcie meczu i publikowany tuż po ostatnim gwizdku.
-          <br> <strong>Newsroom</strong> — research informacji. Wybór redakcji najciekawszych newsów z sieci abyś ty nie musiał szukać.
-            </p>
-          <p class="muted">
-            U nas nie znajdziesz reklam ani clickbaitu. Tylko rzetelne treści stworzone od podstaw – dla kibiców Liverpool FC.</p>
-          <!-- CTA -->
-          <div class="cta">
-            <a class="btn btn-primary" href="#feature">Najnowszy felieton →</a>
-            <a class="btn btn-ghost" href="#latest-title">Zobacz wpisy</a>
-          </div>
-        </div>
+  <div class="spacer"></div>
+  <div class="badge">Liverpool FC • Premier League • Polska </div>
+  <h1>Anfield.PL - autorski i niezależny serwis dla kibiców Liverpool FC. </h1>
+  <p class="lead">
+    Felietony, analizy, opinie i komentarze. Z pamięcią o historii i chłodną analizą tego co dziś. 
+  </p>
+  <p class="why">
+    Anfield.PL to serwis stworzony przez kibica dla kibiców. W świecie, gdzie teksty kopiuje się jednym kliknięciem, ja stawiam na autorskie felietony, pogłębione analizy i szczere opinie o The Reds i Premier League. Nie tłumaczę z angielskiego nie swoich treści i nie robię punktu ksero. Tworzę z pasją własne materiały.
+  </p>
+  <p><strong>matchDay</strong> — analizy i wrażenia po spotkaniach. Gorący komentarz tworzony w trakcie meczu i publikowany tuż po ostatnim gwizdku.
+  <br> <strong>Newsroom</strong> — research informacji. Wybór redakcji najciekawszych newsów z sieci abyś ty nie musiał szukać.
+    </p>
+  <p class="muted">
+    U nas nie znajdziesz reklam ani clickbaitu. Tylko rzetelne treści stworzone od podstaw – dla kibiców Liverpool FC.</p>
+  <!-- CTA -->
+  <div class="cta">
+    <a class="btn btn-primary" href="#feature">Najnowszy felieton →</a>
+    <a class="btn btn-ghost" href="#latest-title">Zobacz wpisy</a>
+  </div>
+</div>
 
-        <!-- ASIDE: MatchDay + Newsroom (visually on right on desktop) -->
-          <aside class="hero__aside" aria-label="Panel boczny">
-          <!-- MATCHDAY -->
-          <section class="matchday" aria-labelledby="matchday-title">
-            
-            <div class="matchday__types" id="matchday-type"></div>
-              <div class="matchday__header">
-                <div class="matchday__badge" id="matchday-badge"></div>
-                  <!-- NOWE: przeciwnik (wymagane przez JS) -->
-              <div class="matchday__opponent" id="matchday-opponent"></div>
-                <div class="matchday__meta" id="matchday-meta">
-                </div>
-              
-                <div class="matchday__countdown" id="matchday-countdown" aria-live="polite">
-                <span id="md-days">–</span><small>d</small>
-                <span id="md-hours">–</span><small>h</small>
-                <span id="md-mins">–</span><small>m</small>
-                <span id="md-secs">–</span><small>s</small>
-              </div>
-
-              <div class="matchday__progress" role="progressbar" aria-valuemin="0"aria-valuemax="100">
-                <div class="matchday__bar" id="matchday-bar" >
-                </div>
-              </div>
-            
-              <!-- odstęp -->
-              <!-- MATCH DAY -->
-          <div class="spacer"></div>
-              <h3 class="matchday__status" id="matchday-status">Zapowiedź:</h3>
-          <p id="matchday-commentary" class="matchday__commentary">
-            Derby Liverpoolu. Po emocjach w Lidze Mistrzów przed nami kolejna dawka adrenaliny. Na Anfield tym razem zawita Everton. Czy szykuje nam się kolejny rollercoaster w tym sezonie? Póki co jest to stały element w starciach drużyny Arne z Netherlande. Czy będzie podobnie z lokalnym rywalem?
-          </p>
-            Anfield.PL przedstawia:
-          </p>
-          <div class="matchday__cta">
-            <a class="btn btn-ghost btn-block"
-              href="/felieton/wrzesien25/felieton-10-derby-liverpool/zapowiedz.html"
-              aria-label="Przejdź do strony z zapowiedzią">
-              Zapowiedź ⏱
-            </a>
-          </div>
-
-
-            </div>
-          </section>
+<!-- ASIDE: MatchDay + Newsroom (visually on right on desktop) -->
+<aside class="hero__aside" aria-label="Panel boczny">
+<!-- MATCHDAY -->
+<section class="matchday" aria-labelledby="matchday-title">
+  
+  <div class="matchday__types" id="matchday-type"></div>
+    <div class="matchday__header">
+      <div class="matchday__badge" id="matchday-badge"></div>
+        <!-- NOWE: przeciwnik (wymagane przez JS) -->
+    <div class="matchday__opponent" id="matchday-opponent"></div>
+      <div class="matchday__meta" id="matchday-meta">
+      </div>
     
-          
+      <div class="matchday__countdown" id="matchday-countdown" aria-live="polite">
+      <span id="md-days">–</span><small>d</small>
+      <span id="md-hours">–</span><small>h</small>
+      <span id="md-mins">–</span><small>m</small>
+      <span id="md-secs">–</span><small>s</small>
+    </div>
+
+    <div class="matchday__progress" role="progressbar" aria-valuemin="0"aria-valuemax="100">
+      <div class="matchday__bar" id="matchday-bar" >
+      </div>
+    </div>
+  
+    <!-- odstęp -->
+    <!-- MATCH DAY -->
+<div class="spacer"></div>
+    <h3 class="matchday__status" id="matchday-status">Zapowiedź:</h3>
+<p id="matchday-commentary" class="matchday__commentary">
+  Derby Liverpoolu. Po emocjach w Lidze Mistrzów przed nami kolejna dawka adrenaliny. Na Anfield tym razem zawita Everton. Czy szykuje nam się kolejny rollercoaster w tym sezonie? Póki co jest to stały element w starciach drużyny Arne z Netherlande. Czy będzie podobnie z lokalnym rywalem?
+</p>
+  Anfield.PL przedstawia:
+</p>
+<div class="matchday__cta">
+  <a class="btn btn-ghost btn-block"
+    href="/felieton/wrzesien25/felieton-10-derby-liverpool/zapowiedz.html"
+    aria-label="Przejdź do strony z zapowiedzią">
+    Zapowiedź ⏱
+  </a>
+</div>
+
+
+  </div>
+</section>
+    
     <!-- NEWSROOM -->
   <section class="newsroom" aria-labelledby="newsroom-title" id="newsroom-section">
     <div class="newsroom__head">
@@ -222,39 +223,39 @@
   </section>
       </aside>
 
-        <!-- FEATURE (DOM before aside so mobile shows it before sidebar) -->
-        <section id="feature" class="hero__feature">
-          <article class="feature-article">
-            <header>
-              <h2 id="latest-felieton"> matchDay ⚽ najświeższe relacje:</h2>
-                <a
-                  href="/felieton/wrzesien25/felieton-09-liverpool-atletico/index.html"
-                >
-                  <h3> Jak sobie pościelisz tak się wyśpisz. Los Colchoneros tanio skóry nie sprzedali.</h3>
-                </a>
-            
-              <p class="lead">
-              Ekipa dowodzona przez Arne Slota zaczęła grę w europejskich pucharach meczem u siebie z drużyną Diego Simeone. Po 4. meczach ligowych Liverpoool znajduje się na szczycie tabeli Premier League. Atletico w swojej lidze jest dopiero na 11. miejscu. Przed spotkaniem słychać głosy, że oprócz pokazania siły charakteru poprzez wygrywanie meczów w samych końcówkach, drużynie Slota brakuje chłodnej głowy w obronie. Trzy na cztery spotkania The Reds w lidze angielskiej wygrywali rzutem na taśme. Czy ten trend z ligi został dalej z drużyną w starciu w Lidze Mistrzów. Zapraszamy na relacje.
-              </p>
-            </header>
-            <a
-              class="btn btn-primary"
-              href="/felieton/wrzesien25/felieton-09-liverpool-atletico/index.html"
-              >Czytaj całość →</a>
-          </article>
-          <!-- odstęp -->
-          <div class="spacer"></div>
+<!-- FEATURE (DOM before aside so mobile shows it before sidebar) -->
+<section id="feature" class="hero__feature">
+<article class="feature-article">
+  <header>
+    <h2 id="latest-felieton"> matchDay ⚽ najświeższe relacje:</h2>
+      <a
+        href="/felieton/wrzesien25/felieton-09-liverpool-atletico/index.html"
+      >
+        <h3> Jak sobie pościelisz tak się wyśpisz. Los Colchoneros tanio skóry nie sprzedali.</h3>
+      </a>
+  
+    <p class="lead">
+    Ekipa dowodzona przez Arne Slota zaczęła grę w europejskich pucharach meczem u siebie z drużyną Diego Simeone. Po 4. meczach ligowych Liverpoool znajduje się na szczycie tabeli Premier League. Atletico w swojej lidze jest dopiero na 11. miejscu. Przed spotkaniem słychać głosy, że oprócz pokazania siły charakteru poprzez wygrywanie meczów w samych końcówkach, drużynie Slota brakuje chłodnej głowy w obronie. Trzy na cztery spotkania The Reds w lidze angielskiej wygrywali rzutem na taśme. Czy ten trend z ligi został dalej z drużyną w starciu w Lidze Mistrzów. Zapraszamy na relacje.
+    </p>
+  </header>
+  <a
+    class="btn btn-primary"
+    href="/felieton/wrzesien25/felieton-09-liverpool-atletico/index.html"
+    >Czytaj całość →</a>
+</article>
+<!-- odstęp -->
+<div class="spacer"></div>
           
 <!-- FELIETONY inne -->
-    <main id="main" tabindex="-1">
-      <section class="section container" aria-labelledby="latest-title">
-        <div id="latest-posts" class="posts-grid"></div>
+<main id="main" tabindex="-1">
+<section class="section container" aria-labelledby="latest-title">
+  <div id="latest-posts" class="posts-grid"></div>
 
-        <h2 id="latest-title">Od redakcji:</h2>
-        <p class="muted">Najnowsze felietony, autorskie analizy i subiektywne komentarze o Liverpool FC i Premier League. Znajdziesz tu tylko oryginalne materiały z serwisu Anfield.pl - zbiór publikacji z ostatnich 14 dni. </p>
-      </section>
-          
-    <!-- MAIN content: Początek   -->
+  <h2 id="latest-title">Od redakcji:</h2>
+  <p class="muted">Najnowsze felietony, autorskie analizy i subiektywne komentarze o Liverpool FC i Premier League. Znajdziesz tu tylko oryginalne materiały z serwisu Anfield.pl - zbiór publikacji z ostatnich 14 dni. </p>
+</section>
+    
+<!-- MAIN content: Początek   -->
       <section class="posts-list">
   <div id="posts-container">
     </div>
@@ -269,33 +270,33 @@
       </section>
       
     <!-- FOOTER -->
-    <footer class="site-footer">
-      <div class="container">
-        <p>© 2025 ANFIELD.PL </p>
-        <p class="muted">Niezależny projekt, nieoficjalny serwis.</p>
-        <p>
-          
-          <a href="mailto:kontakt@doublebrain.pl">kontakt@doublebrain.pl</a> |
-          <a
-            href="https://www.facebook.com/profile.php?id=61580257838714"
-            target="_blank"
-            rel="noopener"
-            >FB Anfield.pl</a
-          >
-        </p>
-        <p>
-          Projekt realizowany przez: <br />
-          <a
-            class="brand-link"
-            href="https://doublebrain.pl"
-            target="_blank"
-            rel="noopener"
-            aria-label="Otwórz stronę DoubleBrain w nowej karcie"
-            >DoubleBrain™ </a
-          >
-        </p>
-      </div>
-    </footer>
+<footer class="site-footer">
+<div class="container">
+  <p>© 2025 ANFIELD.PL </p>
+  <p class="muted">Niezależny projekt, nieoficjalny serwis.</p>
+  <p>
+    
+    <a href="mailto:kontakt@doublebrain.pl">kontakt@doublebrain.pl</a> |
+    <a
+      href="https://www.facebook.com/profile.php?id=61580257838714"
+      target="_blank"
+      rel="noopener"
+      >FB Anfield.pl</a
+    >
+  </p>
+  <p>
+    Projekt realizowany przez: <br />
+    <a
+      class="brand-link"
+      href="https://doublebrain.pl"
+      target="_blank"
+      rel="noopener"
+      aria-label="Otwórz stronę DoubleBrain w nowej karcie"
+      >DoubleBrain™ </a
+    >
+  </p>
+</div>
+</footer>
 
     <!-- JS (defer) -->
     <script src="/assets/js/nav.js" defer></script>

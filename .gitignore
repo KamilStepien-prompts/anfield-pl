@@ -11,3 +11,8 @@ node_modules/
 
 # obrazy generowane tymczasowo
 *.tmp
+
+# Admin UI + exports (local only)
+/admin/*
+/exports/*
+anfield_live_events.json

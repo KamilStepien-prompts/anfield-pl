@@ -183,7 +183,14 @@
 }
 
 /* Team card */
+/* Styling for the entire match banner container */
+.match-banner {
+  padding: 20px 0; /* Dodaje przestrzeń nad i pod sekcją */
+}
 .livematch .team {
+  display: flex; /* Użycie Flexbox dla łatwego centrowania */
+  align-items: center;
+  justify-content: center;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: linear-gradient(
@@ -193,13 +200,55 @@
   );
   padding: 0.8rem;
 }
+.team {
+  flex-basis: 0;
+  flex-grow: 1; /* Pozwala każdemu zespołowi rosnąć, ale w zbalansowany sposób */
+}
+.team--home {
+  text-align: right;
+}
+
+.team--away {
+  text-align: left;
+}
 .livematch .team--lfc {
   border-left: 6px solid var(--card-red);
 }
 .livematch .team--atm {
   border-left: 6px solid rgba(255, 255, 255, 0.16);
 }
+.match-teams {
+  display: flex;
+  align-items: center; /* Wyśrodkowuje elementy w pionie */
+  justify-content: center; /* Rozmieszcza elementy z równymi odstępami */
+  width: 100%; /* Upewnij się, że kontener zajmuje całą dostępną szerokość */
+  gap: clamp(1rem, 10vw, 4rem); /* Dynamicznie zmienia odstęp między herbami */
+}
 
+/* Styling for the central match metadata block */
+.match-meta {
+  flex-grow: 1; /* Pozwala temu elementowi zająć całą dostępną przestrzeń między herbami */
+  text-align: center; /* Wyśrodkowuje tekst i przyciski */
+}
+/* Styling for match actions (buttons) */
+.match-actions {
+  display: flex;
+  justify-content: center; /* Centralizuje przyciski */
+  flex-wrap: wrap; /* Pozwala na zawijanie przycisków na mniejszych ekranach */
+  gap: 8px; /* Odstęp między przyciskami */
+  margin-top: 10px; /* Dodaje odstęp nad przyciskami */
+}
+
+.team__logo {
+  max-width: 100px; /* Przykładowa maksymalna szerokość herbu */
+  height: auto;
+  transition: transform 0.3s ease; /* Dodaje płynną animację przy najechaniu */
+}
+.team__logo:hover {
+  transform: scale(
+    1.05
+  ); /* Lekkie powiększenie po najechaniu, aby dodać interaktywność */
+}
 /* Team header */
 .livematch .team__head {
   display: flex;
