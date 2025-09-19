@@ -107,6 +107,45 @@
   }
 }
 
+.match-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.match-header__team {
+  flex: 1 1 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.match-header__team img {
+  max-width: 80px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .match-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .match-header__team {
+    flex: none;
+    margin-bottom: 1rem;
+  }
+
+  .match-header__info {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+}
+
 /* === Newsroom widget === */
 .newsroom {
   margin-top: 0.8rem;
