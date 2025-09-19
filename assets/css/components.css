@@ -111,12 +111,14 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid #444;
   flex-wrap: wrap;
 }
 
 .match-header__team {
-  flex: 1 1 120px;
+  flex: 1 1 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -126,6 +128,19 @@
 .match-header__team img {
   max-width: 80px;
   height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.match-header__info {
+  flex: 2 1 200px;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.match-competition {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 @media (max-width: 768px) {
@@ -136,7 +151,6 @@
   }
 
   .match-header__team {
-    flex: none;
     margin-bottom: 1rem;
   }
 

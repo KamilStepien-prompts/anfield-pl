@@ -227,40 +227,6 @@
   gap: clamp(1rem, 10vw, 4rem); /* Dynamicznie zmienia odstęp między herbami */
 }
 
-/* Banner: tylko herby po bokach */
-.match-banner .team {
-  flex: 0 0 clamp(110px, 12vw, 160px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-/* === BANNER (herby + meta) === */
-.match-banner {
-  padding: 20px 0;
-}
-
-.match-banner .match-teams {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: nowrap;
-  gap: clamp(2rem, 8vw, 5rem);
-  position: relative;
-}
-
-/* logo: stały wymiar, ładny hover */
-.match-banner .team__logo {
-  width: clamp(90px, 12vw, 140px);
-  height: auto;
-  object-fit: contain;
-  transition: transform 0.35s ease, filter 0.35s ease;
-  filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.35));
-}
-.match-banner .team__logo:hover {
-  transform: translateY(-2px) scale(1.06);
-  filter: drop-shadow(0 10px 28px rgba(0, 0, 0, 0.55));
-}
-
 /* cienkie „promienie” do środka – desktop only */
 @media (min-width: 960px) {
   .match-banner .team--home::after,
@@ -315,6 +281,134 @@
   flex: 0 1 auto;
   min-width: clamp(220px, 36vw, 420px);
   text-align: center;
+}
+/* === Match banner / teams – base === */
+.match-banner {
+  padding: 16px 0 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.match-banner .match-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* pasek z herbami i nazwami drużyn */
+.match-teams {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+}
+.match-team {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.match-team__crest {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.25));
+}
+.match-team__name {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* blok meta: liga, data/godzina, stadion, countdown */
+.match-meta {
+  text-align: center;
+  line-height: 1.25;
+  margin-inline: auto;
+}
+.match-meta .comp {
+  opacity: 0.9;
+  font-weight: 600;
+}
+.match-meta .kickoff {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+.match-meta .venue {
+  opacity: 0.8;
+}
+.match-meta .countdown {
+  opacity: 0.85;
+}
+
+/* przyciski (zapowiedź / składy / live blog) */
+.match-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* === Mobile tweaks === */
+@media (max-width: 768px) {
+  .match-banner .match-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .match-teams {
+    order: 1;
+    justify-content: center;
+    gap: 20px;
+  }
+  .match-team {
+    flex: 0 0 auto;
+    justify-content: center;
+  }
+  .match-team__crest {
+    width: 56px;
+    height: 56px;
+  }
+  .match-team__name {
+    font-size: 0.95rem;
+  }
+
+  .match-meta {
+    order: 2;
+    margin-top: 4px;
+  }
+  .match-meta .kickoff {
+    font-size: 1rem;
+  }
+  .match-meta .countdown {
+    font-size: 0.95rem;
+  }
+
+  .match-actions {
+    order: 3;
+  }
+
+  /* jeśli masz tło/gradient w bannerze – ogranicz bleeding na mobile */
+  .match-banner {
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 420px) {
+  .match-team__crest {
+    width: 48px;
+    height: 48px;
+  }
+  .match-team__name {
+    font-size: 0.9rem;
+  }
+  .match-meta .kickoff {
+    font-size: 0.95rem;
+  }
 }
 
 .livematch .squad li {
