@@ -809,3 +809,123 @@
   line-height: 1.5;
   font-style: italic;
 }
+/* LIVE EVENTS (appended) */
+.live-tools {
+  margin: 14px 0;
+}
+.live-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.scoreboard {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  font-weight: 800;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+.scoreboard .score {
+  font-size: 1.25rem;
+  padding: 0 6px;
+}
+.score-update {
+  transform: scale(1.02);
+  transition: transform 0.25s ease;
+}
+
+.live-controls .btn {
+  margin-left: 6px;
+}
+
+.live-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+.evt {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--muted);
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.evt__meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  min-width: 84px;
+}
+.evt__type {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: 700;
+  margin-left: 8px;
+  color: #fff;
+}
+.evt__body {
+  flex: 1;
+  color: #ddd;
+}
+
+.evt--goal {
+  border-left: 4px solid #29a745;
+  box-shadow: 0 6px 18px rgba(41, 167, 69, 0.06);
+}
+.evt--yellow {
+  border-left: 4px solid #f2c94c;
+}
+.evt--red {
+  border-left: 4px solid #e63946;
+}
+.evt--sub {
+  border-left: 4px solid #5e60ce;
+}
+.evt--injury {
+  border-left: 4px solid #ff7b8a;
+}
+.evt--shot {
+  border-left: 4px solid #2b90d9;
+}
+.evt--half,
+.evt--full {
+  border-left: 4px solid #9aa0a6;
+}
+
+.evt--flash {
+  transform: translateY(-4px);
+  animation: evtFlash 0.9s ease-in-out;
+}
+@keyframes evtFlash {
+  0% {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .evt {
+    padding: 8px;
+  }
+  .evt__meta {
+    min-width: 64px;
+    font-size: 0.8rem;
+  }
+}

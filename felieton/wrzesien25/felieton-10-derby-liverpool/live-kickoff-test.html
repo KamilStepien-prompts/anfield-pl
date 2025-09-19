@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Live test — Derby Merseyside (kickoff test) | Anfield.pl</title>
+  <meta name="description" content="Testowy widok relacji live — derby. Hotkeys, form, VAR, undo, export. Offline/localStorage." />
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/header.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/article.css" />
+  <link rel="stylesheet" href="/assets/css/livematch.css" />
+  <style>
+    /* small page-level tweaks for the test page */
+    body { background: #0b0b0c; color: #ddd; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 18px; }
+    .container { max-width: 980px; margin: 0 auto; }
+    h1 { text-align:center; color: #fff; margin-bottom: 6px; }
+    p.lead { text-align:center; color: var(--muted); margin-top:0; margin-bottom:18px; }
+    .help { font-size:0.9rem; color:var(--muted); margin-bottom:16px; }
+    /* ensure live-tools fits */
+    #live-tools { margin-bottom: 22px; }
+  </style>
+</head>
+<body class="livematch">
+  <div class="container">
+    <header style="padding:8px 0;display:flex;align-items:center;justify-content:space-between;">
+      <div style="font-weight:800;color:#fff">Anfield.pl <small style="color:#ff2442; margin-left:8px;">Live test</small></div>
+      <nav style="font-size:0.9rem;color:var(--muted)">Derby Merseyside — 20 września 13:30 • Anfield</nav>
+    </header>
+
+    <main>
+      <h1>Derby Merseyside — live test</h1>
+      <p class="lead">Symulacja relacji meczu z obsługą hotkeys, VAR, undo i eksportu. Wszystko lokalnie (localStorage).</p>
+      <p class="help">Hotkeys: <strong>G</strong>=goal, <strong>Ctrl+G</strong>=home goal, <strong>Ctrl+Shift+G</strong>=away goal, <strong>Y</strong>=yellow, <strong>R</strong>=red, <strong>S</strong>=sub, <strong>I</strong>=injury, <strong>V</strong>=VAR start, <strong>U</strong>=VAR upheld, <strong>O</strong>=VAR overturned, <strong>Z</strong>=undo.</p>
+
+      <!-- LIVE TOOLS: announcer + score + timeline -->
+      <div id="live-tools" class="live-tools">
+        <div class="live-topbar">
+          <div class="scoreboard" id="scoreboard" role="region" aria-label="Scoreboard">
+            <span id="team-home-short">LIV</span>
+            <span id="score-home" class="score">0</span>
+            <span class="score-sep">:</span>
+            <span id="score-away" class="score">0</span>
+            <span id="team-away-short">EVE</span>
+          </div>
+
+          <div class="live-controls">
+            <div class="live-controls__buttons" style="display:flex;gap:8px;align-items:center;">
+              <button id="voice-toggle" class="btn btn--ghost" type="button">Voice: Off</button>
+              <button id="test-sound" class="btn btn--sm" type="button">Test sound</button>
+              <button id="undo-btn" class="btn btn--ghost" type="button" title="Undo (Z)">Undo</button>
+              <button id="export-csv" class="btn btn--ghost" type="button" title="Export CSV">Export CSV</button>
+              <button id="clear-local" class="btn btn--ghost" type="button" title="Clear local data">Clear</button>
+            </div>
+
+            <form id="live-add-form" class="live-add-form" onsubmit="return false;" style="display:flex;gap:8px;align-items:center;margin-top:8px;">
+              <select id="live-type" aria-label="Typ wydarzenia" style="padding:6px;border-radius:8px;">
+                <option value="moment">Note</option>
+                <option value="goal">Goal</option>
+                <option value="yellow">Yellow</option>
+                <option value="red">Red</option>
+                <option value="sub">Sub</option>
+                <option value="injury">Injury</option>
+                <option value="shot">Shot</option>
+                <option value="var">VAR (review)</option>
+                <option value="var-upheld">VAR — upheld</option>
+                <option value="var-overturned">VAR — overturned</option>
+              </select>
+              <input id="live-minute" placeholder="min" aria-label="Minuta" type="number" min="0" style="width:70px;padding:6px;border-radius:8px;" />
+              <input id="live-author" placeholder="Autor (opcjonalnie)" aria-label="Autor komentarza" style="padding:6px;border-radius:8px;" />
+              <input id="live-text" placeholder="Wpisz komentarz / notatkę..." aria-label="Treść wydarzenia" style="flex:1;padding:6px;border-radius:8px;" />
+              <button id="live-add-btn" class="btn btn--accent" type="button">Add</button>
+            </form>
+          </div>
+        </div>
+
+        <main aria-live="polite" id="aria-announcer" class="sr-only" style="position:absolute;left:-9999px;"></main>
+
+        <section id="live-timeline" class="live-timeline" aria-label="Chronologia wydarzeń (live)">
+          <!-- live events will be prepended here -->
+        </section>
+      </div>
+      <!-- /LIVE TOOLS -->
+
+      <!-- Placeholder for final embedded events after export -->
+      <!-- LIVE_EVENTS_MARKER_START -->
+      <!-- LIVE_EVENTS_MARKER_END -->
+
+      <hr style="border:none;border-top:1px solid rgba(255,255,255,0.04);margin:24px 0;">
+      <p style="color:var(--muted);font-size:0.9rem;">Po zakończeniu testu użyj "Export CSV" aby zapisać historię wydarzeń, lub "Clear" aby wyczyścić localStorage.</p>
+    </main>
+  </div>
+
+  <!-- Enhanced live reporter JS (same logic as in project) -->
+  <script>
+  /* Enhanced Live reporter - persistence, undo, export CSV (kickoff test page) */
+  (function(){
+    const TEAM_HOME = { short: 'LIV', long: 'Liverpool' };
+    const TEAM_AWAY = { short: 'EVE', long: 'Everton' };
+
+    // DOM nodes cached later
+    let scoreHomeNode, scoreAwayNode, liveTimeline, ariaAnn, voiceToggleBtn, testSoundBtn;
+    let undoBtn, exportBtn, addBtn, minuteInput, authorInput, typeSelect, textInput, clearBtn;
+
+    let score = { home: 0, away: 0 };
+    let recognition = null, listening = false;
+    let liveEvents = []; // persisted events
+
+    const STORAGE_KEY = 'anfield_live_events_v1';
+
+    // Audio engine (safe)
+    const AudioEngine = (() => {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        function tone(freq=440, t=0.08) {
+          const o = ctx.createOscillator();
+          const g = ctx.createGain();
+          o.type = 'sine';
+          o.frequency.value = freq;
+          o.connect(g); g.connect(ctx.destination);
+          g.gain.value = 0.0001;
+          o.start();
+          g.gain.exponentialRampToValueAtTime(0.12, ctx.currentTime + 0.001);
+          g.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + t);
+          o.stop(ctx.currentTime + t + 0.02);
+        }
+        function goalJingle() {
+          tone(880,0.12);
+          setTimeout(()=>tone(660,0.12),120);
+          setTimeout(()=>tone(1320,0.08),260);
+        }
+        return { tone, goalJingle };
+      } catch(e) { return { tone: ()=>{}, goalJingle: ()=>{} }; }
+    })();
+
+    // Utility: save & load
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify({ score, events: liveEvents }));
+      } catch(e){ console.warn('saveState failed', e); }
+    }
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return;
+        const obj = JSON.parse(raw);
+        if (obj.score) score = obj.score;
+        if (Array.isArray(obj.events)) liveEvents = obj.events;
+      } catch(e){ console.warn('loadState failed', e); }
+    }
+    function clearState() {
+      try { localStorage.removeItem(STORAGE_KEY); liveEvents = []; score = { home:0, away:0 }; renderAll(); } catch(e){}
+    }
+
+    // Render single event from data without side effects (no sounds/announce)
+    function renderEventData(ed) {
+      const node = document.createElement('article');
+      node.className = 'evt evt--' + ed.type;
+      const meta = document.createElement('div'); meta.className = 'evt__meta';
+      meta.innerHTML = '<time>' + (ed.minute? ed.minute + "'" : ed.tstamp) + '</time> <span class="evt__type">' + ed.type.toUpperCase() + '</span>';
+      const body = document.createElement('div'); body.className = 'evt__body';
+      const authHtml = ed.author? ('<div class="evt__author"><em>' + escapeHtml(ed.author) + '</em></div>') : '';
+      body.innerHTML = authHtml + '<div class="evt__text">' + escapeHtml(ed.text) + '</div>';
+      node.appendChild(meta); node.appendChild(body);
+      return node;
+    }
+
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+    // Render all events from liveEvents array (used on load/clear)
+    function renderAll() {
+      if (!liveTimeline) liveTimeline = document.getElementById('live-timeline');
+      if (!liveTimeline) return;
+      liveTimeline.innerHTML = '';
+      // newest first
+      for (let i = liveEvents.length - 1; i >= 0; i--) {
+        const ed = liveEvents[i];
+        const node = renderEventData(ed);
+        liveTimeline.insertBefore(node, liveTimeline.firstChild);
+      }
+      // update scoreboard visuals
+      if (scoreHomeNode) scoreHomeNode.textContent = score.home;
+      if (scoreAwayNode) scoreAwayNode.textContent = score.away;
+    }
+
+    // Add event (public) - with side-effects (sound, announce)
+    function addEvent(type, text, opts = {}) {
+      const ev = {
+        id: 'e' + Date.now() + Math.floor(Math.random()*9999),
+        type: type || 'moment',
+        text: text || '',
+        minute: opts.minute || null,
+        author: opts.author || '',
+        scoreDelta: opts.scoreDelta || null,
+        tstamp: new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'})
+      };
+      // push to storage array
+      liveEvents.push(ev);
+      // update score if needed
+      if (ev.scoreDelta === 'home') score.home += 1;
+      if (ev.scoreDelta === 'away') score.away += 1;
+      saveState();
+
+      // render visually (prepend)
+      const node = renderEventData(ev);
+      liveTimeline.insertBefore(node, liveTimeline.firstChild);
+      requestAnimationFrame(()=> node.classList.add('evt--flash'));
+      setTimeout(()=> node.classList.remove('evt--flash'), 1400);
+
+      // sound + aria announce
+      if (type === 'goal') AudioEngine.goalJingle(); else AudioEngine.tone(440,0.06);
+      announce((type||'event') + ' — ' + (ev.author || '') + ' — ' + ev.text);
+      // update scoreboard nodes
+      if (scoreHomeNode) scoreHomeNode.textContent = score.home;
+      if (scoreAwayNode) scoreAwayNode.textContent = score.away;
+      return ev;
+    }
+
+    function announce(text) {
+      if (!ariaAnn) return;
+      ariaAnn.textContent = '';
+      setTimeout(()=> ariaAnn.textContent = text, 60);
+    }
+
+    function updateScore(hInc=0, aInc=0) {
+      score.home += hInc; score.away += aInc;
+      if (scoreHomeNode) scoreHomeNode.textContent = score.home;
+      if (scoreAwayNode) scoreAwayNode.textContent = score.away;
+      saveState();
+    }
+
+    function undoLast() {
+      if (!liveEvents.length) return;
+      const last = liveEvents.pop();
+      // roll back score if it was a goal
+      if (last.scoreDelta === 'home') score.home = Math.max(0, score.home-1);
+      if (last.scoreDelta === 'away') score.away = Math.max(0, score.away-1);
+      saveState();
+      renderAll();
+    }
+
+    function exportCSV() {
+      const rows = [['id','time','minute','type','author','text','scoreHome','scoreAway']];
+      // events in chronological order (oldest first)
+      let running = { home: 0, away: 0 };
+      for (let i = 0; i < liveEvents.length; i++) {
+        const e = liveEvents[i];
+        if (e.scoreDelta === 'home') running.home += 1;
+        if (e.scoreDelta === 'away') running.away += 1;
+        rows.push([e.id || '', e.tstamp || '', e.minute || '', e.type || '', e.author || '', (e.text||'').replace(/\n/g,' '), running.home, running.away]);
+      }
+      const csv = rows.map(r => r.map(c => '"' + String(c).replace(/"/g,'""') + '"').join(',')).join('\n');
+      const blob = new Blob([csv], {type:'text/csv;charset=utf-8;'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'anfield_live_events.csv'; a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // Keyboard hotkeys handler (including VAR)
+    function handleHotkey(e) {
+      if (['INPUT','TEXTAREA','SELECT'].includes(document.activeElement.tagName)) return;
+      if (e.key === 'z' || e.key === 'Z') { // undo
+        undoLast(); return;
+      }
+      if (e.key === 'g' || e.key === 'G') {
+        if (e.ctrlKey && e.shiftKey) { addEvent('goal','Away goal',{ scoreDelta:'away' }); }
+        else if (e.ctrlKey) { addEvent('goal','Home goal',{ scoreDelta:'home' }); }
+        else addEvent('goal','Goal (quick)',{ scoreDelta:'home' });
+      }
+      if (e.key === 'y' || e.key === 'Y') addEvent('yellow','Yellow card',{ });
+      if (e.key === 'r' || e.key === 'R') addEvent('red','Red card',{ });
+      if (e.key === 's' || e.key === 'S') addEvent('sub','Substitution',{ });
+      if (e.key === 'i' || e.key === 'I') addEvent('injury','Injury',{ });
+      if (e.key === 'h' || e.key === 'H') addEvent('half','Half time',{ });
+      if (e.key === 'f' || e.key === 'F') addEvent('full','Full time',{ });
+      // VAR: V = start review, U = upheld, O = overturned
+      if (e.key === 'v' || e.key === 'V') addEvent('var','VAR review started',{});
+      if (e.key === 'u' || e.key === 'U') addEvent('var-upheld','VAR decision: upheld',{});
+      if (e.key === 'o' || e.key === 'O') addEvent('var-overturned','VAR decision: overturned',{});
+      if (e.ctrlKey && (e.key === 'g' || e.key === 'G')) {
+        if (e.shiftKey) updateScore(0,1);
+        else updateScore(1,0);
+      }
+    }
+
+    // Speech recognition initialization
+    function initSpeech() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) return null;
+      const r = new SpeechRecognition();
+      r.lang = 'en-US'; r.interimResults = false; r.maxAlternatives = 1; r.continuous = true;
+      r.onresult = (ev) => {
+        const transcript = ev.results[ev.results.length-1][0].transcript.trim().toLowerCase();
+        if (transcript.includes('goal')) {
+          if (transcript.includes('away') || transcript.includes('everton')) addEvent('goal','Goal (voice)', { scoreDelta:'away' });
+          else addEvent('goal','Goal (voice)', { scoreDelta:'home' });
+        } else if (transcript.includes('yellow')) addEvent('yellow','Yellow card (voice)');
+        else if (transcript.includes('red')) addEvent('red','Red card (voice)');
+        else if (transcript.includes('sub') || transcript.includes('substitution')) addEvent('sub','Substitution (voice)');
+        else if (transcript.includes('injury')) addEvent('injury','Injury (voice)');
+        else if (transcript.includes('half')) addEvent('half','Half time (voice)');
+        else if (transcript.includes('full')) addEvent('full','Full time (voice)');
+        else if (transcript.includes('shot')) addEvent('shot','Shot on target (voice)');
+        else addEvent('moment', transcript.substr(0,160), { });
+      };
+      r.onerror = (e) => console.warn('SpeechRecognition error', e);
+      r.onend = () => { if (listening) r.start(); };
+      return r;
+    }
+
+    // Initialization and bindings
+    function init() {
+      // cache DOM
+      scoreHomeNode = document.getElementById('score-home');
+      scoreAwayNode = document.getElementById('score-away');
+      liveTimeline = document.getElementById('live-timeline');
+      ariaAnn = document.getElementById('aria-announcer');
+      voiceToggleBtn = document.getElementById('voice-toggle');
+      testSoundBtn = document.getElementById('test-sound');
+      undoBtn = document.getElementById('undo-btn');
+      exportBtn = document.getElementById('export-csv');
+      clearBtn = document.getElementById('clear-local');
+      addBtn = document.getElementById('live-add-btn');
+      minuteInput = document.getElementById('live-minute');
+      authorInput = document.getElementById('live-author');
+      typeSelect = document.getElementById('live-type');
+      textInput = document.getElementById('live-text');
+
+      // load saved state
+      loadState();
+      renderAll();
+
+      // events
+      window.addEventListener('keydown', handleHotkey);
+      recognition = initSpeech();
+
+      voiceToggleBtn?.addEventListener('click', () => {
+        if (!recognition) { alert('Voice not supported. Use hotkeys.'); return; }
+        if (!listening) { recognition.start(); listening = true; voiceToggleBtn.textContent = 'Voice: On'; voiceToggleBtn.classList.add('is-active'); }
+        else { recognition.stop(); listening = false; voiceToggleBtn.textContent = 'Voice: Off'; voiceToggleBtn.classList.remove('is-active'); }
+      });
+      testSoundBtn?.addEventListener('click', ()=> AudioEngine.goalJingle());
+      undoBtn?.addEventListener('click', ()=> undoLast());
+      exportBtn?.addEventListener('click', ()=> exportCSV());
+      clearBtn?.addEventListener('click', ()=> { if (confirm('Clear local live events?')) clearState(); });
+
+      addBtn?.addEventListener('click', ()=> {
+        const type = typeSelect.value || 'moment';
+        const minute = minuteInput.value ? Number(minuteInput.value) : null;
+        const author = authorInput.value ? authorInput.value.trim() : '';
+        const text = textInput.value ? textInput.value.trim() : '';
+        if (!text) { alert('Wpisz treść wydarzenia przed dodaniem.'); return; }
+        // score logic: if goal and user wants to mark away, allow ctrl+click? For now goal => home by default
+        const scoreDelta = (type === 'goal') ? 'home' : null;
+        addEvent(type, text, { minute, author, scoreDelta });
+        // keep author, clear text and minute
+        textInput.value = '';
+        minuteInput.value = '';
+      });
+
+      // expose API
+      window.liveAddEvent = function(type, text, opts){ return addEvent(type, text, opts||{}); };
+      window.liveUndo = undoLast;
+      window.liveExport = exportCSV;
+      window.liveClear = clearState;
+      window.liveHelpers = { addEvent: (t,txt,o)=> window.liveAddEvent(t,txt,o) };
+    }
+
+    document.addEventListener('DOMContentLoaded', init);
+  })();
+  </script>
+
+</body>
+</html>
