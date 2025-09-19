@@ -1,0 +1,163 @@
+<!-- HEADER -->
+<header class="site-header livematch">
+  <div class="container navbar">
+    <a class="brand" href="/"><span class="brand__dot"></span> Anfield.pl</a>
+    <nav class="nav" aria-label="Główne">
+      <a href="https://anfield.pl/#feature">Felieton</a>
+      <a href="https://anfield.pl/#newsroom-section">Newsroom</a>
+      <a href="/archive.html">Archiwum</a>
+      <a href="/about.html">O nas</a>
+    </nav>
+    <button
+      class="hamb"
+      data-nav-toggle
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+      aria-label="Otwórz menu"
+    >
+      <span class="hamb__bar"></span>
+    </button>
+  </div>
+
+  <!-- Match banner for Derby Merseyside -->
+  <div
+    class="match-banner"
+    role="region"
+    aria-label="Derby Merseyside — zapowiedź meczu"
+  >
+    <div class="container match-inner">
+      <div class="match-teams" aria-hidden="false">
+        <div class="team team--home">
+          <img
+            src="/assets/img/teams/liverpool.svg"
+            alt="Liverpool FC — herb"
+            class="team__logo"
+          />
+          <div class="team__name">Liverpool</div>
+        </div>
+
+        <div class="match-meta">
+          <div class="match__title">Derby Merseyside</div>
+          <div class="match__when" aria-live="polite">
+            <strong>20 września 2025 • 13:30</strong>
+            <span class="match__venue">Anfield</span>
+            <div
+              class="countdown"
+              id="kickoff-countdown"
+              aria-hidden="false"
+              title="Czas do rozpoczęcia meczu"
+            >
+              <span class="countdown__label">Start za</span>
+              <span class="countdown__time">—</span>
+            </div>
+          </div>
+
+          <div
+            class="match-actions"
+            role="navigation"
+            aria-label="Szybkie linki do relacji"
+          >
+            <a
+              class="btn btn--sm"
+              href="/felieton/wrzesien25/felieton-10-derby-liverpool/preview.html"
+              >Zapowiedź</a
+            >
+            <a
+              class="btn btn--ghost btn--sm"
+              href="/felieton/wrzesien25/felieton-10-derby-liverpool/lineups.html"
+              >Składy</a
+            >
+            <a
+              class="btn btn--accent btn--sm"
+              href="/live/derby-merseyside"
+              id="live-link"
+              >Live blog</a
+            >
+          </div>
+        </div>
+
+        <div class="team team--away">
+          <img
+            src="/assets/img/teams/everton.svg"
+            alt="Everton — herb"
+            class="team__logo"
+          />
+          <div class="team__name">Everton</div>
+        </div>
+      </div>
+
+      <p class="match-note" aria-hidden="true">
+        Przygotowujemy relację meczową i szybkie notki taktyczne — odśwież
+        stronę przed kick-offem.
+      </p>
+    </div>
+  </div>
+
+  <div class="off" id="mobile-menu" data-offcanvas>
+    <div class="off__panel container" data-offcanvas-panel>
+      <button class="off__close" data-nav-close aria-label="Zamknij menu">
+        ✕
+      </button>
+      <nav class="off__nav" aria-label="Menu mobilne">
+        <a href="https://anfield.pl/#feature">Felieton</a>
+        <a href="https://anfield.pl/#newsroom-section">Newsroom</a>
+        <a href="/archive.html">Archiwum</a>
+        <a href="/about.html">O nas</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Countdown script: ustaw kickoff jednoznacznie -->
+  <script>
+    (function () {
+      // Kickoff time (use absolute ISO with timezone)
+      const kickoffISO = "2025-09-20T13:30:00+02:00"; // 20 września 2025, 13:30 CEST (Europe/Warsaw)
+      const target = new Date(kickoffISO).getTime();
+      const el = document.getElementById("kickoff-countdown");
+      const timeNode = el && el.querySelector(".countdown__time");
+
+      function pad(n) {
+        return String(n).padStart(2, "0");
+      }
+
+      function update() {
+        const now = Date.now();
+        const diff = target - now;
+
+        if (!timeNode) return;
+
+        if (diff <= 0) {
+          timeNode.textContent = "Kick-off — trwa transmisja / relacja na żywo";
+          // option: add "live" class to the Live link
+          const liveLink = document.getElementById("live-link");
+          if (liveLink) liveLink.classList.add("is-live");
+          clearInterval(interval);
+          return;
+        }
+
+        const secs = Math.floor(diff / 1000);
+        const days = Math.floor(secs / 86400);
+        const hours = Math.floor((secs % 86400) / 3600);
+        const minutes = Math.floor((secs % 3600) / 60);
+        const seconds = secs % 60;
+
+        let display = "";
+        if (days > 0) display += days + "d ";
+        display += pad(hours) + "h " + pad(minutes) + "m " + pad(seconds) + "s";
+        timeNode.textContent = display;
+      }
+
+      // initial
+      update();
+      const interval = setInterval(update, 1000);
+    })();
+  </script>
+
+  <!-- core styles -->
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  <link rel="stylesheet" href="/assets/css/header.css" />
+  <link rel="stylesheet" href="/assets/css/components.css" />
+  <link rel="stylesheet" href="/assets/css/article.css" />
+  <!-- live match module -->
+  <link rel="stylesheet" href="/assets/css/livematch.css" />
+</header>
