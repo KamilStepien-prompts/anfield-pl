@@ -329,6 +329,7 @@
   text-align: center;
   line-height: 1.25;
   margin-inline: auto;
+  padding-top: 1rem;
 }
 .match-meta .comp {
   opacity: 0.9;
@@ -397,7 +398,51 @@
     overflow: hidden;
   }
 }
+/* „vs” – kompaktowe i wyraźne */
+.match-vs {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  background: radial-gradient(
+    100% 100% at 50% 0%,
+    #ff2d55 0%,
+    #a71f3b 60%,
+    #77152a 100%
+  );
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(255, 45, 85, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  user-select: none;
+}
 
+/* Mobile */
+@media (max-width: 768px) {
+  .team__crest {
+    width: 56px;
+    height: 56px;
+  }
+  .match-vs {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 420px) {
+  .team__crest {
+    width: 48px;
+    height: 48px;
+  }
+  .match-vs {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+}
 @media (max-width: 420px) {
   .match-team__crest {
     width: 48px;
@@ -459,6 +504,47 @@
   flex-wrap: wrap; /* Pozwala na zawijanie przycisków na mniejszych ekranach */
   gap: 8px; /* Odstęp między przyciskami */
   margin-top: 10px; /* Dodaje odstęp nad przyciskami */
+}
+
+/* WHEN / COUNTDOWN nad herbami */
+.match-when {
+  text-align: center;
+  margin: 10px auto 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.03)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 680px;
+}
+.match-title {
+  font-weight: 800;
+  opacity: 0.95;
+}
+.match-kickoff {
+  margin-top: 4px;
+  font-weight: 800;
+}
+.match-venue {
+  opacity: 0.85;
+}
+.match-countdown {
+  margin-top: 2px;
+  opacity: 0.9;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Rząd: herby + „vs” */
+.match-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 12px 0 8px;
+  flex-wrap: nowrap;
 }
 
 /* Squad list */

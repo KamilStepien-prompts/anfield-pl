@@ -40,3 +40,36 @@
   update();
   const interval = setInterval(update, 1000);
 })();
+
+(function () {
+  const el = document.getElementById("match-countdown");
+  if (!el) return;
+  // preferuj data-kickoff z HTML; fallback: ręcznie ustawiona data
+  const iso = el.getAttribute("data-kickoff"); // np. "2025-09-20T11:30:00Z"
+  const KO = iso ? new Date(iso) : new Date(Date.now() + 60 * 60 * 1000); // fallback: +1h
+  const MS_45 = 45 * 60 * 1000,
+    MS_90 = 90 * 60 * 1000;
+
+  function fmt(n) {
+    return n.toString().padStart(2, "0");
+  }
+  function tick() {
+    const now = new Date();
+    const diff = KO - now;
+    if (diff > 0) {
+      const h = Math.floor(diff / 3_600_000);
+      const m = Math.floor((diff % 3_600_000) / 60_000);
+      const s = Math.floor((diff % 60_000) / 1000);
+      el.textContent = `Start za ${h}h ${fmt(m)}m ${fmt(s)}s`;
+      return;
+    }
+    // mecz trwa: pokaż status wg czasu od KO
+    const since = now - KO;
+    if (since <= MS_45) el.textContent = "Gramy! 1. połowa";
+    else if (since <= MS_45 + 900000) el.textContent = "Przerwa";
+    else if (since <= MS_90) el.textContent = "Gramy! 2. połowa";
+    else el.textContent = "Koniec meczu";
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
