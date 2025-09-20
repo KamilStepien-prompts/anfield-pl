@@ -19,16 +19,16 @@
 }
 
 .matchday__label {
-  font-size: 0.78rem;
-  color: var(--muted);
+  font-size: 0.4rem;
+  color: var(--accent-2t);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 1rem;
 }
 .matchday__opponent {
   font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--accent);
+  font-size: 1.3rem;
+  color: var(--accent-2);
   margin: 0.35rem 0 0.25rem;
 }
 .matchday__meta {
