@@ -1381,3 +1381,117 @@
     content: attr(data-abbr);
   }
 }
+/* ===== Live timeline: base ===== */
+.evt {
+  position: relative;
+  margin: 10px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(255, 255, 255, 0.02)
+  );
+}
+.evt__meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  font-variant-numeric: tabular-nums;
+}
+.evt__meta time {
+  display: inline-block;
+  min-width: 2ch;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+}
+.evt__type {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  opacity: 0.95;
+  background: rgba(255, 255, 255, 0.08);
+  text-transform: uppercase;
+}
+.evt__body {
+  line-height: 1.4;
+}
+.evt__author {
+  opacity: 0.8;
+  margin-bottom: 4px;
+}
+
+/* ===== Variants ===== */
+.evt--goal {
+  border-color: rgba(46, 204, 113, 0.55);
+  box-shadow: 0 0 0 1px rgba(46, 204, 113, 0.25) inset,
+    0 6px 20px rgba(46, 204, 113, 0.12);
+}
+.evt--goal .evt__type {
+  background: rgba(46, 204, 113, 0.18);
+  color: #c9f7de;
+}
+
+.evt--yellow {
+  border-color: rgba(255, 208, 0, 0.55);
+  box-shadow: 0 0 0 1px rgba(255, 208, 0, 0.25) inset,
+    0 6px 20px rgba(255, 208, 0, 0.08);
+}
+.evt--yellow .evt__type {
+  background: rgba(255, 208, 0, 0.22);
+  color: #fff1b3;
+}
+
+.evt--red {
+  border-color: rgba(255, 71, 87, 0.55);
+  box-shadow: 0 0 0 1px rgba(255, 71, 87, 0.25) inset,
+    0 6px 20px rgba(255, 71, 87, 0.12);
+}
+.evt--red .evt__type {
+  background: rgba(255, 71, 87, 0.2);
+  color: #ffd1d6;
+}
+
+.evt--var {
+  border-color: rgba(255, 159, 67, 0.55);
+  box-shadow: 0 0 0 1px rgba(255, 159, 67, 0.25) inset,
+    0 6px 20px rgba(255, 159, 67, 0.1);
+}
+.evt--var .evt__type {
+  background: rgba(255, 159, 67, 0.2);
+  color: #ffe0bf;
+}
+
+.evt--subs {
+  border-color: rgba(52, 152, 219, 0.55);
+  box-shadow: 0 0 0 1px rgba(52, 152, 219, 0.25) inset,
+    0 6px 20px rgba(52, 152, 219, 0.1);
+}
+.evt--subs .evt__type {
+  background: rgba(52, 152, 219, 0.2);
+  color: #cfeaff;
+}
+
+/* Drobne dopieszczki na mobile */
+@media (max-width: 560px) {
+  .evt {
+    padding: 10px 12px;
+  }
+  .evt__meta time {
+    padding: 2px 6px;
+  }
+}
+.btn--danger {
+  background: #7a1f2b;
+  border-color: #a92f40;
+}
+.btn--danger:hover {
+  filter: brightness(1.05);
+}
