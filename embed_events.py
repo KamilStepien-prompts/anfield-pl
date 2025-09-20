@@ -1,43 +1,57 @@
 #!/usr/bin/env python3
-# embed_events.py
-import json, html, sys, os
+import json, html, sys, os, argparse
+from pathlib import Path
 
-IN = 'exports/anfield_live_events.json'
-TEMPLATE = 'index_template.html'
-OUT = 'index_published.html'
-MARKER_START = '<!-- LIVE_EVENTS_MARKER_START -->'
-MARKER_END = '<!-- LIVE_EVENTS_MARKER_END -->'
+MARKER_START = "<!-- LIVE_EVENTS_MARKER_START -->"
+MARKER_END   = "<!-- LIVE_EVENTS_MARKER_END -->"
 
-if not os.path.exists(IN):
-    print('Place exported JSON from localStorage as', IN)
-    sys.exit(1)
+def build_events_html(events):
+    nodes = []
+    for e in events:
+        t = e.get('type','moment')
+        minute = (str(e.get('minute')) + "'") if e.get('minute') else (e.get('tstamp') or '')
+        author = f"<div class='evt__author'><em>{html.escape(e.get('author') or '')}</em></div>" if e.get('author') else ''
+        text = html.escape(e.get('text') or '').replace('\n','<br/>')
+        nodes.append(
+            f"<article class='evt evt--{html.escape(t)}'>\n"
+            f"  <div class='evt__meta'><time>{html.escape(minute)}</time> "
+            f"<span class='evt__type'>{html.escape(t.upper())}</span></div>\n"
+            f"  <div class='evt__body'>{author}<div class='evt__text'>{text}</div></div>\n"
+            f"</article>"
+        )
+    return "\n".join(nodes)
 
-with open(IN,'r',encoding='utf-8') as f:
-    raw = json.load(f)
+def inject_into_file(html_path: Path, events_html: str):
+    src = html_path.read_text(encoding="utf-8")
+    if MARKER_START not in src or MARKER_END not in src:
+        print(f"❌ Brak markerów w {html_path}. Dodaj:\n{MARKER_START}\n{MARKER_END}")
+        sys.exit(1)
+    pre, rest = src.split(MARKER_START, 1)
+    _, post = rest.split(MARKER_END, 1)
+    out = pre + MARKER_START + "\n" + events_html + "\n" + MARKER_END + post
+    html_path.write_text(out, encoding="utf-8")
 
-events = raw.get('events', raw)
+def main():
+    ap = argparse.ArgumentParser(description="Embed live events JSON into target HTML between markers.")
+    ap.add_argument("--in", dest="json_in", default="exports/anfield_live_events.json", help="Input JSON (default: exports/anfield_live_events.json)")
+    ap.add_argument("--target", dest="target_html", required=True, help="Target HTML to inject (e.g. felieton/.../index.html)")
+    args = ap.parse_args()
 
-nodes = []
-for e in events:
-    t = e.get('type','moment')
-    minute = (str(e.get('minute')) + "'") if e.get('minute') else (e.get('tstamp') or '')
-    author = f"<div class='evt__author'><em>{html.escape(e.get('author') or '')}</em></div>" if e.get('author') else ''
-    text = html.escape(e.get('text') or '').replace('\n','<br/>')
-    nodes.append(f"<article class='evt evt--{html.escape(t)}'>\n  <div class='evt__meta'><time>{html.escape(minute)}</time> <span class='evt__type'>{html.escape(t.upper())}</span></div>\n  <div class='evt__body'>{author}<div class='evt__text'>{text}</div></div>\n</article>")
+    json_path = Path(args.json_in)
+    target = Path(args.target_html)
 
-snippet = '\n'.join(nodes)
+    if not json_path.exists():
+        print("❌ Nie znaleziono JSON:", json_path)
+        sys.exit(1)
+    if not target.exists():
+        print("❌ Nie znaleziono pliku docelowego HTML:", target)
+        sys.exit(1)
 
-with open(TEMPLATE,'r',encoding='utf-8') as f:
-    template = f.read()
+    raw = json.loads(json_path.read_text(encoding="utf-8"))
+    events = raw.get("events", raw)
+    html_snippet = build_events_html(events)
+    inject_into_file(target, html_snippet)
+    print(f"✅ Wstrzyknięto {len(events)} wydarzeń do {target}")
 
-if MARKER_START not in template or MARKER_END not in template:
-    print('Markers missing in template. Add markers:', MARKER_START, MARKER_END)
-    sys.exit(1)
-
-start = template.find(MARKER_START) + len(MARKER_START)
-end = template.find(MARKER_END)
-newdoc = template[:start] + '\n' + snippet + '\n' + template[end:]
-with open(OUT,'w',encoding='utf-8') as f:
-    f.write(newdoc)
-
-print('Generated', OUT)
+if __name__ == "__main__":
+    main()
