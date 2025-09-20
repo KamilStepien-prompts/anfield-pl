@@ -58,7 +58,6 @@ MID
 <span class="name">Cody Gakpo</span
 ><span class="pos">LW</span>
 </li>
-
 <li>
 <span class="num">22</span
 ><span class="name">Hugo Ekitike</span

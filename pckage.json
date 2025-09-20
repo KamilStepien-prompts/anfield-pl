@@ -1,0 +1,7 @@
+{
+  "name": "anfieldpl",
+  "private": true,
+  "scripts": {
+    "embed": "py embed_events.py --target felieton/wrzesien25/felieton-10-derby-liverpool/index.html"
+  }
+}
