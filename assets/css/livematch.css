@@ -1524,4 +1524,26 @@
     gap: 10px;
     padding: 10px 12px;
   }
+
+  .evt--goal .evt__type {
+    background: #123d23;
+    color: #c2ffda;
+  }
+  .evt--yellow .evt__type {
+    background: #3a3300;
+    color: #ffe066;
+  }
+  .evt--red .evt__type {
+    background: #e4050da0;
+    color: #f70606;
+  }
+  .evt--subs .evt__type {
+    background: #10273a;
+    color: #c8e6ff;
+  }
+  .evt--moment .evt__type,
+  .evt--fact .evt__type {
+    background: #24262a;
+    color: #d9d9d9;
+  }
 }
