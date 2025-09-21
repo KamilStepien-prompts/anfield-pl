@@ -1495,3 +1495,33 @@
 .btn--danger:hover {
   filter: brightness(1.05);
 }
+/* === Live timeline: mobile stack for meta === */
+@media (max-width: 640px) {
+  /* meta w kolumnie: czas nad typem */
+  .evt__meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px; /* ciaśniej niż desktop */
+    min-width: auto; /* pozwól się zawijać */
+    margin-bottom: 6px; /* odstęp od treści */
+  }
+
+  .evt__meta time {
+    display: inline-block;
+    padding: 2px 8px; /* czytelniejszy „żeton” minuty */
+  }
+
+  .evt__type {
+    display: inline-block; /* nowa linia przez flex-direction: column */
+    margin-left: 0; /* wyzeruj lewy margines z wersji desktop */
+    padding: 2px 8px;
+    font-size: 0.74rem; /* odrobina kompresji */
+  }
+
+  /* delikatne ściśnięcie całego eventu na mobile */
+  .evt {
+    gap: 10px;
+    padding: 10px 12px;
+  }
+}
