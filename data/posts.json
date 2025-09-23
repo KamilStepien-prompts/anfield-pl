@@ -1,12 +1,31 @@
 [
   {
+    "id": 13,
+    "title": "Mickey Mouse Cup",
+    "date": "2025-09-23",
+    "excerpt": "Święci nie rozłożyli się krzyżem przed The Reds. Skład ekpserymentalny dostarcza emocji",
+    "url": "/felieton/wrzesien25/felieton-11-efl-cup/index.html",
+    "tag": "",
+    "priority": 1
+  },
+
+  {
+    "id": 12,
+    "title": "Derby",
+    "date": "2025-09-20",
+    "excerpt": "Nie zawsze było tak kurtuazyjnie. Czysty mecz o supremację w mieście, które ciągle jest The Reds",
+    "url": "/felieton/wrzesien25/felieton-10-derby-liverpool/index.html",
+    "tag": "",
+    "priority": 0.8
+  },
+  {
     "id": 11,
-    "title": "Derby Merseyside",
+    "title": "Merseyside",
     "date": "2025-09-18",
     "excerpt": "This City is Ours. O serialu HBO, którego akcja dzieje się w Liverpoolu. Serial mówi więcej niż chciałbyś wiedzieć",
     "url": "/felieton/wrzesien25/felieton-10-derby-liverpool/zapowiedz.html",
-    "tag": "naMarginesie",
-    "priority": 1
+    "tag": "naBoku",
+    "priority": 0.8
   },
   {
     "id": 10,
@@ -15,7 +34,7 @@
     "excerpt": "Relacja ze spotkanie w Champions League. Diego Simeone i jego twarde materace. Los ponownie sprzyja The Reds",
     "url": "/felieton/wrzesien25/felieton-09-liverpool-atletico/index.html",
     "tag": "matchDay",
-    "priority": 1
+    "priority": 0.7
   },
   {
     "id": 9,
@@ -33,7 +52,7 @@
     "excerpt": "Twierdza zdobyta rzutem na taśme. Gol w końcówce po nieustającym oblężeniu",
     "url": "/felieton/wrzesien25/felieton-08-tough-moor/index.html",
     "tag": "matchDay",
-    "priority": 0.9
+    "priority": 0.6
   },
   {
     "id": 7,
@@ -51,7 +70,7 @@
     "excerpt": "Premier League przyciąga kapitał i technologie ze Stanów Zjednoczonych.",
     "url": "/felieton/wrzesien25/felieton-06-wiatr-zmian-premier-league-kapital-usa/index.html",
     "tag": "Felieton",
-    "priority": 0.6
+    "priority": 0.4
   },
   {
     "id": 5,
@@ -60,7 +79,7 @@
     "excerpt": "O zwycięstwie reprezentacji Polski nad Finlandią. Robert Lewandowski z życzeniami dla żony.",
     "url": "/felieton/wrzesien25/felieton-05-zwyciestwo-w-chorzowie-kadra/index.html",
     "tag": "Komentarz",
-    "priority": 0.8
+    "priority": 0.3
   },
   {
     "id": 4,
@@ -69,7 +88,7 @@
     "excerpt": "Harvey Elliott opuszcza Liverpool. Analiza wypożyczenia z obowiązkiem zakupu oraz klauzuli buy-back.",
     "url": "/felieton/wrzesien25/felieton-04-harvey-elliott-odejscie-aston-villa/index.html",
     "tag": "Analiza",
-    "priority": 0.5
+    "priority": 0.4
   },
   {
     "id": 3,
@@ -78,7 +97,7 @@
     "excerpt": "Niespodziewany remis Polski z Holandią. Remis, który był lekcją charakteru.",
     "url": "/felieton/wrzesien25/felieton-03-punkt-z-holandia-debiut/index.html",
     "tag": "Komentarz",
-    "priority": 0.5
+    "priority": 0.3
   },
   {
     "id": 2,
@@ -87,7 +106,7 @@
     "excerpt": "Piłkarz który łączy błysk z dyscypliną, a gwiazdorską twarz z robotniczym etosem.",
     "url": "/felieton/wrzesien25/felieton-02-dominik-szoboszlai-oczekiwania/index.html",
     "tag": "Opinia",
-    "priority": 0.6
+    "priority": 0.2
   },
   {
     "id": 1,
@@ -96,6 +115,6 @@
     "excerpt": "Futbol to nie tylko rekordy transferowe. Liverpool pomiędzy pamięcią a chłodną kalkulacją",
     "url": "/felieton/wrzesien25/felieton-01-salah-vs-isak-wartosci-vs-rekord/index.html",
     "tag": "Felieton",
-    "priority": 0.7
+    "priority": 0.2
   }
 ]
