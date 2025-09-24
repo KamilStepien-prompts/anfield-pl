@@ -1071,6 +1071,10 @@
   color: #bbbbff;
 }
 
+.livematch .scorebox__team--saints {
+  color: #ecfb12;
+}
+
 /* Scorebox – responsive */
 .livematch .scorebox {
   padding: 0.9rem 0.9rem;
