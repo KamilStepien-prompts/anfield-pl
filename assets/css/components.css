@@ -394,3 +394,32 @@
     height: 260px;
   }
 }
+
+/* ARCHIVE: włącz widoczność i siatkę dla #archive-container */
+#archive-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+  padding: 12px 6px;
+}
+
+/* Na archiwum karty od razu widoczne; animację i tak można dołożyć JS-em */
+#archive-container .post-card {
+  opacity: 1;
+  transform: none;
+}
+
+/* Kolumny na desktopie – jak na #posts-container */
+@media (min-width: 900px) {
+  #archive-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+@media (min-width: 1300px) {
+  #archive-container {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
