@@ -1067,12 +1067,20 @@
   color: var(--card-red-2);
 }
 
+.livematch .scorebox__team--lfc--away {
+  color: var(--ink);
+}
+
 .livematch .scorebox__team--atm {
   color: #bbbbff;
 }
 
 .livematch .scorebox__team--saints {
   color: #ecfb12;
+}
+
+.livematch .scorebox__team--cp {
+  color: #3912fb;
 }
 
 /* Scorebox – responsive */
