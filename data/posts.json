@@ -1,19 +1,29 @@
 [
   {
+    "id": 14,
+    "title": "Mecz na szczycie",
+    "date": "2025-09-27",
+    "excerpt": "Na Selhust Park Stadium zmierzyły się drużyny, które były do tego starcia niezwyciężone w całej stawce. Tym razem szczeście sprzyjało przeciwnikom The Reds.",
+    "url": "/felieton/wrzesien25/felieton-12-crystal-palace/index.html",
+    "tag": "",
+    "priority": 1
+  },
+
+  {
     "id": 13,
     "title": "Mickey Mouse Cup",
     "date": "2025-09-23",
-    "excerpt": "Święci nie rozłożyli się krzyżem przed The Reds. Skład ekpserymentalny dostarcza emocji",
+    "excerpt": "Święci nie rozłożyli się krzyżem przed The Reds. Skład ekpserymentalny dostarcza emocji. Nieoczywisty bohater w starciu w pucharze Myszki Miki",
     "url": "/felieton/wrzesien25/felieton-11-efl-cup/index.html",
     "tag": "EFL Cup",
-    "priority": 1
+    "priority": 0.8
   },
 
   {
     "id": 12,
     "title": "Derby",
     "date": "2025-09-20",
-    "excerpt": "Nie zawsze było tak kurtuazyjnie. Czysty mecz o supremację w mieście, które ciągle jest The Reds",
+    "excerpt": "Nie zawsze było tak kurtuazyjnie. Czysty mecz o supremację w mieście, które ciągle jest czerwone. Kolejne zwycięstwo w derbach Liverpool FC",
     "url": "/felieton/wrzesien25/felieton-10-derby-liverpool/index.html",
     "tag": "relacja",
     "priority": 0.8
