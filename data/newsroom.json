@@ -1,62 +1,28 @@
 [
   {
-    "title": "EFL Cup",
-    "tag": "Puchar Ligi",
-    "time": "2025-09-23T22:30:15Z",
-    "excerpt": "Skrót meczu z Southamton",
-    "url": "https://www.youtube.com/watch?v=MOcQFjRiirw",
-    "source": "EFL - YouTube"
+    "title": "Zasłużona porażka?",
+    "tag": "Premier League",
+    "time": "2025-09-27T20:00:15Z",
+    "excerpt": "This Is Anfield ocenia - zasłużona porażka",
+    "url": "https://www.thisisanfield.com/2025/09/crystal-palace-2-1-liverpool-deserved-defeat-for-reds/",
+    "source": "This is Anfield"
   },
 
   {
-    "title": "Derby Merseyside",
+    "title": "VAR - kontrowersja",
     "tag": "Premier League",
-    "time": "2025-09-22T22:30:15Z",
-    "excerpt": "Najnowszy odcinek Inside Anfield",
-    "url": "https://www.youtube.com/watch?v=XaaMR_8hlpk",
-    "source": "Liverpool FC"
-  },
-
-  {
-    "title": "Derby Merseyside",
-    "tag": "Premier League",
-    "time": "2025-09-21T15:00:15Z",
-    "excerpt": "Isak i Ekitike - obaj niezbędni w składzie The Reds",
-    "url": "https://www.thisisanfield.com/2025/09/alexander-isak-and-hugo-ekitike-definitely-necessary-arne-slot-explains/",
-    "source": "ThisIsAnfield"
-  },
-  {
-    "title": "Pięć na pięć",
-    "tag": "Premier League",
-    "time": "2025-09-21T19:25:15Z",
-    "excerpt": "Po 5 kolejce ligowej w Anglii przewaga Liverpool FC rośnie do 5 punktów",
-    "url": "https://www.liverpoolecho.co.uk/sport/football/football-news/liverpool-handed-new-premier-league-32522350",
+    "time": "2025-09-27T20:05:15Z",
+    "excerpt": "Decyzja o braku ręki Salaha przy bramce Chiesy podtrzymana",
+    "url": "https://www.liverpoolecho.co.uk/sport/football/football-news/liverpool-handed-var-verdict-after-32565113",
     "source": "Liverpool Echo"
   },
 
   {
-    "title": "Hit kolejki",
+    "title": "Tabela",
     "tag": "Premier League",
-    "time": "2025-09-21T20:25:15Z",
-    "excerpt": "Spotkanie Arsenalu z City zakończyło się podziałem punktów",
-    "url": "https://www.standard.co.uk/sport/football/arsenal-vs-man-city-premier-league-b1248915.html",
-    "source": "The Standard"
-  },
-
-  {
-    "title": "Dziennikarz Gary Neville donosi",
-    "tag": "Premier League",
-    "time": "2025-09-21T23:00:00Z",
-    "excerpt": "Ekspert SkySport koronuje zespół Slota po piątej kolejce.",
-    "url": "https://www.skysports.com/football/live-blog/11669/13025501/liverpool-transfer-news-rumours-and-gossip-live-updates-and-latest-on-deals-signings-loans-and-contracts",
-    "source": "skysports.com"
-  },
-  {
-    "title": "Aston Villa w tarapatach",
-    "tag": "Premier League",
-    "time": "2025-09-21T21:00:00Z",
-    "excerpt": "Unai Emery tłumaczy się z beznadziejnego początku sezonu",
-    "url": "https://www.bbc.com/sport/football/articles/cz7rr8y3xv9o",
-    "source": "BBC Sport"
+    "time": "2025-09-27T23:30:15Z",
+    "excerpt": "Tabela Live Premier League",
+    "url": "https://www.skysports.com/football/news/11095/13382434/live-premier-league-table-2025-26-season-standings",
+    "source": "SkySports"
   }
 ]
