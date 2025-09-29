@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- === SEO CORE === -->
+    <title>
+      Galtasaray - Liverpool FC - zapowiedź, analiza, relacja | Anfield.pl
+    </title>
+    <meta name="google-site-verification" content="G-6WX8HTYXM2" />
+    <meta
+      name="description"
+      content="Anfield.pl — niezależny portal kibica Liverpool FC w Polsce. Autorskie felietony, analizy i komentarze o The Reds oraz Premier League. Bez tłumaczeń i clickbaitu."
+    />
+    <link rel="canonical" href="https://anfield.pl/" />
+    <meta
+      name="robots"
+      content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+    />
+
+    <!-- === OPEN GRAPH / SOCIAL === -->
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Anfield.pl" />
+    <meta property="og:url" content="https://anfield.pl/" />
+    <meta
+      property="og:title"
+      content="Anfield.pl — Liverpool FC Polska: felietony, analizy, Premier League"
+    />
+    <meta
+      property="og:description"
+      content="Autorskie felietony i analizy o Liverpool FC. MatchDay zapowiedzi, komentarze i Newsroom Premier League."
+    />
+    <meta
+      property="og:image"
+      content="https://anfield.pl/assets/img/social/og-anfield.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image:alt"
+      content="Anfield.pl — You'll Never Walk Alone, symboliczna brama do Anfield"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Anfield.pl — Liverpool FC Polska: felietony, analizy, Premier League"
+    />
+    <meta
+      name="twitter:description"
+      content="Autorskie felietony i analizy o Liverpool FC. MatchDay i Newsroom — bez tłumaczeń, bez kopiowania."
+    />
+    <meta
+      name="twitter:image"
+      content="https://anfield.pl/assets/img/social/og-anfield.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Anfield.pl — niezależny portal kibica Liverpool FC"
+    />
+
+    <!-- === BRANDING / ICONS === -->
+    <link rel="icon" href="/assets/img/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0b0b0e" />
+
+    <!-- === CSS === -->
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/matchday.css" />
+    <!-- live match module -->
+    <link rel="stylesheet" href="/assets/css/livematch.css" />
+
+    <!-- === STRUCTURED DATA (JSON-LD) === -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Anfield.pl",
+        "url": "https://anfield.pl/",
+        "inLanguage": "pl-PL",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Anfield.pl",
+          "url": "https://anfield.pl/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://anfield.pl/assets/img/social/og-anfield.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "sameAs": ["https://www.facebook.com/profile.php?id=61580257838714"]
+        },
+        "potentialAction": {
+          "@type": "ReadAction",
+          "target": "https://anfield.pl/"
+        }
+      }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6WX8HTYXM2"
+    ></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <!-- HEADER -->
+    <!-- HEADER -->
+    <header class="site-header livematch">
+      <div class="container navbar">
+        <a class="brand" href="/"
+          ><span class="brand__dot" aria-hidden="true"></span>
+          <small style="color: #ff2442; margin-left: 1rem">matchDay</small>
+          <span> ANFIELD.PL ⚡</span>
+        </a>
+        <!-- Desktop nav (root-relative links!) -->
+        <nav class="nav" aria-label="Główne">
+          <a href="https://anfield.pl/#feature">Artykuły</a>
+          <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+          <a href="https://anfield.pl/archive">Archiwum</a>
+          <a href="https://anfield.pl/about">O nas</a>
+        </nav>
+        <!-- Mobile nav toggle -->
+        <button
+          class="hamb"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Otwórz menu"
+        >
+          <span class="hamb__bar"></span>
+        </button>
+      </div>
+      <div class="off" id="mobile-menu" data-offcanvas>
+        <div class="off__panel container" data-offcanvas-panel>
+          <button class="off__close" data-nav-close aria-label="Zamknij menu">
+            ✕
+          </button>
+          <nav aria-label="Menu mobilne" class="off__nav">
+            <a href="https://anfield.pl/#feature">Artykuły</a>
+            <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+            <a href="https://anfield.pl/archive">Archiwum</a>
+            <a href="https://anfield.pl/about">O nas</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Match banner  -->
+    <section
+      class="match-banner"
+      role="region"
+      aria-label="Crystal Palace — zapowiedź, składy, relacja z meczu"
+    >
+      <section class="container match-inner">
+        <section class="match-teams" aria-hidden="false">
+          <div class="team team--home">
+            <img
+              src="/felieton/wrzesien25/felieton-13-galatasaray/galata_2.png"
+              alt="Galatasaray — herb"
+              class="team__logo"
+            />
+          </div>
+          <div class="match-vs" aria-hidden="true">vs</div>
+          <div class="team team--away">
+            <img
+              src="/assets/img/teams/liverpool.png"
+              alt="Liverpool — herb"
+              class="team__logo"
+            />
+          </div>
+        </section>
+      </section>
+      <!--Data-->
+      <div class="match-meta">
+        <div class="match__title">Champions League - 2 kolejka</div>
+        <div class="match__when" aria-live="polite">
+          <strong>30 września 2025 • wtorek, 21:00</strong><br />
+          <div class="matchday__opponent">Galtasaray - Liverpool FC</div>
+          <span class="match__venue">Rams Park, Stambuł</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="off" id="mobile-menu" data-offcanvas>
+      <div class="off__panel container" data-offcanvas-panel>
+        <button class="off__close" data-nav-close aria-label="Zamknij menu">
+          ✕
+        </button>
+        <nav class="off__nav" aria-label="Menu mobilne">
+          <a href="https://anfield.pl/#feature">Artykuły</a>
+          <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+          <a href="https://anfield.pl/archive">Archiwum</a>
+          <a href="https://anfield.pl/about">O nas</a>
+        </nav>
+      </div>
+    </div>
+
+    <main id="main" class="livematch">
+      <article class="article">
+        <!-- neutralizujemy lokalny header, zostaje globalny -->
+        <header class="site-header" style="display: none"></header>
+        <div class="spacer"></div>
+        <section class="match_intro">
+          <h2>
+            <strong>Lwy ze Stambułu.</strong>
+          </h2>
+          <h3>
+            W nocy, gdy Rams Park zapala tysiące świateł, stadion zamienia się w
+            scenę. Jutro Galatasaray podejmie Liverpool FC w 2. kolejce Ligi
+            Mistrzów.
+          </h3>
+
+          <figure class="matchday_image">
+            <img
+              src="/felieton/wrzesien25/felieton-13-galatasaray/rams-park.webp"
+              alt=" Galatasaray vs Liverpool. Champions League"
+            />
+            <figcaption>✨ Rams Park, google maps + NanoBanana</figcaption>
+          </figure>
+          <h2>Polowanie na europejskiego giganta</h2>
+          <p>
+            Czy Lwy upolują zranioną zwierzynę jaką jest The Reds po porażce z
+            Palace? Dla gospodarzy to kolejny test dominacji: w lidze nie
+            zaznali jeszcze smaku porażki (7–0–0, bilans bramkowy +17), ale
+            pamięć o rozbiciu się o ścianę we Frankfurcie 1:5 w pierwszej
+            rundzie europejskich pucharów, wciąż parzy.
+          </p>
+          <p>
+            The Reds z kolei wyjeżdżają do Turcji po pierwszej ligowej
+            przegranej — porażka z Crystal Palace to cios, który motywuje. Tym
+            bardziej, że ten cios drużyna odebrała w ostatniej akcji meczu na
+            Selhurst Park. Czy podrażnieni tym faktem piłkarze The Reds wyjadą
+            ze Stambułu w glorii chwały?
+          </p>
+          <p>
+            Obiekt Galtasaray to miejsce gdzie ultrasi potrafią stworzyć warunki
+            niemal niemożliwe do gry: masowe choreografie, śpiewy, pirotechnika
+            i presja, która zaczyna działać jeszcze zanim sędzia zagwiżdże po
+            raz pierwszy.
+          </p>
+        </section>
+
+        <section class="match_intro">
+          <h2>Profesor z ManCity w drużynie Galatasaray</h2>
+
+          <p>
+            Czy to będzie noc ognia, gdzie miejscowi zagłuszą gości. Czy też
+            scena, na której Liverpool odzyska rytm i zapunktuje na trudnym
+            terenie? Zadanie na pewno zechce nam utrudnić nie kto inny jak sam
+            İlkay Gündoğan, który dołączył w tym sezonie do tureckiej drużyny.
+          </p>
+
+          <section class="pull-quote" aria-label="cytat">
+            <blockquote>
+              To duma i ogromna radość dla mnie i mojej rodziny — nie mogę się
+              doczekać, by grać tutaj.” — İlkay Gündoğan po podpisaniu
+              kontraktu.
+            </blockquote>
+          </section>
+
+          <p>
+            Gündoğan to piłkarz, którego kariera jest idealnym łącznikiem między
+            angielskim profesjonalizmem a tureckim dziedzictwem. Urodzony w
+            Niemczech, z tureckimi korzeniami, dorastał w akademiach niemieckich
+            (m.in. 1. FC Nürnberg, Borussia Dortmund), by w 2016 roku przejść do
+            Manchesteru City i rozwinąć się w jednego z najważniejszych
+            rozgrywających ery Guardioli. W City stał się nie tylko wykonawcą —
+            często decydował o rytmie gry, zdobywał ważne bramki i pełnił
+            funkcję kapitana, gdy klub osiągnął historyczny sukces. Po epizodach
+            poza Anglią podjął decyzję, by powrócić bliżej korzeni — podpisując
+            umowę z Galatasaray, wyraźnie podkreślił emocjonalny związek z
+            turecką piłką i chęć wniesienia doświadczenia światowej klasy do
+            Rams Park.
+          </p>
+
+          <h2>Wyspiarski futbol nad cieśniną Bosfor</h2>
+
+          <p>
+            W drużynie Galaty, znajdziemy też dużo innych akcentów z angielskiej
+            piłki. W składzie Lwów oprócz Gündoğana jest też inny ex podopieczny
+            Pepa - Leroy Sane. Oprócz nich znajdziemy tam też defensora
+            Davinsona Sánchez'a (ex-Tottenham), czy pomocnika Lucasa Torreira
+            (ex-Arsenal). Nawet Gabriel Sara, brazylijczyjk na pozycji
+            defensywnego pomocnika też może pochwalić się w CV przeszłością w
+            Norwich. Dodaje to temu pojedynkowi dodatkowego kontekstu.
+          </p>
+        </section>
+
+        <h2>Jakim składem zagra Liverpoool?</h2>
+        <h4>
+          Czy Arne Slot będzie miał na tyle mocne argumenty, żeby największa
+          gwiazda Liverpool FC została posadzona na ławce rezerwowych?
+        </h4>
+        <p>
+          Niektóre media z Wysp już stukają w stół i wołają o zmiany po ligowej
+          porażce Liverpoolu. My myślimy inaczej - o ile zgadzamy się, że
+          Mohamed Salah ostatnio „zagrał piach”, ale to zawodnik z kategorią
+          Messiego i CR7 — słabsza forma nie oznacza z automatu, że
+          usiądzie on na ławce. My stawiamy na odważne, ale przemyślane roszady.
+          Konaté zaczyna na ławce. Z Crystal Palace popełniał tyle błędów, że
+          powinien odpocząć od pierwszej jedenastki. Kolejny na liście do roli
+          rezerwowego jest według nas Florian Wirtz, który póki co, radzi sobie
+          słabo w układance holenderskiego menagera. Prawdopodobnie jego okres
+          adaptacji będzie nieco dłuższy niż wielu by oczekiwało ale pamiętajmy
+          jakie początki na Anfield miał Ryan Gravenberch.
+        </p>
+
+        <h2>Chiesa w pierwszoplanowej roli.</h2>
+
+        <p>
+          Po tym jak kontuzji doznał inny reprezentant z półwyspu apenińskiego -
+          Giovanni Leoni, włoski talizman zostaje powowłany do kadry drużyny w
+          rozgrywkach Champions League. Piłkarz z 14 na plecach może pełnić rolę uniwersalnego rozrusznika. Po tym jak los zaczął sprzyjać byłemu zawodnikowi Juve, to warto go właczyć w końcu od samego początku do składu. Zastępuje on Wirtza od którego ma lepsze liczby wchodząc jako joker.
+          Jak dotychczas zagrał jedynie 153 minuty a zdążył zanotować już 2 gole i 2 asysty. Ponadto jest to uniwersalny zawodnik i może grać na wszystkich pozycjach w linii ataku. Wszystko to razem zebrane powinno w końcu zaowocować pierwszym składem. I oby tak się stało.
+        </p>
+        <h2>Ekitike dostaję szansę na poprawę wizerunku.</h2>
+        <p>
+          Na napadzie z kolei mógłby zagrać Hugo Ekitike. Francuz zrozumiał, że
+          po incydencie z koszulką w EFL Cup nie zrobił dobrego wrażenia — teraz
+          ma szansę to naprawić i polować w Rams Park jak prawdziwa „zraniona
+          zwierzyna”. W Londynie grał Isak to teraz na szpicy powininen szansę
+          dostać Hugo. Slot po publicznym skrytykowaniu snajpera daje mu szansę
+          na szybką poprawę wizerunku. Ten będąc dotychczas w lepszej formie niż
+          Alexander owdzięcza się dobrą grą i zrównoważonym zachowaniem. Szwed w
+          odwodzie. Rotacja i racjonalne zarządzanie siłami dwóch dziewiątek.
+        </p>
+
+        <!-- SECTION: MATCH EVENT -->
+    
+        <section class="match-event">
+          <span class="label">Spekulacje przedmeczowe: data 29/09/2025</span>
+          <h2 id="lineups-title">Prawdopodobny skład</h2>
+          <h4>
+            Nasze przewidywania prezentujemy w ten, dosyć karkołomny sposób:
+          </h4>
+          <p>
+            Skład na mecz z Galatasaray w Lidze Mistrzów wg. spekulacji redakcji <strong style="color: #e31b23;">Anfield.PL</strong>
+          </p>
+        </section>
+        
+
+        <article
+          class="team team--lfc"
+          aria-label="Liverpool – skład wyjściowy"
+        >
+          <!-- LIVERPOOL -->
+          <header class="team__head">
+            <h3 class="team__name">Liverpool FC</h3>
+            <span class="formation">4–2–3–1</span>
+          </header>
+
+          <ul class="squad" role="list">
+            <!-- GK -->
+            <li>
+              <span class="num">1</span><span class="name">Alisson</span
+              ><span class="pos">GK</span>
+            </li>
+            <!-- DEF -->
+            <li>
+              <span class="num">26</span><span class="name">Andy Robertson</span
+              ><span class="pos">LB</span>
+            </li>
+            <!--captain-->
+            <li>
+              <span class="num">2</span><span class="name">Joe Gomez</span
+              ><span class="pos">CB</span>
+            </li>
+            <li>
+              <span class="num">4</span
+              ><span class="name"
+                >Virgil van Dijk
+                <span class="tag tag--c" title="Kapitan">C</span></span
+              ><span class="pos">CB</span>
+            </li>
+            <li>
+              <span class="num">30</span
+              ><span class="name">Jeremie Frimpong</span
+              ><span class="pos">RB</span>
+            </li>
+            <!-- MID (6-8-10) -->
+            <li>
+              <span class="num">38</span
+              ><span class="name">Ryan Gravenberch</span
+              ><span class="pos">CM</span>
+            </li>
+            <li>
+              <span class="num">8</span
+              ><span class="name">Dominik Szoboszlai</span
+              ><span class="pos">CM</span>
+            </li>
+            <li>
+              <span class="num">10</span
+              ><span class="name">Alexis Mac Allister</span
+              ><span class="pos">CM</span>
+            </li>
+            <!-- FRONT 3 -->
+            <li>
+              <span class="num">14</span
+              ><span class="name">Federico Chiesa</span
+              ><span class="pos">LW</span>
+            </li>
+            <li>
+              <span class="num">22</span><span class="name">Hugo Ekitike</span
+              ><span class="pos">ST</span>
+            </li>
+            <li>
+              <span class="num">11</span
+              ><span class="name">Mohamed Salah</span>
+              <span class="pos">RW</span>
+            </li>
+          </ul>
+
+          <!-- ŁAWKA REZERWOWYCH -->
+          <details class="bench">
+            <summary>Rezerwowi</summary>
+            <ul role="list">
+              <!-- GK -->
+              <li>
+                <span class="num">25</span
+                ><span class="name">Giorgi Mamardashvili</span
+                ><span class="pos">GK</span>
+              </li>
+              <li>
+                <span class="num">6</span
+                ><span class="name">Milos Kerkez</span>
+                <span class="pos">LB</span>
+              </li>
+              <li>
+                <span class="num">5</span
+                ><span class="name">Ibrahima Konaté</span
+                ><span class="pos">CB</span>
+              </li>
+              <li>
+                <span class="num">12</span
+                ><span class="name">Connor Bradley</span
+                ><span class="pos">RB</span>
+              </li>
+              <!--MIDFILDERS-->
+              <li>
+                <span class="num">7</span
+                ><span class="name"> Florian Wirtz</span
+                ><span class="pos">CM</span>
+              </li>
+              <li>
+                <span class="num">3</span><span class="name"> Wataru Endō</span
+                ><span class="pos">CM</span>
+              </li>
+              <li>
+                <span class="num">17</span><span class="name">Curtis Jones</span
+                ><span class="pos">CM</span>
+              </li>
+              <!--STRIKERS-->
+              <li>
+                <span class="num">9</span
+                ><span class="name">Alexander Isak</span
+                ><span class="pos">ST</span>
+              </li>
+              <li>
+                <span class="num">18</span><span class="name">Cody Gakpo</span>
+                <span class="pos">LW</span>
+              </li>
+              <li>
+                <span class="num">73</span><span class="name">Rio Ngumoha</span
+                ><span class="pos">LW</span>
+              </li>
+              <li>
+                <span class="num">76</span><span class="name">Jayden Danns</span
+                ><span class="pos">RW</span>
+              </li>
+
+              <!--GŁĘBOKIE REZERWY-->
+              <!--
+          <li><span class="num">28</span><span class="name">Freddie Woodman</span><span class="pos">GK</span></li>
+          <li><span class="num">42</span><span class="name">Trey Nyoni</span><span class="pos">CM</span></li> 
+          -->
+            </ul>
+          </details>
+          <p class="manager">Trener: Arne Slot</p>
+
+      </article>
+          <section class="match-event">
+          <h2>Pucharowa niespodzianka.</h2>
+          <p>
+            Jest to nasza trochę szalona spekulacja dotycząca składu, ale może
+            czas w końcu na nieoczywiste wybory, które u przeciwników wprowadzą
+            większe zaskoczenie. Porażka z Crystal Palace była spowodowana
+            błędną taktyką z Wirtzem na skrzydle, który na swojej naturalnej
+            pozycji sobie nie radził a co dopiero mówić w tej części boiska na
+            której zagrał na Selhurst Park.
+          </p>
+          <p>
+            Liverpool zaprezentował się zbyt przewidywalnie jak na nasz gust.
+            Ponadto doszły do tego indywidualne problemy z formą u Konate i
+            zadyszką u Salaha. Tym razem oczekujemy, że Slot zagra coś innego
+            tak żeby ogień w Stambule zapłonął także w drużynie The Reds a nie
+            tylko na trybunach stadionu Lwów.
+          </p>
+        </section>
+
+
+<!-- FOOTER -->
+  <footer class="site-footer">
+        <section class="read-next" aria-label="Czytaj dalej">
+          <h2>Czytaj dalej</h2>
+          <ul>
+                      <li>
+              <a href="/felieton/wrzesien25/felieton-08-tough-moor/index.html"
+                >Kryształowy Pałac nie dał się skruszyć </a
+              >
+              <span class="why"
+                >— o starciu dwóch niepokonanych drużyn w Premier League</span
+              >
+            </li>
+              <li>
+              <a
+                href="/felieton/wrzesien25/felieton-11-efl-cup/index.html"
+                >Mickey Mouse Cup </a
+              >
+              <span class="why"
+                >— Federico Chiesa - reaktywacja</span
+              >
+            </li>
+            <li>
+              <a
+                href="/felieton/wrzesien25/felieton-10-derby-liverpool/zapowiedz.html"
+                >This City is Ours</a
+              >
+              <span class="why"
+                >— sprawdź do kogo należy Liverpool</span
+              >
+            </li>
+          </ul>
+        </section>
+  <div class="spacer"></div>
+        <div class="post-footer-nav">
+          <a href="/index.html" class="btn btn-ghost"
+            >← Powrót na stronę główną</a
+          >
+        </div>
+
+        <section id="comments">
+          <h2>Chcesz podyskutować?</h2>
+          <p>
+            Zapraszamy na nasz profil FB:
+            <a
+              href="https://www.facebook.com/profile.php?id=61580257838714"
+              target="_blank"
+              rel="noopener"
+              >Anfield.pl na Facebooku →</a
+            >
+          </p>
+        </section>
+      </footer>
+      <!-- JS (defer) -->
+    <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/matchday.js" defer></script>
+    <script src="/assets/js/cookie-consent.js" defer></script>
+      <!-- Countdown script: ustaw kickoff jednoznacznie -->
+    <script src="/assets/js/timeline.js" defer></script>
+  </body>
+</html>
