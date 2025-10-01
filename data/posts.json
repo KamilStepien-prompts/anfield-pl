@@ -1,12 +1,22 @@
 [
   {
+    "id": 15,
+    "title": "Champions League",
+    "date": "2025-09-30",
+    "excerpt": "Na Rams Park Stadium zmierzą się drużyny, których ambicje sięgają wysoko. Zapowiedź spotkania z Stambule.",
+    "url": "/felieton/wrzesien25/felieton-13-galatasaray/index.html",
+    "tag": "matchDay",
+    "priority": 1
+  },
+
+  {
     "id": 14,
     "title": "Mecz na szczycie",
     "date": "2025-09-27",
     "excerpt": "Na Selhust Park Stadium zmierzyły się drużyny, które były do tego starcia niezwyciężone w całej stawce. Tym razem szczeście sprzyjało przeciwnikom The Reds.",
     "url": "/felieton/wrzesien25/felieton-12-crystal-palace/index.html",
     "tag": "matchDay",
-    "priority": 1
+    "priority": 0.7
   },
 
   {
