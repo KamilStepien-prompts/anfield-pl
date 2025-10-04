@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- === SEO CORE === -->
+    <title>
+      Chelsea - Liverpool FC - matchDay - zapowwiedź, relacja, analiza,
+      komentarz | Anfield.pl
+    </title>
+
+    <!-- === OPEN GRAPH / SOCIAL === -->
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Anfield.pl" />
+    <meta property="og:url" content="https://anfield.pl/" />
+    <meta
+      property="og:title"
+      content="Anfield.pl — Liverpool FC Polska: felietony, analizy, Premier League"
+    />
+    <meta
+      property="og:description"
+      content="Autorskie felietony i analizy o Liverpool FC. MatchDay zapowiedzi, komentarze i Newsroom Premier League."
+    />
+    <meta
+      property="og:image"
+      content="https://anfield.pl/assets/img/social/og-anfield.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image:alt"
+      content="Anfield.pl — You'll Never Walk Alone, symboliczna brama do Anfield"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Anfield.pl — Liverpool FC Polska: felietony, analizy, Premier League"
+    />
+    <meta
+      name="twitter:description"
+      content="Autorskie felietony i analizy o Liverpool FC. MatchDay i Newsroom — bez tłumaczeń, bez kopiowania."
+    />
+    <meta
+      name="twitter:image"
+      content="https://anfield.pl/assets/img/social/og-anfield.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Anfield.pl — niezależny portal kibica Liverpool FC"
+    />
+
+    <!-- === BRANDING / ICONS === -->
+    <link rel="icon" href="/assets/img/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0b0b0e" />
+
+    <!-- === CSS === -->
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/matchday.css" />
+    <!-- live match module -->
+    <link rel="stylesheet" href="/assets/css/livematch.css" />
+
+    <!-- === STRUCTURED DATA (JSON-LD) === -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Anfield.pl",
+        "url": "https://anfield.pl/",
+        "inLanguage": "pl-PL",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Anfield.pl",
+          "url": "https://anfield.pl/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://anfield.pl/assets/img/social/og-anfield.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "sameAs": ["https://www.facebook.com/profile.php?id=61580257838714"]
+        },
+        "potentialAction": {
+          "@type": "ReadAction",
+          "target": "https://anfield.pl/"
+        }
+      }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6WX8HTYXM2"
+    ></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+
+    <!-- HEADER -->
+    <!-- HEADER -->
+    <header class="site-header livematch">
+      <div class="container navbar">
+        <a class="brand" href="/"
+          ><span class="brand__dot" aria-hidden="true"></span>
+          <small style="color: #ff2442; margin-left: 1rem">matchDay</small>
+          <span> ANFIELD.PL ⚡</span>
+        </a>
+        <!-- Desktop nav (root-relative links!) -->
+        <nav class="nav" aria-label="Główne">
+          <a href="https://anfield.pl/#feature">Artykuły</a>
+          <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+          <a href="https://anfield.pl/archive">Archiwum</a>
+          <a href="https://anfield.pl/about">O nas</a>
+        </nav>
+        <!-- Mobile nav toggle -->
+        <button
+          class="hamb"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Otwórz menu"
+        >
+          <span class="hamb__bar"></span>
+        </button>
+      </div>
+      <div class="off" id="mobile-menu" data-offcanvas>
+        <div class="off__panel container" data-offcanvas-panel>
+          <button class="off__close" data-nav-close aria-label="Zamknij menu">
+            ✕
+          </button>
+          <nav aria-label="Menu mobilne" class="off__nav">
+            <a href="https://anfield.pl/#feature">Artykuły</a>
+            <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+            <a href="https://anfield.pl/archive">Archiwum</a>
+            <a href="https://anfield.pl/about">O nas</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Match banner  -->
+    <section
+      class="match-banner"
+      role="region"
+      aria-label="Chelsea vs Liverpool — zapowiedź, składy, relacja z meczu"
+    >
+      <section class="container match-inner">
+        <section class="match-teams" aria-hidden="false">
+          <div class="team team--home">
+            <img
+              src="/assets/img/teams/chelsea.png"
+              alt="Chelsea — herb"
+              class="team__logo"
+            />
+          </div>
+          <div class="match-vs" aria-hidden="true">vs</div>
+          <div class="team team--away">
+            <img
+              src="/assets/img/teams/liverpool.png"
+              alt="Liverpool — herb"
+              class="team__logo"
+            />
+          </div>
+        </section>
+      </section>
+      <!--Data-->
+      <div class="match-meta">
+        <div class="match__title">Premier League - 7 kolejka</div>
+        <div class="match__when" aria-live="polite">
+          <strong>4 październik 2025 • sobota, 18:30</strong><br />
+          <div class="matchday__opponent">Chelsea - Liverpool</div>
+          <span class="match__venue">Stamford Bridge, Londyn</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="off" id="mobile-menu" data-offcanvas>
+      <div class="off__panel container" data-offcanvas-panel>
+        <button class="off__close" data-nav-close aria-label="Zamknij menu">
+          ✕
+        </button>
+        <nav class="off__nav" aria-label="Menu mobilne">
+          <a href="https://anfield.pl/#feature">Artykuły</a>
+          <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+          <a href="https://anfield.pl/archive">Archiwum</a>
+          <a href="https://anfield.pl/about">O nas</a>
+        </nav>
+      </div>
+    </div>
+
+    <main id="main" class="livematch">
+      <article class="article">
+        <!-- neutralizujemy lokalny header, zostaje globalny -->
+        <header class="site-header" style="display: none"></header>
+        <div class="spacer"></div>
+        <section class="match_intro">
+          <h2>
+            <strong>Lew ze Stamford Bridge kontra Liverbird z Anfield</strong>
+          </h2>
+          <h3>
+            Chelsea i Liverpool – dwa kluby z różnym rodowodem, które jednak dziś łączy kilka wspólnych mianowinków.
+          </h3>
+          <p>Na pierszy plan wysuwa się fakt, że oba kluby mają amerykańskie zarządy i ambicje na najwyższe cele piłkarskie. Historia Chelsea to dzielnica Londynu – prestiż, luksus i tradycja klasy wyższej, z herbem lwa trzymającego berło, które przypomina o lokalnym dziedzictwie. Liverpool to z kolei klub z serca industrialnego miasta, reprezentujący ducha klasy pracującej. Choć korzenie tych zespołów naznaczone są różnicami społecznymi, dziś ich spotkanie to przede wszystkim nowoczesny futbol, finansowane milionami inwestycji, rywalizacja globalnych marek i menedżerów z topu światowego futbolu</p>
+
+          <figure class="matchday_image">
+            <img
+              src="/felieton/pazdziernik25/chelsea/chelsea-lfc_rpg.webp"
+              alt=" Chelsea vs Liverpool. Premier League"
+            />
+            <figcaption>✨ graphics: nanoBanana, prompts: AnfieldPL </figcaption>
+          </figure>
+
+<h2>Starcie sportowych korporacji</h2>
+<p>
+  Liverpool to klub o głębokich korzeniach robotniczych i portowych, który przez dekady reprezentował ducha klasy pracującej. Obecnie, podobnie jak Chelsea, znajduje się pod amerykańskim zarządem, co odzwierciedla nowoczesne oblicze i rozwój obu klubów w erze globalnego futbolu.
+</p>
+<h2>Historia i tożsamość dwóch klubów</h2>
+<p>
+  Chelsea i Liverpool odzwierciedlają szerzej społeczne i kulturowe różnice między ich miastami i dzielnicami. Chelsea to dzielnica londyńska o prestiżu klasy wyższej, znana z luksusu, sztuki oraz bogatej historii, co znajduje odzwierciedlenie w herbie z lwem i berłem – symbolami władzy i tradycji. Jeżeli mówimy o historii to warto odnotować, że Chelsea zdobyła 6 tytułów mistrza kraju, z ostatnim w 2017 roku. Z czego 5 w erze Premier League. Obecnie jest własnością amerykańskiego konsorcjum BlueCo pod przewodnictwem Todda Boehly'ego, co wpisuje się w globalny trend fuzji futbolu ze światowym biznesem i inwestycjami.
+</p>
+<p>
+  Liverpool natomiast ma głębokie korzenie robotnicze i portowe — jego historia jest historią klasy pracującej, dla której piłka była i jest jednym z najważniejszych elementów tożsamości społecznej. Klub ten od lat zapisuje się nie tylko jako wielki sportowo, ale również jako symbol solidarności i ducha wspólnoty. Podobnie jak Chelsea, jest dziś w rękach amerykańskich właścicieli, co zmienia oblicze zarówno klubu, jak i sposobu, w jaki traktuje się futbol na najwyższym poziomie.
+</p>
+<h2>Czasy współczesne </h2>
+<p>Dziś spotkanie Chelsea z Liverpoolem to nie tylko konfrontacja na boisku, ale także symboliczny dialog między dwoma światami: prestiżem londyńskiej dzielnicy a energią i pasją miasta portowego. Jednak obie marki łączy jedna rzecz — nowoczesny, globalny futbol, w którym na równi liczą się historia, ambicje i milionowe inwestycje. To właśnie czyni ich wzajemne starcia tak fascynującymi dla kibiców na całym świecie.</p>
+
+<h2>Oczekiwania kontra rzeczywistość</h2>
+
+<p>Kolejne starcie Liverpool FC w stolicy. Ostatnia wizyta w Londynie na Selhurst Park była bolesna, The Reds ulegli Crystal Palace po straconym golu w ostatniej akcji meczu. Z kolei na Stamford Bridge, ostatnie zwycięstwo w ramach rozgrywek na szczeblu Premier League, drużyna z hrabstwa Mersey odnotowała 5 lat temu. Tak, w perspektywie czasu można powiedzieć, że jest to prehistoria o której już prawie nikt nie pamięta.</p>
+
+<!-- 5 ostatnich spotkań Chelsea - Liverpool na Stamford Bridge -->
+<section class="match-history-section">
+  <h3>Chelsea vs Liverpool <br> Premier Legue - Stamford Bridge</h3>
+</section>
+          
+  <table class="match-history" role="table" aria-label="5 ostatnich spotkań Chelsea vs Liverpool na Stamford Bridge">
+    <thead>
+      <tr>
+        <th scope="col">Data</th>
+        <th scope="col">Wynik</th>
+        <th scope="col">Rozgrywki</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><time datetime="2025-05-04">04.05.2025</time></td>
+        <td>Chelsea 3–1 Liverpool</td>
+        <td>Premier League</td>
+      </tr>
+      <tr>
+        <td><time datetime="2023-08-13">13.08.2023</time></td>
+        <td>Chelsea 1–1 Liverpool</td>
+        <td>Premier League</td>
+      </tr>
+      <tr>
+        <td><time datetime="2023-04-04">04.04.2023</time></td>
+        <td>Chelsea 0–0 Liverpool</td>
+        <td>Premier League</td>
+      </tr>
+      <tr>
+        <td><time datetime="2022-01-02">02.01.2022</time></td>
+        <td>Chelsea 2–2 Liverpool</td>
+        <td>Premier League</td>
+      </tr>
+      <tr>
+        <td><time datetime="2020-09-20">20.09.2020</time></td>
+        <td>Chelsea 0–2 Liverpool</td>
+        <td>Premier League</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Wieści z kadry</h2>
+<p> Dziś Liverpool staje przed kolejnym wyzwaniem, jakim jest mecz z The Blues – rywalem, który od dawna sprawia nam sporo problemów na londyńskim terenie. Trudności kadrowe, jakie ostatnio dopadły naszą drużynę – zwłaszcza kontuzja Alissona i problemy w ataku z Hugo Ekitike – nie pomagają w przełamaniu niekorzystnej passy. Jednak w historii The Reds nie brakowało sytuacji, gdy zespół w trudnym momencie potrafił pokazać charakter i wyciągnąć z opresji niesamowite futbolowe historie. </p>
+
+<p> Obecny sezon przyniósł sporo oczekiwań i nadziei, zwłaszcza po imponującym początku pod wodzą Arne Slota. Mimo dwóch ostatnich porażek w lidze i Lidze Mistrzów, nie wolno zapominać o sile zespołu, który wciąż dysponuje głęboką ławką i doświadczeniem w kluczowych momentach. </p>
+
+<h2>Świat należy do młodzieży</h2>
+
+<p>Chelsea ma najmłodszą drużynę w Premier League z średnią wieku około 23,4 lat, co jest rekordem w historii ligi. Młody wiek zespołu pokazuje świeżość i potencjał na przyszłość, choć doświadczenie może jeszcze brakować. Chelsea inwestuje w młode talenty, co stanowi ważny element strategii klubu, choć wymaga cierpliwości i czasu by przyniosło sukcesy</p>
+
+<p> Być może własnie ten fakt powoduje, że Chelsea to ekipa, która również przechodzi przez swoje zawirowania. Letnie transfery na wysokie kwoty nie przełożyły się jeszcze na stabilną formę, a drużyna prowadzona przez Enzo Marescę musi pokonać własne słabości, by w pełni wykorzystać talent dostępnych zawodników. </p>
+
+<h2>Epilog</h2>
+
+<p> Dzisiejszy pojedynek na Stamford Bridge to nie tylko kwestia trzech punktów – to walka o prestiż. Czy Liverpool pójdzie za ciosem i przełamie londyńską niemoc? A może Chelsea wykaże się większą determinacją i udowodni, że jest w stanie powalczyć o najwyższe cele? </p>
+
+<p> Niezależnie od wyniku, jedno jest pewne – emocji dziś nie zabraknie, a kibice The Reds mogą liczyć, że ich ulubieńcy zrobią wszystko, by kolejna wizyta w Londynie nie skończyła się rozczarowaniem. </p> 
+          
+<h2>Post scriptum - You'll Never Walk Alone w praktyce</h2>
+  <p>Florian Wirtz, sprowadzony do Liverpoolu latem 2025 za rekordową kwotę około 117 milionów funtów, wciąż przechodzi okres adaptacji do wymagań Premier League i nowej taktyki. </p>
+
+  <!--FLOREK-->
+  <figure class="matchday_image">
+    <img
+    src="/felieton/pazdziernik25/chelsea/Florek.webp"
+    alt=" Chelsea vs Liverpool. Premier League"
+  />
+  <figcaption>✨ foto: LiverpoolFC.com </figcaption>
+</figure>
+
+
+    <p> Jego gra cechuje się umiarkowaną skutecznością i solidną liczbą kontaktów z piłką oraz podań, choć zdarzają się błędy i niewykorzystane sytuacje. W Anfield.pl bronimy Wirtza, widząc w nim zawodnika o dużym potencjale, który potrzebuje czasu i wsparcia. Przykład Ryana Gravenbercha pokazuje, że cierpliwość wobec młodych talentów jest kluczowa, a czas często przynosi znaczący rozwój. Jest nadzieja, że Wirtz niedługo pokaże pełnię swoich możliwości i stanie się kluczową postacią The Reds. AnfieldPL stoi na stanowisku, że gównoburza w internecie o jego niespełnionych oczekiwaniach jest grubo przesadzona i przedwczesna.</p>
+</section>
+
+<h2>matchDay - relacja:</h2>
+
+
+
+        <!-- FOOTER -->
+  <footer class="site-footer">
+        <section class="read-next" aria-label="Czytaj dalej">
+          <h2>Czytaj dalej</h2>
+          <ul>
+                      <li>
+              <a href="/felieton/wrzesien25/felieton-08-tough-moor/index.html"
+                >Kryształowy Pałac nie dał się skruszyć </a
+              >
+              <span class="why"
+                >— o starciu w Londynie na Selhurst Park</span
+              >
+            </li>
+              <li>
+              <a
+                href="/felieton-06-wiatr-zmian-premier-league-kapital-usa/index.html"
+                >O tym do kogo należy Premier League </a
+              >
+              <span class="why"
+                >— kapitał z USA lokuje się na wyspach</span
+              >
+            </li>
+            <li>
+              <a
+                href="/felieton/wrzesien25/felieton-10-derby-liverpool/zapowiedz.html"
+                >This City is Ours</a
+              >
+              <span class="why"
+                >— sprawdź do kogo należy Liverpool</span
+              >
+            </li>
+          </ul>
+        </section>
+  <div class="spacer"></div>
+        <div class="post-footer-nav">
+          <a href="/index.html" class="btn btn-ghost"
+            >← Powrót na stronę główną</a
+          >
+        </div>
+
+        <section id="comments">
+          <h2>Chcesz podyskutować?</h2>
+          <p>
+            Zapraszamy na nasz profil FB:
+            <a
+              href="https://www.facebook.com/profile.php?id=61580257838714"
+              target="_blank"
+              rel="noopener"
+              >Anfield.pl na Facebooku →</a
+            >
+          </p>
+        </section>
+      </footer>
+      <!-- JS (defer) -->
+    <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/matchday.js" defer></script>
+    <script src="/assets/js/cookie-consent.js" defer></script>
+      <!-- Countdown script: ustaw kickoff jednoznacznie -->
+    <script src="/assets/js/timeline.js" defer></script>
+
+  </body>
+</html>
