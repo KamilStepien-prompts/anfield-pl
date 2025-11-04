@@ -146,16 +146,62 @@ body.theme-dark {
   }
 }
 
-/* header row */
+/* --- MOBILE: meta nad teams --- */
 .match-head {
-  position: relative;
   display: grid;
-  grid-template-columns: 1fr auto 1fr; /* teams | score | meta */
-  align-items: center;
-  column-gap: 1rem;
-  padding: 1rem;
-  cursor: pointer;
+  grid-template-areas:
+    "meta"
+    "teams";
+  grid-template-columns: 1fr;
+  row-gap: 0.5rem;
+  padding: 0.9rem 1rem;
 }
+.meta {
+  grid-area: meta;
+  text-align: left;
+  align-items: flex-start;
+  width: 100%;
+}
+.teams {
+  grid-area: teams;
+}
+
+/* skrócona vs pełna wersja meta */
+.meta-row {
+  font-size: 0.82rem;
+  line-height: 1.2;
+}
+.meta--full {
+  display: none;
+}
+.meta--compact {
+  display: block;
+  color: var(--accent-2);
+  font-weight: 200;
+}
+
+/* --- DESKTOP ≥640px: meta na prawo --- */
+@media (min-width: 640px) {
+  .match-head {
+    grid-template-areas: "teams meta";
+    grid-template-columns: 1fr var(--meta-w);
+    align-items: center;
+  }
+  .meta {
+    text-align: center;
+    align-items: center;
+    width: var(--meta-w);
+  }
+  .meta--full {
+    display: block;
+  }
+  .meta--compact {
+    display: none;
+    font-size: 18px;
+    font-weight: 200;
+  }
+}
+
 .match-head::after {
   content: "";
   position: absolute;
@@ -636,6 +682,70 @@ body.theme-dark {
     }
   }
 }
+/* --- domyślnie: mobile-first --- */
+.match-head {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 kolumna */
+  row-gap: 0.5rem;
+  padding: 0.9rem 1rem;
+}
+
+/* meta ma osobny wiersz NAD teams */
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: left;
+  width: 100%;
+}
+.meta-row {
+  font-size: 0.82rem;
+  line-height: 1.2;
+}
+.meta--full {
+  display: none;
+} /* na mobile chowamy pełną */
+.meta--compact {
+  display: block;
+  color: var(--muted);
+}
+.meta--compact {
+  color: var(--accent-2);
+  font-weight: 600;
+} /* pierwszy wiersz ma akcent? możesz zostawić */
+
+.teams {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--score-w) minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.8rem;
+}
+
+.score {
+  width: var(--score-w);
+  min-width: var(--score-w);
+  justify-self: center;
+}
+
+/* --- od tablet/desktop: meta wraca na prawo, pełna wersja --- */
+@media (min-width: 640px) {
+  .match-head {
+    grid-template-columns: 1fr var(--meta-w); /* teams | meta */
+    align-items: center;
+  }
+  .meta {
+    text-align: right;
+    align-items: flex-end;
+    width: var(--meta-w);
+  }
+  .meta--full {
+    display: block;
+  }
+  .meta--compact {
+    display: none;
+  }
+}
+
 .notes {
   margin: 0 0 0.35rem;
   color: var(--text);

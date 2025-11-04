@@ -2,6 +2,7 @@
   {
     "id": "2025-11-01-epl-liv-asv",
     "date": "2025-11-01",
+    "day": "Sobota",
     "competition": "Premier League",
     "round": "10 kolejka",
     "home": {
@@ -24,6 +25,7 @@
   {
     "id": "2025-10-29-efl-liv-cpl",
     "date": "2025-10-29",
+    "day": "Środa",
     "competition": "EFL Cup",
     "round": "4 kolejka",
     "home": {
@@ -45,6 +47,7 @@
   {
     "id": "2025-10-25-epl-brt-liv",
     "date": "2025-10-25",
+    "day": "Sobota",
     "competition": "Premier League",
     "round": "9 kolejka",
     "home": {
@@ -66,6 +69,7 @@
   {
     "id": "2025-10-22-cl-efr-liv",
     "date": "2025-10-22",
+    "day": "Wtorek",
     "competition": "Liga Mistrzów",
     "round": "3 kolejka",
     "home": {
@@ -87,6 +91,7 @@
   {
     "id": "2025-10-19-epl-liv-mnu",
     "date": "2025-10-19",
+    "day": "Niedziela",
     "competition": "Premier League",
     "round": "8 kolejka",
     "home": {
@@ -115,6 +120,7 @@
   {
     "id": "2025-10-04-epl-che-liv",
     "date": "2025-10-04",
+    "day": "Sobota",
     "competition": "Premier League",
     "round": "7 kolejka",
     "home": {
@@ -136,6 +142,7 @@
   {
     "id": "2025-09-30-cl-gal-liv",
     "date": "2025-09-30",
+    "day": "Wtorek",
     "competition": "Liga Mistrzów",
     "round": "2 kolejka",
     "home": {
@@ -166,6 +173,7 @@
   {
     "id": "2025-09-27-epl-cpl-liv",
     "date": "2025-09-27",
+    "day": "Sobota",
     "competition": "Premier League",
     "round": "6 kolejka",
     "home": {
@@ -189,6 +197,7 @@
   {
     "id": "2025-09-23-efl-liv-sou",
     "date": "2025-09-23",
+    "day": "Wtorek",
     "competition": "EFL Cup",
     "round": "3 kolejka",
     "home": {
@@ -212,6 +221,7 @@
   {
     "id": "2025-09-20-epl-liv-eve",
     "date": "2025-09-20",
+    "day": "Sobota",
     "competition": "Premier League",
     "round": "5 kolejka",
     "home": {
@@ -236,6 +246,7 @@
   {
     "id": "2025-09-17-cl-liv-rma",
     "date": "2025-09-17",
+    "day": "Wtorek",
     "competition": "Liga Mistrzów",
     "round": "1 kolejka",
     "home": {
@@ -260,6 +271,7 @@
   {
     "id": "2025-09-14-epl-bur-liv",
     "date": "2025-09-14",
+    "day": "Niedziela",
     "competition": "Premier League",
     "round": "4 kolejka",
     "home": {
@@ -284,6 +296,7 @@
   {
     "id": "2025-08-31-epl-liv-ars",
     "date": "2025-08-31",
+    "day": "Niedziela",
     "competition": "Premier League",
     "round": "3 kolejka",
     "home": {
@@ -307,6 +320,7 @@
   {
     "id": "2025-08-25-epl-new-liv",
     "date": "2025-08-25",
+    "day": "Poniedziałek",
     "competition": "Premier League",
     "round": "2 kolejka",
     "home": {
@@ -330,6 +344,7 @@
   {
     "id": "2025-08-15-epl-liv-bou",
     "date": "2025-08-15",
+    "day": "Sobota",
     "competition": "Premier League",
     "round": "1 kolejka",
     "home": {

@@ -105,8 +105,48 @@
       .format(d)
       .replace(".", "");
   }
+  function fmtWeekdayPL(d) {
+    const s = new Intl.DateTimeFormat("pl-PL", { weekday: "long" }).format(d);
+    return s.charAt(0).toUpperCase() + s.slice(1); // „Wtorek”
+  }
+  function abbrWeekdayPL(full) {
+    // Wtorek -> Wt, Niedziela -> Nd, Środa -> Śr
+    const map = {
+      Poniedziałek: "Pn",
+      Wtorek: "Wt",
+      Środa: "Śr",
+      Czwartek: "Cz",
+      Piątek: "Pt",
+      Sobota: "Sb",
+      Niedziela: "Nd",
+    };
+    return map[full] || full.slice(0, 2);
+  }
 
   // ------- render -------
+  // DODAJ u góry pliku:
+  const COMP_ABBR = {
+    "Premier League": "PL",
+    "Liga Mistrzów": "CL",
+    "EFL Cup": "EFL",
+    "FA Cup": "FA",
+  };
+  function shortRound(comp, roundText = "") {
+    // wyciągnij numer kolejki
+    const m = /(\d+)/.exec(roundText || "");
+    const n = m ? m[1] : "";
+    if (comp === "Premier League") return n ? `GW ${n}` : "";
+    if (/Liga Mistrzów/i.test(comp)) return n ? `MD ${n}` : roundText; // Matchday
+    return n ? `R${n}` : roundText; // Runda 3 itd.
+  }
+  function fmtDateShort(d) {
+    // 04.10.25
+    const dd = String(d.getDate()).padStart(2, "0");
+    const mm = String(d.getMonth() + 1).padStart(2, "0");
+    const yy = String(d.getFullYear()).slice(-2);
+    return `${dd}.${mm}.${yy}`;
+  }
+
   function renderOne(m) {
     const resClass =
       m._res && ["win", "lose", "draw", "upcoming"].includes(m._res)
@@ -123,9 +163,34 @@
 
     const metaComp = [m.competition, m.round].filter(Boolean).join(" • ");
     const dateTxt = `${fmtDate(m._dt)}${m.kickoff ? `, ${m.kickoff}` : ""}`;
+    // W renderOne(), po metaComp i dateTxt:
+    const compShort = COMP_ABBR[m.competition] || m.competition;
+    const roundShort = shortRound(m.competition, m.round);
+    const dateShort = `${fmtDateShort(m._dt)}${
+      m.kickoff ? `, ${m.kickoff}` : ""
+    }`;
+    const dayFull = m.day || fmtWeekdayPL(m._dt);
+    const dayShort = abbrWeekdayPL(dayFull);
+
+    // pełne i skrócone wersje (z dniem)
+    const metaFull = [m.competition, m.round, `${dayFull}, ${dateTxt}`]
+      .filter(Boolean)
+      .join(" • ");
+    const metaCompact = [
+      COMP_ABBR[m.competition] || m.competition,
+      shortRound(m.competition, m.round),
+      `${dayShort} • ${fmtDateShort(m._dt)}${
+        m.kickoff ? `, ${m.kickoff}` : ""
+      }`,
+    ]
+      .filter(Boolean)
+      .join(" • ");
+
     const detailsId = `details-${m.id}`;
 
     const stdLinks = `
+
+    
     ${
       m.links?.preview
         ? `<a class="pill" href="${m.links.preview}">Zapowiedź</a>`
@@ -193,11 +258,10 @@
           </div>
         </div>
 
-        <div class="meta">
-          <div class="comp">${metaComp}</div>
-          <div class="date">${dateTxt}</div>
-        </div>
-      </div>
+    <div class="meta">
+  <div class="meta-row meta--full">${metaFull}</div>
+  <div class="meta-row meta--compact">${metaCompact}</div>
+</div>
 
       <div id="${detailsId}" class="match-details">
         ${notes}
@@ -509,7 +573,8 @@ async function loadUpcoming() {
   }
 }
 document.addEventListener("DOMContentLoaded", loadUpcoming);
-/* ===== nadchodzące mecze – belka przewijana ===== */
+/* ===== nadchodzące mecze belka przewijana ===== */
+
 // === NADCHODZĄCE MECZE — autofiltr po czasie ===
 (function setupUpcomingBar() {
   const FILE = "/assets/data/fixtures_lfc_2025-26.json";
@@ -522,6 +587,13 @@ document.addEventListener("DOMContentLoaded", loadUpcoming);
     const [hh = "00", mm = "00"] = (t || "00:00").split(":");
     // Date w strefie użytkownika (PL ok) – wystarczy do naszego porównania
     return new Date(`${d}T${hh.padStart(2, "0")}:${mm.padStart(2, "0")}:00`);
+  }
+  function fmtWeekdayPL(d) {
+    const s = new Intl.DateTimeFormat("pl-PL", { weekday: "long" }).format(d);
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  function getDayLabel(m) {
+    return m.day || fmtWeekdayPL(parseDT(m.date, m.kickoff));
   }
 
   function isFutureOrLive(m, now = new Date()) {
@@ -561,9 +633,10 @@ document.addEventListener("DOMContentLoaded", loadUpcoming);
             <span>vs</span>
             <img src="${m.away.logo}" alt="${m.away.name}">
           </div>
-          <div class="upcoming-date">${m.date}${
+          <div class="upcoming-date">${getDayLabel(m)} • ${m.date}${
             m.kickoff ? `, ${m.kickoff}` : ""
           }</div>
+
           <div class="upcoming-comp">${m.competition}</div>
         </div>
       `
