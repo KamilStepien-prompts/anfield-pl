@@ -9,7 +9,7 @@ async function loadPosts() {
     posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
     // opcjonalne filtrowanie
-    const maxAgeInDays = 10; // np. 7 dni
+    const maxAgeInDays = 14; // np. 14 dni
     const today = new Date();
     const recentPosts = posts.filter((p) => {
       const pd = new Date(p.date);

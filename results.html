@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Liverpool FC — Anfield.PL - wyniki</title>
+    <meta name="google-site-verification" content="G-6WX8HTYXM2" />
+    <meta
+      name="description"
+      content="Najnowsze wyniki Liverpoolu. Premier League i puchary. Autorski serwis Anfield.PL."
+    />
+    <link rel="canonical" href="https://anfield.pl/" />
+    <meta
+      name="robots"
+      content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+    />
+    <link rel="preconnect" href="/" />
+    <!-- === OPEN GRAPH / SOCIAL === -->
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Anfield.pl" />
+    <meta property="og:url" content="https://anfield.pl/" />
+    <meta
+      property="og:title"
+      content="Anfield.pl — Liverpool FC Polska: felietony, analizy, Premier League"
+    />
+    <meta
+      property="og:description"
+      content="Autorskie felietony i analizy o Liverpool FC. MatchDay zapowiedzi, komentarze i Newsroom Premier League."
+    />
+    <meta
+      property="og:image"
+      content="https://anfield.pl/assets/img/social/og-anfield.jpg"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta
+      property="og:image:alt"
+      content="Anfield.pl — You'll Never Walk Alone ,symboliczna brama do Anfield"
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Anfield.pl — Liverpool FC Polska: felietony, analizy, Premier League"
+    />
+    <meta
+      name="twitter:description"
+      content="Autorskie felietony i analizy o Liverpool FC. MatchDay i Newsroom — bez tłumaczeń, bez kopiowania."
+    />
+    <meta
+      name="twitter:image"
+      content="https://anfield.pl/assets/img/social/og-anfield.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Anfield.pl — niezależny portal kibica Liverpool FC"
+    />
+
+    <!-- === BRANDING / ICONS === -->
+    <link rel="icon" href="/assets/img/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png" />
+    <meta name="theme-color" content="#0b0b0e" />
+    <!-- istniejące style projektu -->
+    <!-- === CSS === -->
+    <link rel="stylesheet" href="/assets/css/base.css" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/matchday.css" />
+    <link rel="stylesheet" href="/assets/css/results.css" />
+    <!-- === STRUCTURED DATA (JSON-LD) === -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Anfield.pl",
+        "url": "https://anfield.pl/",
+        "inLanguage": "pl-PL",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Anfield.pl",
+          "url": "https://anfield.pl/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://anfield.pl/assets/img/social/og-anfield.jpg",
+            "width": 1200,
+            "height": 630
+          },
+          "sameAs": ["https://www.facebook.com/profile.php?id=61580257838714"]
+        },
+        "potentialAction": {
+          "@type": "ReadAction",
+          "target": "https://anfield.pl/"
+        }
+      }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6WX8HTYXM2"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-6WX8HTYXM2");
+    </script>
+    <!--- END Google tag -->
+  </head>
+  <body class="theme-dark">
+    <a class="skip-link" href="#main">Przejdź do treści</a>
+    <!-- HEADER -->
+    <header class="site-header" role="banner">
+      <div class="container navbar">
+        <a class="brand" href="/">
+          <span class="brand__dot" aria-hidden="true"></span>
+          <span>ANFIELD.PL ⚡</span>
+        </a>
+
+        <!-- Desktop nav (root-relative links!) -->
+        <nav class="nav" aria-label="Główna nawigacja">
+          <a href="https://anfield.pl/results.html">Terminarz</a>
+          <a href="https://anfield.pl/#feature">Artykuły</a>
+          <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+          <a href="https://anfield.pl/archive">Archiwum</a>
+          <a href="https://anfield.pl/about">O nas</a>
+        </nav>
+        <!-- Mobile nav toggle -->
+        <button
+          class="hamb"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Otwórz menu"
+        >
+          <span class="hamb__bar"></span>
+        </button>
+      </div>
+      <div class="off" id="mobile-menu" data-offcanvas>
+        <div class="off__panel container" data-offcanvas-panel>
+          <button class="off__close" data-nav-close aria-label="Zamknij menu">
+            ✕
+          </button>
+          <nav aria-label="Menu mobilne" class="off__nav">
+            <a href="https://anfield.pl/results.html">Terminarz</a>
+            <a href="https://anfield.pl/#feature">Artykuły</a>
+            <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+            <a href="https://anfield.pl/archive">Archiwum</a>
+            <a href="https://anfield.pl/about">O nas</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="app" class="container results-page">
+      <h1 class="page-title">
+        Terminarz<span id="season-label">(sezon 2025/26)</span>
+      </h1>
+
+      <!-- === NADCHODZĄCE MECZE === -->
+      <section
+        id="upcoming-bar"
+        class="upcoming-bar"
+        aria-label="Najbliższe mecze"
+      >
+        <div class="upcoming-header">
+          <h2 class="upcoming-title">Najbliższe mecze</h2>
+        </div>
+        <div class="upcoming-scroll" id="upcoming-scroll">
+          <!-- JS wstawi 5 kart -->
+        </div>
+      </section>
+
+      <!-- Pasek sterowania -->
+      <section class="controls" aria-label="Filtry wyników">
+        <div class="controls-row">
+          <label class="select">
+            <h4 class="outcoming-title">Rozegrane</h4>
+            <span class="label">Sezon</span>
+            <select id="season-select" aria-label="Wybierz sezon">
+              <option value="2025-26" selected>2025/26</option>
+              <!-- przyszłe sezony dojdą dynamicznie lub ręcznie -->
+            </select>
+          </label>
+
+          <div class="chips" role="tablist" aria-label="Filtr rozgrywek">
+            <button
+              class="chip is-active"
+              data-comp="all"
+              role="tab"
+              aria-selected="true"
+            >
+              Wszystkie
+            </button>
+            <button class="chip" data-comp="Premier League" role="tab">
+              Premier League
+            </button>
+            <button class="chip" data-comp="Liga Mistrzów" role="tab">
+              Liga Mistrzów
+            </button>
+            <button class="chip" data-comp="FA Cup" role="tab">FA Cup</button>
+            <button class="chip" data-comp="EFL Cup" role="tab">EFL Cup</button>
+          </div>
+
+          <div class="chips" role="tablist" aria-label="Filtr wyniku">
+            <button
+              class="chip is-active"
+              data-result="all"
+              role="tab"
+              aria-selected="true"
+            >
+              W/R/P
+            </button>
+            <button class="chip" data-result="win" role="tab">W</button>
+            <button class="chip" data-result="draw" role="tab">R</button>
+            <button class="chip" data-result="lose" role="tab">P</button>
+          </div>
+        </div>
+
+        <div class="searchbox">
+          <input
+            id="search-input"
+            type="search"
+            inputmode="search"
+            placeholder="Szukaj rywala…"
+            aria-label="Wyszukaj po nazwie rywala"
+          />
+        </div>
+      </section>
+
+      <!-- Lista wyników (renderowana przez JS) -->
+      <section
+        id="results-list"
+        class="results-list"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        <!-- JS wstawi tu elementy meczów -->
+      </section>
+
+      <div class="load-more-wrap">
+        <button id="load-more" class="btn" hidden>Pokaż więcej</button>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="container">
+        <p>© 2025 ANFIELD.PL</p>
+        <p class="muted">Niezależny projekt, nieoficjalny serwis.</p>
+        <p>
+          <a href="mailto:kontakt@doublebrain.pl">kontakt@doublebrain.pl</a> |
+          <a
+            href="https://www.facebook.com/profile.php?id=61580257838714"
+            target="_blank"
+            rel="noopener"
+            >FB Anfield.pl</a
+          >
+        </p>
+        <p>
+          Projekt realizowany przez: <br />
+          <a
+            class="brand-link"
+            href="https://doublebrain.pl"
+            target="_blank"
+            rel="noopener"
+            aria-label="Otwórz stronę DoubleBrain w nowej karcie"
+            >DoubleBrain™
+          </a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- Konfiguracja strony (domyślny sezon) -->
+    <script>
+      window.ANFLD_RESULTS = {
+        season: "2025-26",
+        perPage: 20,
+      };
+    </script>
+    <!-- logika podstrony wyników -->
+    <script src="/assets/js/results.js" defer></script>
+    <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/posts.js" defer></script>
+    <script src="/assets/js/matchday.js" defer></script>
+    <script src="/assets/js/newsroom.js" defer></script>
+    <script src="/assets/js/app.js" defer></script>
+    <script src="/assets/js/cookie-consent.js" defer></script>
+    <script src="/assets/js/archive-results.js" defer></script>
+  </body>
+</html>

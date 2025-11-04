@@ -124,6 +124,24 @@ button:focus-visible {
 /* ============================
    BUTTONS / BADGES
    ============================ */
+.btn.pulse {
+  position: relative;
+  background: #e11d48;
+  animation: pulseGlow 2.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(225, 29, 72, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(225, 29, 72, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(225, 29, 72, 0);
+  }
+}
+
 .btn {
   display: inline-block;
   padding: 0.7rem 1rem;
@@ -205,3 +223,122 @@ button:focus-visible {
     animation: none !important;
   }
 }
+/* Archive results - improved (responsive) */
+.archive-results-section {
+  margin: 32px 0;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+/* Each match is a block. The visible row is a button (.match-row) */
+.match {
+  margin-bottom: 12px;
+}
+.match-row {
+  display: grid;
+  grid-template-columns: 1fr 88px 120px;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: transparent;
+  transition: background 0.14s, transform 0.12s;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.02);
+}
+.match-row:hover {
+  background: rgba(255, 255, 255, 0.02);
+  transform: translateY(-2px);
+}
+
+/* Left column: teams */
+.match-row .teams {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+}
+.team {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.team .name {
+  color: #a1a1aa;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.match-row .vs {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 600;
+  padding: 0 8px;
+  font-size: 14px;
+}
+
+/* Center column: score badge */
+.match-row .score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.badge {
+  width: 100%;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 700;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) inset;
+}
+.badge.win {
+  background: #17a661;
+} /* green */
+.badge.lose {
+  background: #d43f3f;
+} /* red */
+.badge.draw {
+  background: #6c757d;
+} /* grey */
+
+/* Right column: meta (date / comp) */
+.match-row .meta {
+  text-align: right;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Details panel below the row */
+.match-details {
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.01);
+  border-left: 1px solid rgba(255, 255, 255, 0.02);
+  border-right: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  border-radius: 0 0 10px 10px;
+  padding: 0 14px;
+}
+.match-details.open {
+  padding: 12px 14px 16px 14px;
+}
+
+/* list of linked articles */
+.match-details ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.match-details li + li {
+  margin-top: 8px;
+}
+.m atch-details a {
+  color: var(--red-2);
+  font-weight: 600;
+}
+.match-details a:hover {
+  text-decoration: underline;
+}
+/* Team border colors */

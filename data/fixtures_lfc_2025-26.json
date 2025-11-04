@@ -1,0 +1,191 @@
+[
+  {
+    "date": "2025-11-04",
+    "kickoff": "21:00",
+    "competition": "Liga Mistrzów",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "away": {
+      "name": "Real Madrid",
+      "short": "RMA",
+      "logo": "/assets/logos/CL/real_madrid.svg"
+    },
+    "venue": "Anfield",
+    "status": "upcoming"
+  },
+
+  {
+    "date": "2025-11-09",
+    "kickoff": "17:30",
+    "competition": "Premier League",
+    "home": {
+      "name": "Manchester City",
+      "short": "MCI",
+      "logo": "/assets/logos/manchester_city.svg"
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "venue": "Etihad Stadium",
+    "status": "upcoming"
+  },
+
+  {
+    "date": "2025-11-22",
+    "kickoff": "16:00",
+    "competition": "Premier League",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "away": {
+      "name": "Nottingham Forest",
+      "short": "NFO",
+      "logo": "/assets/logos/nottingham_forest.svg"
+    },
+    "venue": "Anfield",
+    "status": "upcoming"
+  },
+  {
+    "date": "2025-11-26",
+    "kickoff": "21:00",
+    "competition": "Liga Mistrzów",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "away": {
+      "name": "PSV Eindhoven",
+      "short": "PSV",
+      "logo": "/assets/logos/CL/psv.svg"
+    },
+    "venue": "Anfield",
+    "status": "upcoming"
+  },
+  {
+    "date": "2025-11-30",
+    "kickoff": "15:05",
+    "competition": "Premier League",
+    "home": {
+      "name": "West Ham United",
+      "short": "WHU",
+      "logo": "/assets/logos/west_ham.svg"
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "venue": "London Stadium",
+    "status": "upcoming"
+  },
+  {
+    "date": "2025-12-03",
+    "kickoff": "21:15",
+    "competition": "Premier League",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "away": {
+      "name": "Sunderland",
+      "short": "SUN",
+      "logo": "/assets/logos/sunderland.svg"
+    },
+    "venue": "Anfield",
+    "status": "upcoming"
+  },
+  {
+    "date": "2025-12-06",
+    "kickoff": "18:30",
+    "competition": "Premier League",
+    "home": {
+      "name": "Leeds United",
+      "short": "LEE",
+      "logo": "/assets/logos/leeds.svg"
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "venue": "Elland Road",
+    "status": "upcoming"
+  },
+  {
+    "date": "2025-12-09",
+    "kickoff": "21:00",
+    "competition": "Liga Mistrzów",
+    "home": {
+      "name": "Inter",
+      "short": "INT",
+      "logo": "/assets/logos/CL/inter.svg"
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "venue": "Stadio Giuseppe Meazza",
+    "status": "upcoming"
+  },
+  {
+    "date": "2025-12-13",
+    "kickoff": "16:00",
+    "competition": "Premier League",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "away": {
+      "name": "Brighton & Hove Albion",
+      "short": "BHA",
+      "logo": "/assets/logos/brighton.svg"
+    },
+    "venue": "Anfield",
+    "status": "upcoming"
+  },
+  {
+    "date": "2025-12-20",
+    "kickoff": "18:30",
+    "competition": "Premier League",
+    "home": {
+      "name": "Tottenham Hotspur",
+      "short": "TOT",
+      "logo": "/assets/logos/tottenham.svg"
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "venue": "Tottenham Hotspur Stadium",
+    "status": "upcoming"
+  },
+  {
+    "date": "2025-12-27",
+    "kickoff": "16:00",
+    "competition": "Premier League",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "away": {
+      "name": "Wolverhampton Wanderers",
+      "short": "WOL",
+      "logo": "/assets/logos/wolves.svg"
+    },
+    "venue": "Anfield",
+    "status": "upcoming"
+  }
+]

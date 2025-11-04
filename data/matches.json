@@ -54,5 +54,13 @@
     "opponent": "Man United",
     "home": true,
     "round": "Gameweek 8"
+  },
+  {
+    "id": 8,
+    "competition": "Champions League",
+    "date": "2025-11-04T22:00:00+02:00",
+    "opponent": "Real Madryt",
+    "home": true,
+    "round": "Group Stage - Matchday 4"
   }
 ]

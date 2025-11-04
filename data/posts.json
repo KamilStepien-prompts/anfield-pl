@@ -1,5 +1,65 @@
 [
   {
+    "id": 22,
+    "title": "EFL Cup: eksperymentalny Liverpool odpada z pucharu",
+    "date": "2025-10-29",
+    "excerpt": "Crystal Palace wygrywa 3:0 z Liverpoolem w meczu 4. rundy EFL Cup. The Reds wystawili młody skład i nie sprostali ambitnej drużynie z Selhurst Park.",
+    "url": "/felieton/pazdziernik25/palace/relacja.html",
+    "tag": "matchDay",
+    "priority": 1
+  },
+
+  {
+    "id": 21,
+    "title": "Pszczoły kąsają Liverpool",
+    "date": "2025-10-25",
+    "excerpt": "Brentford pokonuje Liverpool 3:2 na własnym terenie. The Reds nie potrafią znaleźć sposobu na wyjście z kryzysu. Czwarta porażka z rzędu w Premier League.",
+    "url": "/felieton/pazdziernik25/brentford/relacja.html",
+    "tag": "matchDay",
+    "priority": 1
+  },
+
+  {
+    "id": 20,
+    "title": "Liga Mistrzów na otarcie łez",
+    "date": "2025-10-22",
+    "excerpt": "Eintracht Frankfurt okazał się niezwykle gościnny. Liverpool rozbił niemiecki klub 5:1 i wraca na zwycięską ścieżkę po czterech porażkach z rzędu.",
+    "url": "/felieton/pazdziernik25/eintracht/relacja.html",
+    "tag": "matchDay",
+    "priority": 1
+  },
+
+  {
+    "id": 19,
+    "title": "Kac Gigant po setce na Anfield",
+    "date": "2025-10-19",
+    "excerpt": "Czerwone Diabły z pierwszym zwycięstwem nad Liverpoolem na Anfield od 2016 roku.  Nieudany wieczór The Reds z setką na Anfield. Bramka Harry'ego Maguire'a przesądziła o losach derbów Anglii.",
+    "url": "/felieton/pazdziernik25/manu/relacja.html",
+    "tag": "matchDay",
+    "priority": 1
+  },
+
+  {
+    "id": 18,
+    "title": "Derby Anglii - zapowiedź",
+    "date": "2025-10-18",
+    "excerpt": "United na Anfield nie potrafią wygrać blisko od dekady. Czy dalej rządy w północno-zachodniej Anglii będą należały do Liverpoolu? A może słabsza forma The Reds da szansę Czerwonym Diabłom?",
+    "url": "/felieton/pazdziernik25/manu/index.html",
+    "tag": "zapowiedź",
+    "priority": 1
+  },
+
+  {
+    "id": 17,
+    "title": "Chelsea vs Liverpool",
+    "date": "2025-10-04",
+    "excerpt": "Kolejna wycieczka do Londynu nieudana. The Reds nie potrafią przełamać Stamford Bridge.",
+    "url": "/felieton/pazdziernik25/chelsea/index.html",
+    "tag": "matchDay",
+    "priority": 1
+  },
+
+  {
     "id": 16,
     "title": "Lwy Stambułu",
     "date": "2025-10-01",

@@ -1,0 +1,350 @@
+[
+  {
+    "id": "2025-11-01-epl-liv-asv",
+    "date": "2025-11-01",
+    "competition": "Premier League",
+    "round": "10 kolejka",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 2
+    },
+    "away": {
+      "name": "Aston Villa",
+      "short": "ASV",
+      "logo": "/assets/logos/aston_villa.svg",
+      "score": 0
+    },
+    "venue": "Anfield",
+    "status": "FT",
+    "links": { "report": "/felieton/2025/01/liv-asv-relacja.html" }
+  },
+
+  {
+    "id": "2025-10-29-efl-liv-cpl",
+    "date": "2025-10-29",
+    "competition": "EFL Cup",
+    "round": "4 kolejka",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 0
+    },
+    "away": {
+      "name": "Crystal Palace",
+      "short": "CPL",
+      "logo": "/assets/logos/crystal_palace.svg",
+      "score": 3
+    },
+    "venue": "Anfield",
+    "status": "FT",
+    "links": { "report": "/felieton/pazdziernik25/palace/relacja.html" }
+  },
+  {
+    "id": "2025-10-25-epl-brt-liv",
+    "date": "2025-10-25",
+    "competition": "Premier League",
+    "round": "9 kolejka",
+    "home": {
+      "name": "Brentford",
+      "short": "BRE",
+      "logo": "/assets/logos/brentford.svg",
+      "score": 3
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 2
+    },
+    "venue": "Gtech Community Stadium",
+    "status": "FT",
+    "links": { "report": "/felieton/pazdziernik25/brentford/relacja.html" }
+  },
+  {
+    "id": "2025-10-22-cl-efr-liv",
+    "date": "2025-10-22",
+    "competition": "Liga Mistrzów",
+    "round": "3 kolejka",
+    "home": {
+      "name": "Eintracht Frankfurt",
+      "short": "EFR",
+      "logo": "/assets/logos/CL/eintracht.svg",
+      "score": 1
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 5
+    },
+    "venue": "Deutsche Bank Park",
+    "status": "FT",
+    "links": { "report": "/felieton/pazdziernik25/eintracht/relacja.html" }
+  },
+  {
+    "id": "2025-10-19-epl-liv-mnu",
+    "date": "2025-10-19",
+    "competition": "Premier League",
+    "round": "8 kolejka",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 1
+    },
+    "away": {
+      "name": "Manchester United",
+      "short": "MNU",
+      "logo": "/assets/logos/manchester_united.svg",
+      "score": 2
+    },
+    "venue": "Anfield",
+    "status": "FT",
+    "links": { "report": "/felieton/pazdziernik25/manu/relacja.html" },
+    "articles": [
+      {
+        "type": "zapowiedz",
+        "title": "Setka na Anfield",
+        "url": "/felieton/pazdziernik25/manu/index.html"
+      }
+    ]
+  },
+  {
+    "id": "2025-10-04-epl-che-liv",
+    "date": "2025-10-04",
+    "competition": "Premier League",
+    "round": "7 kolejka",
+    "home": {
+      "name": "Chelsea",
+      "short": "CHE",
+      "logo": "/assets/logos/chelsea.svg",
+      "score": 2
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 1
+    },
+    "venue": "Stamford Bridge",
+    "status": "FT",
+    "links": { "report": "/felieton/pazdziernik25/chelsea/index.html" }
+  },
+  {
+    "id": "2025-09-30-cl-gal-liv",
+    "date": "2025-09-30",
+    "competition": "Liga Mistrzów",
+    "round": "2 kolejka",
+    "home": {
+      "name": "Galatasaray",
+      "short": "GAL",
+      "logo": "/assets/logos/CL/galatasaray.svg",
+      "score": 1
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 0
+    },
+    "venue": "Rams Park",
+    "status": "FT",
+    "links": {
+      "report": "/felieton/wrzesien25/felieton-13-galatasaray/relacja.html"
+    },
+    "articles": [
+      {
+        "type": "zapowiedz",
+        "title": "Stambuł czeka na Liverpool",
+        "url": "/felieton/wrzesien25/felieton-13-galatasaray/index.html"
+      }
+    ]
+  },
+  {
+    "id": "2025-09-27-epl-cpl-liv",
+    "date": "2025-09-27",
+    "competition": "Premier League",
+    "round": "6 kolejka",
+    "home": {
+      "name": "Crystal Palace",
+      "short": "CPL",
+      "logo": "/assets/logos/crystal_palace.svg",
+      "score": 2
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 1
+    },
+    "venue": "Selhurst Park",
+    "status": "FT",
+    "links": {
+      "report": "/felieton/wrzesien25/felieton-12-crystal-palace/index.html"
+    }
+  },
+  {
+    "id": "2025-09-23-efl-liv-sou",
+    "date": "2025-09-23",
+    "competition": "EFL Cup",
+    "round": "3 kolejka",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 2
+    },
+    "away": {
+      "name": "Southampton",
+      "short": "SOU",
+      "logo": "/assets/logos/southampton.svg",
+      "score": 1
+    },
+    "venue": "Anfield",
+    "status": "FT",
+    "links": {
+      "report": "/felieton/wrzesien25/felieton-11-efl-cup/index.html"
+    }
+  },
+  {
+    "id": "2025-09-20-epl-liv-eve",
+    "date": "2025-09-20",
+    "competition": "Premier League",
+    "round": "5 kolejka",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 2
+    },
+    "away": {
+      "name": "Everton",
+      "short": "EVE",
+      "logo": "/assets/logos/everton.svg",
+      "score": 1
+    },
+    "venue": "Anfield",
+    "status": "FT",
+    "links": {
+      "report": "/felieton/wrzesien25/felieton-10-derby-liverpool/index.html"
+    }
+  },
+
+  {
+    "id": "2025-09-17-cl-liv-rma",
+    "date": "2025-09-17",
+    "competition": "Liga Mistrzów",
+    "round": "1 kolejka",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 3
+    },
+    "away": {
+      "name": "Atletico Madryt",
+      "short": "ATM",
+      "logo": "/assets/logos/CL/atletico_madrid.svg",
+      "score": 2
+    },
+    "venue": "Anfield",
+    "status": "FT",
+    "links": {
+      "report": "/felieton/wrzesien25/felieton-09-liverpool-atletico/index.html"
+    }
+  },
+
+  {
+    "id": "2025-09-14-epl-bur-liv",
+    "date": "2025-09-14",
+    "competition": "Premier League",
+    "round": "4 kolejka",
+    "home": {
+      "name": "Burnley",
+      "short": "BUR",
+      "logo": "/assets/logos/burnley.svg",
+      "score": 1
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 2
+    },
+    "venue": "Turf Moor",
+    "status": "FT",
+    "links": {
+      "report": "/felieton/wrzesien25/felieton-08-tough-moor/index.html"
+    }
+  },
+
+  {
+    "id": "2025-08-31-epl-liv-ars",
+    "date": "2025-08-31",
+    "competition": "Premier League",
+    "round": "3 kolejka",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 1
+    },
+    "away": {
+      "name": "Arsenal",
+      "short": "ARS",
+      "logo": "/assets/logos/arsenal.svg",
+      "score": 0
+    },
+    "venue": "Anfield",
+    "status": "FT",
+    "links": {
+      "report": "/felieton/wrzesien25/felieton-02-dominik-szoboszlai-oczekiwania/index.html"
+    }
+  },
+  {
+    "id": "2025-08-25-epl-new-liv",
+    "date": "2025-08-25",
+    "competition": "Premier League",
+    "round": "2 kolejka",
+    "home": {
+      "name": "Newcastle United",
+      "short": "NEW",
+      "logo": "/assets/logos/newcastle.svg",
+      "score": 2
+    },
+    "away": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 3
+    },
+    "venue": "St James' Park",
+    "status": "FT",
+    "links": {
+      "report": "/felieton/wrzesien25/felieton-01-salah-vs-isak-wartosci-vs-rekord/index.html"
+    }
+  },
+  {
+    "id": "2025-08-15-epl-liv-bou",
+    "date": "2025-08-15",
+    "competition": "Premier League",
+    "round": "1 kolejka",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 4
+    },
+    "away": {
+      "name": "Bournemouth",
+      "short": "BOU",
+      "logo": "/assets/logos/bournemouth.svg",
+      "score": 2
+    },
+    "venue": "Anfield",
+    "status": "FT"
+  }
+]

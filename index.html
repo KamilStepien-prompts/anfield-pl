@@ -94,6 +94,7 @@
 
           <!-- Desktop nav (root-relative links!) -->
     <nav class="nav" aria-label="Główna nawigacja">
+      <a href="https://anfield.pl/results.html">Terminarz</a>
       <a href="https://anfield.pl/#feature">Artykuły</a>
       <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
       <a href="https://anfield.pl/archive">Archiwum</a>
@@ -116,6 +117,7 @@
             ✕
           </button>
         <nav aria-label="Menu mobilne" class="off__nav">
+          <a href="https://anfield.pl/results.html">Terminarz</a>
           <a href="https://anfield.pl/#feature">Artykuły</a>
           <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
           <a href="https://anfield.pl/archive">Archiwum</a>
@@ -144,22 +146,27 @@
 <!-- LEWA KOLUMNA (main content) -->
   <div class="spacer"></div>
   <div class="badge">Liverpool FC • Premier League • Polska </div>
-  <h1>Anfield.PL - autorski i niezależny serwis dla kibiców Liverpool FC. </h1>
+  <h1><strong style="color: #e31b23;">Anfield.PL</strong> - autorski i niezależny serwis dla kibiców <strong style="color: #e31b23;">Liverpool FC</strong> </h1>
   <p class="lead">
     Felietony, analizy, opinie i komentarze. Z pamięcią o historii i chłodną analizą tego co dziś. 
   </p>
   <p class="why">
-    <strong style="color: #e31b23;">Anfield.PL</strong> to serwis stworzony przez kibica dla kibiców. W świecie, gdzie teksty kopiuje się jednym kliknięciem, ja stawiam na autorskie felietony, pogłębione analizy i szczere opinie o The Reds i Premier League. Nie tłumaczę z angielskiego nie swoich treści i nie robię punktu ksero. Tworzę z pasją własne materiały.
+    <strong style="color: #e31b23;">Anfield.PL</strong> to serwis stworzony przez kibica dla kibiców. W świecie, gdzie teksty kopiuje się jednym kliknięciem, ja stawiam na autorskie felietony, własne analizy i szczere opinie o <strong style="color: #e31b23;">The Reds</strong> i Premier League. Tworzę z pasją materiały wolne od komercyjnych wymogów.
   </p>
-  <p><strong>matchDay</strong> — analizy i wrażenia po spotkaniach. Gorący komentarz tworzony w trakcie meczu i publikowany <strong style="color: #e31b23;">Na żywo.</strong>
-  <br> <strong>Newsroom</strong> — research informacji. Wybór redakcji najciekawszych newsów z sieci abyś ty nie musiał szukać.
-    </p>
+  <p><strong style="color: #e31b23;">matchDay</strong> — analizy i wrażenia po spotkaniach. Gorący komentarz tworzony w trakcie meczu i publikowany <strong style="color: #e31b23;">bez cenzury!</strong>
+  </p>
+  <p><strong style="color: #e31b23;">Terminarz</strong> — znajdziesz tu kalendarz spotkań Liverpool FC. Każdy wynik z odnośnikami do pełnych relacji i materiałów, które zostały opublikowane w serwisie.</p>
   <p class="muted">
-    U nas nie znajdziesz reklam ani clickbaitu. Tylko rzetelne treści stworzone od podstaw – dla kibiców Liverpool FC.</p>
+    AnfieldPL to treści stworzone od podstaw – dla kibiców Liverpool FC. Z dystansem. Bez tłumaczenia się, bez kopiowania, bez clickbaitu.
+  </p>
   <!-- CTA -->
   <div class="cta">
-    <a class="btn btn-primary" href="#feature">Najnowszy felieton →</a>
-    <a class="btn btn-ghost" href="#latest-title">Zobacz wpisy</a>
+    <a id="nextGameButton" class="btn btn-primary btn-block pulse"
+   href="https://anfield.pl/results.html"
+   aria-label="Przejdź do terminarza">
+   📅 Terminarz & MatchDay
+</a>
+
   </div>
 </div>
 
@@ -192,9 +199,10 @@
     <!-- MATCH DAY -->
   
 <div class="spacer"></div>
-    <h3 class="matchday__status" id="matchday-status">nextGame ⚽ zapowiedzi:</h3>
-<Niebawem id="matchday-commentary" class="matchday__commentary">
-  Liverpool musi szybko wyciągnąć wnioski po trudnej przeprawie w Stambule. Przed nami spotkanie, które może okazać się kluczowe dla morale zespołu i dalszej walki o czołowe lokaty w lidze. Czy młodość rywali okaże się atutem, czy doświadczenie The Reds pozwoli przełamać złą passę? Zapowiedź meczu 7. kolejki Premier League.</p>
+    <h3 class="matchday__status" id="matchday-status">nextGame ⚽ </h3>
+<section id="matchday-commentary" class="matchday__commentary">
+Liverpool FC czeka klasyk w Lidze Mistrzów. Na Anfield przyjeżdża lider Primera Division. Zespół z Madrytu na którego ławce zasiada były piłkarz obu klubów. Xabi Alonso i jego drużyna będą chcieli zdobyć komplet oczek. Jak The Reds poradzą sobie z Realem Madryt? Czy Arne Slot znajdzie sposób na powstrzymanie gwiazd Królewskich? Drużyna z Anfield prezentuję się ostatnio poniżej oczekiwań a wyniki pozostawiają wiele do życzenia. Przeczytaj naszą autorską zapowiedź tego spotkania.
+</p>
 <div class="matchday__cta">
   <a class="btn btn-ghost btn-block"
     href="/felieton/wrzesien25/felieton-13-galatasaray/index.html"
@@ -226,29 +234,37 @@
   </section>
       </aside>
 
-<!-- FEATURE (DOM before aside so mobile shows it before sidebar) -->
+<!-- MatchDay RELACJA pomeczowa -->
 <section id="feature" class="hero__feature">
 <article class="feature-article">
+  <!--Header Champions League
   <header>
     <h2 id="latest-felieton"> matchDay ⚽ relacje: </h2>
     <h4 id="latest-relation">Champions League</h4>
       <a
         href="/felieton/wrzesien25/felieton-13-galatasaray/relacja.html"
       >
-        <h3>Lwy ze Stambułu zapolowały na giganta europejskich rozgrywek</h3>
+        <h3>Zapraszamy na relację po meczu w Lidze Mistrzów</h3>
       </a>
-    <p class="lead">Za nami starcie z Galatasaray. Druga porażka z rzędu drużyny The Reds. Jak poradziła sobie drużyna Arne Slota w nowym zestawieniu? Przeczytaj naszą autorską i subiektywną opinie z tego meczu.</p>
-   
-   
-  </header>
+    <p class="lead">Za nami starcie z Realem Madryt.</p>
+  </header> -->
+  <!--Header Premier League -->
+  <header>
+    <h2 id="latest-felieton">after ⚽ relacje pomeczowe: </h2>
+    <h4 id="latest-relation">Premier League</h4>
+      <a
+        href="/felieton/pazdziernik25/villa/index.html"
+      >
+        <h3>Zapraszamy na relację po meczu z Aston Villą!</h3>
+      </a>
+    <p class="lead">Liverpool FC pokonał Aston Villę. Mecz zakończył się wynikiem 2:0. Jest to dopiero drugie czyste konto w tym sezonie. Przeczytaj naszą opinię z tego spotkania.</p>
   <a
     class="btn btn-primary"
       href="/felieton/wrzesien25/felieton-13-galatasaray/relacja.html"
     >Czytaj całość →</a>
 </article>
 <!-- odstęp -->
-<div class="spacer"></div>
-          
+<div class="spacer"></div>         
 <!-- FELIETONY inne -->
 <main id="main" tabindex="-1">
 <section class="section container" aria-labelledby="latest-title">
@@ -265,6 +281,7 @@
 </section>
         <!-- ASIDE: MatchDay + Newsroom (visually on right on desktop) -->
     </main>
+
   <!-- ARCHIWUM -->
       <section class="section container" aria-labelledby="archive-title">
         <h2 id="archive-title">Archiwum</h2>
@@ -277,7 +294,9 @@
     >Przejdź do archiwum →</a>
       </section>
       </section>
+
       
+
     <!-- FOOTER -->
 <footer class="site-footer">
 <div class="container">
@@ -314,6 +333,7 @@
     <script src="/assets/js/newsroom.js" defer></script>
     <script src="/assets/js/app.js" defer></script>
     <script src="/assets/js/cookie-consent.js" defer></script>
+    <script src="/assets/js/archive-results.js" defer></script>
   <!-- JSON-LD snippets for articles -->
   </body>
 </html>

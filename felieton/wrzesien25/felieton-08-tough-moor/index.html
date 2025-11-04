@@ -40,10 +40,13 @@
     />
     <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- Styles -->
+    <!-- === CSS === -->
     <link rel="stylesheet" href="/assets/css/base.css" />
-    <link rel="stylesheet" href="/assets/css/article.css" />
-    <link rel="stylesheet" href="/assets/css/test.css" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+    <link rel="stylesheet" href="/assets/css/components.css" />
+    <link rel="stylesheet" href="/assets/css/matchday.css" />
+    <!-- live match module -->
+    <link rel="stylesheet" href="/assets/css/livematch.css" />
 
 
 
@@ -62,18 +65,74 @@
     </script>
   </head>
   <body>
-    <header class="site-header">
-      <div class="wrap">
-        <a class="brand" href="https://anfield.pl">Anfield.pl</a>
-        <span class="tag">Match Day</span>
+      <header class="site-header livematch">
+      <div class="container navbar">
+        <a class="brand" href="/"
+          ><span class="brand__dot" aria-hidden="true"></span>
+          <small style="color: #ff2442; margin-left: 1rem">matchDay</small>
+          <span> ANFIELD.PL ⚡</span>
+        </a>
+        <!-- Desktop nav (root-relative links!) -->
+        <nav class="nav" aria-label="Główne">
+          <a href="https://anfield.pl/results.html">Terminarz</a>
+          <a href="https://anfield.pl/#feature">Artykuły</a>
+          <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+          <a href="https://anfield.pl/archive">Archiwum</a>
+          <a href="https://anfield.pl/about">O nas</a>
+        </nav>
+        <!-- Mobile nav toggle -->
+        <button
+          class="hamb"
+          data-nav-toggle
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+          aria-label="Otwórz menu"
+        >
+          <span class="hamb__bar"></span>
+        </button>
       </div>
-      <h1 class="page-title">Tough Moor - Mecz w stylu wina Bordeux</h1>
-      <p class="page-subtitle">
-        Burnley – Liverpool • 4. kolejka Premier League • 14 września 2025 • autor: Kamil Stępień 
-      </p>
+      <div class="off" id="mobile-menu" data-offcanvas>
+        <div class="off__panel container" data-offcanvas-panel>
+          <button class="off__close" data-nav-close aria-label="Zamknij menu">
+            ✕
+          </button>
+          <nav aria-label="Menu mobilne" class="off__nav">
+            <a href="https://anfield.pl/results.html">Terminarz</a>
+            <a href="https://anfield.pl/#feature">Artykuły</a>
+            <a href="https://anfield.pl/#newsroom-section">MatchDay</a>
+            <a href="https://anfield.pl/archive">Archiwum</a>
+            <a href="https://anfield.pl/about">O nas</a>
+          </nav>
+        </div>
+      </div>
     </header>
 
-    <main class="article">
+    <main id="main" class="livematch">
+      <article class="article">
+          <section id="the-clarets" class="match-essay">
+        <h2>
+        Tough Moor - Twierdza Burnley
+        </h2>
+        <p>
+          Stadion Burnley jest jednym z najstarszych obiektów sportowych, które są eksploatowane do dnia dzisiejszego. 
+        </p>
+         <p> Burnley to klub, który od dekad żyje w cieniu wielkich, ale nigdy nie
+          pozwala zapomnieć o swojej obecności. <em>The Clarets</em> —
+          przydomek, który w Polsce brzmi egzotycznie, bo słowo
+          <strong>claret</strong> nie funkcjonuje u nas tak jak na Wyspach. Tam
+          od razu kojarzy się z kolorem koszulki, z winem z Bordeaux, z futbolem
+          sprzed stu lat. U nas mówimy „bordo”, ale to nie oddaje ciężaru
+          kulturowego, który Anglicy słyszą w tym jednym słowie.
+        </p>
+      </section>
+       <aside class="pull-quote" aria-label="Ciekawostka">
+            <blockquote>
+            „Claret” to nie tylko „bordo”. To tradycyjny angielski odcień
+            głębokiej czerwieni z purpurą, historycznie kojarzony z winami z
+            Bordeaux i barwą koszulek klubów takich jak Burnley czy Aston Villa.
+            W Anglii to kod kulturowy — u nas brzmi jak egzotyka.
+            </blockquote>
+        </aside>
       <div class="matchday_image">
         <img
           src="/felieton/wrzesien25/felieton-08-tough-moor/castle.webp"
@@ -85,45 +144,23 @@
         />
       </div>
       <div class="spacer"></div>
-      <section id="the-clarets" class="match-essay">
-        <h2>
-         Tough Moor - Twierdza Burnley
-        </h2>
-        <p>
-          Stadion Burnley jest jednym z najstarszych obiektów sportowych, które są eksploatowane do dnia dzisiejszego. 
-        </p>
-      </section>
+    
  
       <section id="first-half" class="match-essay">
         <h2>Mecz w stylu wina Bordeaux</h2>
-          <p> Burnley to klub, który od dekad żyje w cieniu wielkich, ale nigdy nie
-          pozwala zapomnieć o swojej obecności. <em>The Clarets</em> —
-          przydomek, który w Polsce brzmi egzotycznie, bo słowo
-          <strong>claret</strong> nie funkcjonuje u nas tak jak na Wyspach. Tam
-          od razu kojarzy się z kolorem koszulki, z winem z Bordeaux, z futbolem
-          sprzed stu lat. U nas mówimy „bordo”, ale to nie oddaje ciężaru
-          kulturowego, który Anglicy słyszą w tym jednym słowie.
-        </p>
+         
         <p>
           Burnley w lidze wygląda jak drużyna, która pamięta swoje błędy i nie
           zamierza ich powtarzać. Nie szarżują, nie chcą się podobać — budują
           mur. Ustawienie w systemie 5–4–1 to deklaracja: minimalizujemy ryzyko, czekamy na jedną kontrę. gramy na 0:0. Po prostu, jak to się u nas mówi - obrona Częstochowy. Dla Liverpoolu to najtrudniejszy rywal — taki, którego trzeba mozolnie rozbijać.
-        </p>
-        I właśnie w tym jest
+          </p>
+          <p>
+            I właśnie w tym jest
           esencja Burnley. Ten klub nie gra po to, by dawać show — gra, by
           <strong>przetrwać</strong>. By nie wrócić do Championship, gdzie bywał
           potęgą, wchodził z 100-ką punktów i rekordową defensywą, a potem w
           Premier League spadał jak kamień rzucony do rzeki.
         </p>
-
-        <aside class="pull-quote" aria-label="Ciekawostka">
-            <blockquote>
-            „Claret” to nie tylko „bordo”. To tradycyjny angielski odcień
-            głębokiej czerwieni z purpurą, historycznie kojarzony z winami z
-            Bordeaux i barwą koszulek klubów takich jak Burnley czy Aston Villa.
-            W Anglii to kod kulturowy — u nas brzmi jak egzotyka.</span>
-            </blockquote>
-        </aside>
       </section>
 
       <!--ODSTĘP-->
@@ -157,6 +194,7 @@
         <p>
           Pierwsza połowa nie była widowiskiem, do którego wraca
           się w rozmowach. Celnie podsumował tą część meczu komentator Michał Gutka "Trudno powiedzieć o niej coś więcej, niż to, że <em>się odbyła"</em>. W punkt panie komentatorze.
+        </p>
       </section>
     
       <section id="half-time" class="match-essay">
@@ -444,52 +482,71 @@
         <p>
           To był mecz, który Liverpool zamierzał wygrać. Pokazywał to szczególnie w drugiej połowie, gdy The Reds zdominowali The Clarets i nie pozwolili im nawet wyjść z własnej połowy. Burnley broniło się zaciekle i miało plan na 0:0 od samego początku. Ale w piłce nożnej, jak w życiu, czasem wystarczy jedna chwila, jeden błąd, by wszystko się zmieniło. Dziś szczęście uśmiechnęło się do Liverpoolu. Do ekipy, która cierpliwie szukała swojej szansy i w końcu ją znalazła. Pomógł piłkarski fart i doświadczenie Salaha, który wziął na siebie ciężar odpowiedzialności i nie zawiódł. To był gol, który przyniósł nie tylko trzy punkty, ale i potwierdzenie, że Liverpool potrafi wygrywać nawet w najtrudniejszych warunkach. Ciśnie do końca. Nie odpuszcza. Jak trzeba postawić wszytko na jedną kartę, to stawia. I wygrywa. To jest właśnie duch mistrzowskiej ekipy. To jest właśnie Liverpool FC.
         </p>
+        <p>
           A <strong>Hannibal Mejbri</strong>? Wszedł, by gryźć, by dać energię Burnley, by być symbolem oporu do samego końca. Został symbolem epickiego zakończenia spotkania przez obrońców tytułu mistrza Anglii. To jego ręka podarowała Liverpoolowi rzut karny. Dziś w nocy będzie się gryzł już tylko z własnymi myślami.
         </p>
       </section>
-    </main>
+      
 
-      <section class="read-next" aria-label="Czytaj dalej">
-        <h2>Czytaj dalej</h2>
-        <ul>
-          <li>
-            <a
-              href="/felieton/wrzesien25/felieton-07-manchester-circus/index.html"
-              >Manchester Circus. Mecz kolejki?</a
-            >
-            <span class="why">— Boisko to zweryfikuje</span>
-          </li>
-          <li>
-            <a
-              href="/felieton/wrzesien25/felieton-06-wiatr-zmian-premier-league-kapital-usa/index.html"
-              >Skąd w Premier League są takie pieniądze?</a
-            >
-            <span class="why">— o tym do kogo należy najwięcej w Królowej wszytkich lig</span>
-          </li>
-        </ul>
-      </section>
+ <!-- FOOTER -->
+  <footer class="site-footer">
+        <section class="read-next" aria-label="Czytaj dalej">
+          <h2>Czytaj dalej</h2>
+          <ul>
+            <li>
+              <a href="/felieton/wrzesien25/felieton-13-galatasaray/index.html"
+                >Fajerwerki w Stambule - zapowiedź </a
+              >
+              <span class="why"
+                >— kibice Galatasaray witają Liverpool</span
+              >
+            </li>
 
-      <div class="post-footer-nav">
-        <a href="/index.html" class="btn btn-ghost"
-          >← Powrót na stronę główną</a
-        >
-      </div>
-
-      <section id="comments">
-        <h2>Chcesz podyskutować?</h2>
-        <p>
-          Zapraszamy na nasz profil FB:
-          <a
-            href="https://www.facebook.com/profile.php?id=61580257838714"
-            target="_blank"
-            rel="noopener"
+            <li>
+              <a href="/felieton/wrzesien25/felieton-08-tough-moor/index.html"
+                >Pałac nie pękł jak kryształ </a
+              >
+              <span class="why"
+                >— o starciu dwóch niepokonanych drużyn w Premier League</span
+              >
+            </li>
+              <li>
+              <a
+                href="/felieton/wrzesien25/felieton-11-efl-cup/index.html"
+                >Mickey Mouse Cup </a
+              >
+              <span class="why"
+                >— Federico Chiesa - reaktywacja</span
+              >
+            </li>
+          </ul>
+        </section>
+  <div class="spacer"></div>
+        <div class="post-footer-nav">
+          <a href="/index.html" class="btn btn-ghost"
+            >← Powrót na stronę główną</a
           >
-            Anfield.pl na Facebooku →
-          </a>
-      </p>
-          </section>
-        </footer>
-      </article>
-    </main>
+        </div>
+
+        <section id="comments">
+          <h2>Chcesz podyskutować?</h2>
+          <p>
+            Zapraszamy na nasz profil FB:
+            <a
+              href="https://www.facebook.com/profile.php?id=61580257838714"
+              target="_blank"
+              rel="noopener"
+              >Anfield.pl na Facebooku →</a
+            >
+          </p>
+        </section>
+      </footer>
+      <!-- JS (defer) -->
+    <script src="/assets/js/nav.js" defer></script>
+    <script src="/assets/js/matchday.js" defer></script>
+    <script src="/assets/js/cookie-consent.js" defer></script>
+      <!-- Countdown script: ustaw kickoff jednoznacznie -->
+    <script src="/assets/js/timeline.js" defer></script>
+
   </body>
 </html>

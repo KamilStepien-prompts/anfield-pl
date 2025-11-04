@@ -200,6 +200,10 @@
   border-left: 6px solid rgba(31, 8, 238, 0.859);
 }
 
+.livematch .team--manu {
+  border-left: 6px solid rgba(249, 249, 255, 0.993);
+}
+
 /* Team header */
 .livematch .team__head {
   display: flex;
