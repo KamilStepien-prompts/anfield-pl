@@ -203,6 +203,9 @@
 .livematch .team--manu {
   border-left: 6px solid rgba(249, 249, 255, 0.993);
 }
+.livematch .team--avl {
+  border-left: 6px solid rgba(62, 3, 35, 0.993);
+}
 
 /* Team header */
 .livematch .team__head {

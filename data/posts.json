@@ -1,5 +1,25 @@
 [
   {
+    "id": 24,
+    "title": "Królewski występ Liverpoolu",
+    "date": "2025-11-05",
+    "excerpt": "The Reds dominowali przez całe spotkanie, a zwycięską bramkę głową zdobył najniższy na boisku Alexis Mac Allister. Zwycięstwo mogłoby być wyższe, ale świetnie spisywał się bramkarz gości.",
+    "url": "/felieton/listopad25/02_real/liv-rma.html",
+    "tag": "matchDay",
+    "priority": 1
+  },
+
+  {
+    "id": 23,
+    "title": "King Ryan",
+    "date": "2025-11-01",
+    "excerpt": "Król środka pola wrócił na Anfield. Aston Villa pokonana 2:0 po świetnym występie Ryana Gravenbercha. Zasłużóne zwycięstwo The Reds. Czyste konto po raz pierwszy od dwóch miesięcy.",
+    "url": "/felieton/listopad25/01_villa/liv-asv.html",
+    "tag": "matchDay",
+    "priority": 1
+  },
+
+  {
     "id": 22,
     "title": "EFL Cup: eksperymentalny Liverpool odpada z pucharu",
     "date": "2025-10-29",

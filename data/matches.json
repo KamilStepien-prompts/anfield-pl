@@ -62,5 +62,13 @@
     "opponent": "Real Madryt",
     "home": true,
     "round": "Group Stage - Matchday 4"
+  },
+  {
+    "id": 9,
+    "competition": "Premier League",
+    "date": "2025-11-09T18:30:00+02:00",
+    "opponent": "Manchester City",
+    "home": false,
+    "round": "Gameweek 11"
   }
 ]

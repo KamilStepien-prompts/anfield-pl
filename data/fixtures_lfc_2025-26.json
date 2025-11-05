@@ -1,24 +1,5 @@
 [
   {
-    "date": "2025-11-04",
-    "day": "Wtorek",
-    "kickoff": "21:00",
-    "competition": "Liga Mistrzów",
-    "home": {
-      "name": "Liverpool",
-      "short": "LIV",
-      "logo": "/assets/logos/liverpool.svg"
-    },
-    "away": {
-      "name": "Real Madrid",
-      "short": "RMA",
-      "logo": "/assets/logos/CL/real_madrid.svg"
-    },
-    "venue": "Anfield",
-    "status": "upcoming"
-  },
-
-  {
     "date": "2025-11-09",
     "day": "Sobota",
     "kickoff": "17:30",

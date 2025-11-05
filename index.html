@@ -40,6 +40,7 @@
   <link rel="stylesheet" href="/assets/css/header.css" />
   <link rel="stylesheet" href="/assets/css/components.css" />
   <link rel="stylesheet" href="/assets/css/matchday.css" />
+  <link rel="stylesheet" href="/assets/css/livematch.css" />
 
 
   <!-- === STRUCTURED DATA (JSON-LD) === -->
@@ -126,9 +127,45 @@
         </div>
       </div>
     </header>
+    
+    <!-- ===== BANNER - NAJBLIŻSZE STARCIE ===== -->
+    <section
+      class="match-banner"
+      role="region"
+      aria-label="Najbliższe starcie Liverpool FC"
+    >
+      <section class="container match-inner">
+        <section class="match-teams" aria-hidden="false">
+          <div class="team team--home">
+            <img
+              src="/assets/img/teams/city.png"
+              alt="Manchester City — herb"
+              class="team__logo"
+            />
+          </div>
+          <div class="match-vs" aria-hidden="true">vs</div>
+          <div class="team team--away">
+            <img
+              src="/assets/img/teams/liverpool.png"
+              alt="Liverpool — herb"
+              class="team__logo"
+            />
+          </div>
+        </section>
+      </section>
+      <div class="match-meta">
+        <div class="match__title">Premier League - 11 kolejka</div>
+        <div class="match__when" aria-live="polite">
+          <strong>9 listopada 2025 • niedziela, 17:30</strong><br />
+          <div class="matchday__opponent">Manchester City - Liverpool</div>
+          <span class="match__venue">Etihad Stadium</span>
+        </div>
+      </div>
+    </section>
 
-  <!-- HERO -->
-  
+    <!-- ===== BANNER - NAJBLIŻSZE STARCIE - KONIEC ===== -->
+
+    <!-- MAIN CONTENT -->
     <!-- HERO IMAGE -->
 <section class="hero">
 <div class="container hero__grid">
@@ -151,11 +188,12 @@
     Felietony, analizy, opinie i komentarze. Z pamięcią o historii i chłodną analizą tego co dziś. 
   </p>
   <p class="why">
-    <strong style="color: #e31b23;">Anfield.PL</strong> to serwis stworzony przez kibica dla kibiców. W świecie, gdzie teksty kopiuje się jednym kliknięciem, ja stawiam na autorskie felietony, własne analizy i szczere opinie o <strong style="color: #e31b23;">The Reds</strong> i Premier League. Tworzę z pasją materiały wolne od komercyjnych wymogów.
+    <strong style="color: #e31b23;">Anfield.PL</strong> to serwis stworzony przez kibica dla kibiców. W świecie, gdzie teksty kopiuje się jednym kliknięciem, ja stawiam na autorskie felietony, własne analizy i szczere opinie.
   </p>
-  <p><strong style="color: #e31b23;">matchDay</strong> — analizy i wrażenia po spotkaniach. Gorący komentarz tworzony w trakcie meczu i publikowany <strong style="color: #e31b23;">bez cenzury!</strong>
+  <p><strong style="color: #e31b23;">MatchDay</strong> — analizy i wrażenia po spotkaniach. Gorący komentarz tworzony w trakcie meczu i publikowany tuż po jego zakończeniu.</strong>
   </p>
   <p><strong style="color: #e31b23;">Terminarz</strong> — znajdziesz tu kalendarz spotkań Liverpool FC. Każdy wynik z odnośnikami do pełnych relacji i materiałów, które zostały opublikowane w serwisie.</p>
+  <p><strong style="color: #e31b23;">Archiwum</strong> — przeszukuj nasze zbiory felietonów, analiz i komentarzy. Znajdź interesujące Cię tematy i wróć do nich w każdej chwili.</p>
   <p class="muted">
     AnfieldPL to treści stworzone od podstaw – dla kibiców Liverpool FC. Z dystansem. Bez tłumaczenia się, bez kopiowania, bez clickbaitu.
   </p>
@@ -164,7 +202,7 @@
     <a id="nextGameButton" class="btn btn-primary btn-block pulse"
    href="https://anfield.pl/results.html"
    aria-label="Przejdź do terminarza">
-   📅 Terminarz & MatchDay
+   📅 Terminarz
 </a>
 
   </div>
@@ -200,12 +238,15 @@
   
 <div class="spacer"></div>
     <h3 class="matchday__status" id="matchday-status">nextGame ⚽ </h3>
-<section id="matchday-commentary" class="matchday__commentary">
-Liverpool FC czeka klasyk w Lidze Mistrzów. Na Anfield przyjeżdża lider Primera Division. Zespół z Madrytu na którego ławce zasiada były piłkarz obu klubów. Xabi Alonso i jego drużyna będą chcieli zdobyć komplet oczek. Jak The Reds poradzą sobie z Realem Madryt? Czy Arne Slot znajdzie sposób na powstrzymanie gwiazd Królewskich? Drużyna z Anfield prezentuję się ostatnio poniżej oczekiwań a wyniki pozostawiają wiele do życzenia. Przeczytaj naszą autorską zapowiedź tego spotkania.
+<p>
+  Kolejne starcie w ramach Premier League! Po emocjonującym i zwycięskim meczu w Lidze Mistrzów z Realem Madryt, The Reds wracają do rywalizacji na krajowym podwórku. Czy uda się podtrzymać dobrą passę i zdobyć kolejne punkty?
 </p>
-<div class="matchday__cta">
+<p>Zadanie nie będzie łatwe, ponieważ rywalem Liverpoolu będzie nie kto inny jak <strong style="color: #1ba4e3;">Manchester City</strong></p>
+<p> Będzie to starcie dwóch gigantów Premier League, które zawsze dostarcza wielu emocji. Liverpool będzie musiał być w najwyższej formie, aby pokonać zespół Pepa Guardioli, który również prezentuje się co raz lepiej. Czy The Reds zdołają wywieźć cenne punkty z trudnego terenu? Przekonamy się już wkrótce!
+</p>
+<!--<div class="matchday__cta">
   <a class="btn btn-ghost btn-block"
-    href="/felieton/wrzesien25/felieton-13-galatasaray/index.html"
+    href="/felieton/listopad25/03_city/mci-liv.html"
     aria-label="Przejdź do strony z zapowiedzią">
     Zapowiedź
   </a>
@@ -213,8 +254,8 @@ Liverpool FC czeka klasyk w Lidze Mistrzów. Na Anfield przyjeżdża lider Prime
     href="/felieton/wrzesien25/felieton-13-galatasaray/relacja.html"
     aria-label="Przejdź do strony z relacją">
     Relacja ⏱
-  </a>-->
-</div>
+  </a>
+</div>-->
 
 
   </div>
@@ -237,30 +278,38 @@ Liverpool FC czeka klasyk w Lidze Mistrzów. Na Anfield przyjeżdża lider Prime
 <!-- MatchDay RELACJA pomeczowa -->
 <section id="feature" class="hero__feature">
 <article class="feature-article">
-  <!--Header Champions League
+  <!--Header Champions League-->
   <header>
-    <h2 id="latest-felieton"> matchDay ⚽ relacje: </h2>
+    <h2 id="latest-felieton"> matchDay ⚽ </h2>
     <h4 id="latest-relation">Champions League</h4>
       <a
-        href="/felieton/wrzesien25/felieton-13-galatasaray/relacja.html"
+        href="/felieton/listopad25/02_real/liv-rma.html"
       >
-        <h3>Zapraszamy na relację po meczu w Lidze Mistrzów</h3>
+        <h3>Zapraszamy na relację ze starcia z Realem Madryt!</h3>
       </a>
-    <p class="lead">Za nami starcie z Realem Madryt.</p>
-  </header> -->
+    <p class="lead">Liverpool w klasyku Champions League pokonuje lider Primera Division! Bardzo dobry mecz The Reds, którzy zasłużenie wygrywają. Czy to oznacza powrót do formy? Drugie zwycięstwo z rzędu bez straty gola!
+    </p>
+
+    <a
+    class="btn btn-primary"
+      href="/felieton/listopad25/02_real/liv-rma.html"
+    >Czytaj całość →</a>
+  </header>
+  <!-- odstęp -->
+<div class="spacer"></div>  
   <!--Header Premier League -->
   <header>
-    <h2 id="latest-felieton">after ⚽ relacje pomeczowe: </h2>
+    <h2 id="latest-felieton">afterParty ⚽ </h2>
     <h4 id="latest-relation">Premier League</h4>
       <a
-        href="/felieton/pazdziernik25/villa/index.html"
+        href="/felieton/listopad25/01_villa/liv-asv.html"
       >
         <h3>Zapraszamy na relację po meczu z Aston Villą!</h3>
       </a>
-    <p class="lead">Liverpool FC pokonał Aston Villę. Mecz zakończył się wynikiem 2:0. Jest to dopiero drugie czyste konto w tym sezonie. Przeczytaj naszą opinię z tego spotkania.</p>
+    <p class="lead">The Reds wracają na właściwą ścieżkę? Kontrolowane zwycięstwo 2:0 po świetnym występie Ryana Gravenbercha. Zasłużone czyste konto po raz pierwszy od dwóch miesięcy.</p>
   <a
     class="btn btn-primary"
-      href="/felieton/wrzesien25/felieton-13-galatasaray/relacja.html"
+      href="/felieton/listopad25/01_villa/liv-asv.html"
     >Czytaj całość →</a>
 </article>
 <!-- odstęp -->

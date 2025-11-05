@@ -1,28 +1,47 @@
 [
   {
-    "title": "Kontuzja Alissona",
-    "tag": "Injury",
-    "time": "2025-10-01T20:00:15Z",
-    "excerpt": "This Is Anfield informuje o kontuzji bramkarza",
-    "url": "https://www.thisisanfield.com/2025/10/alisson-will-have-now-missed-56-games-due-to-injury-at-liverpool/",
+    "id": "2025-11-04-liv-rma-reuters",
+    "title": "Mac Allister daje Liverpoolowi zwycięstwo z Realem Madryt",
+    "tag": "Match",
+    "time": "2025-11-04",
+    "excerpt": "Alexis Mac Allister strzelił zwycięską bramkę głową po rzucie wolnym Dominika Szoboszlaia, a Liverpool pokonał Real Madryt 1:0 w fazie grupowej Ligi Mistrzów.",
+    "url": "https://www.reuters.com/sports/soccer/mac-allister-heads-liverpool-champions-league-victory-over-real-madrid-2025-11-04/",
+    "source": "Reuters"
+  },
+  {
+    "id": "2025-11-04-liv-rma-official",
+    "title": "Liverpool 1:0 Real Madrid w Champions League",
+    "tag": "Match",
+    "time": "2025-11-04",
+    "excerpt": "Oficjalny raport klubu: Mac Allister rozstrzyga spotkanie na Anfield, Szoboszlai kluczowy przy stałym fragmencie, Courtois kilkukrotnie popisał się interwencjami.",
+    "url": "https://www.liverpoolfc.com/news/mac-allister-wins-it-liverpool-defeat-real-madrid-champions-league",
+    "source": "LiverpoolFC.com"
+  },
+  {
+    "id": "2025-11-04-liv-rma-guardian",
+    "title": "Mac Allister wyłącza Real — relacja z Anfield",
+    "tag": "Analysis",
+    "time": "2025-11-04",
+    "excerpt": "Szczegółowa relacja i analiza przebiegu meczu: Liverpool stworzył więcej szans, a powrót Alexandra-Arnolda do Anfield przeszedł w tle wydarzeń.",
+    "url": "https://www.theguardian.com/football/2025/nov/04/liverpool-real-madrid-champions-league-match-report",
+    "source": "The Guardian"
+  },
+  {
+    "id": "2025-11-05-slot-honest",
+    "title": "Arne Slot: 'szczera' ocena poprawy zespołu",
+    "tag": "CoachTalk",
+    "time": "2025-11-05",
+    "excerpt": "Arne Slot wyjaśnia na konferencji, dlaczego drużyna poprawiła formę w ostatnich tygodniach — uczciwe i bez upiększeń spojrzenie na pracę zespołu.",
+    "url": "https://www.thisisanfield.com/2025/11/arne-slot-gives-brutally-honest-answer-on-why-liverpool-have-improved/",
     "source": "This is Anfield"
   },
-
   {
-    "title": "Kontuzje",
-    "tag": "Injury",
-    "time": "2025-10-01T20:05:15Z",
-    "excerpt": "Kontuzja Ekitike",
-    "url": "https://www.standard.co.uk/sport/football/liverpool-alisson-injury-latest-chelsea-b1250549.html",
-    "source": "The Standard"
-  },
-
-  {
-    "title": "Opinia byłego gracza Liverpoolu",
-    "tag": "Pan dziennikarz",
-    "time": "2025-10-01T19:30:15Z",
-    "excerpt": "jamie Carragher i jego dobre rady",
-    "url": "https://www.skysports.com/football/news/29327/13441995/galatasaray-1-0-liverpool-jamie-carragher-says-arne-slots-side-are-not-playing-like-a-top-team-and-calls-for-florian-wirtz-to-come-out-of-the-side",
-    "source": "SkySports"
+    "id": "2025-11-05-sky-liv-rma",
+    "title": "Liverpool 1–0 Real — Mac Allister rozstrzyga, Alexander-Arnold wygwizdany",
+    "tag": "Match",
+    "time": "2025-11-05",
+    "excerpt": "Relacja Sky Sports: Mac Allister zdobywa gola, a powrót Trenta Alexander-Arnolda na Anfield został przyjęty gwizdami.",
+    "url": "https://www.skysports.com/football/news/11945/13463536/liverpool-1-0-real-madrid-alexis-mac-allister-wins-it-as-trent-alexander-arnold-is-booed-on-anfield-return",
+    "source": "Sky Sports"
   }
 ]

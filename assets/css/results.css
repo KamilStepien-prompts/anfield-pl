@@ -8,7 +8,7 @@
   --bg: #0b0b0c;
   --surface: #131216;
   --surface-2: #19181d;
-  --line: rgba(255, 255, 255, 0.06);
+
   --text: #e5e7eb;
   --muted: #9ca3af;
   --accent: var(--red, #e11d48);
@@ -168,7 +168,7 @@ body.theme-dark {
 
 /* skrócona vs pełna wersja meta */
 .meta-row {
-  font-size: 0.82rem;
+  font-size: 0.52rem;
   line-height: 1.2;
 }
 .meta--full {
@@ -176,8 +176,8 @@ body.theme-dark {
 }
 .meta--compact {
   display: block;
-  color: var(--accent-2);
-  font-weight: 200;
+  color: var(--surface-2);
+  font-weight: 100;
 }
 
 /* --- DESKTOP ≥640px: meta na prawo --- */
@@ -664,6 +664,7 @@ body.theme-dark {
   /* DODANA REGUŁA: Neutralizuje max-height: 0 z base.css */
   max-height: none;
 }
+
 .match[aria-expanded="true"] .match-details {
   padding: 0.15rem 1rem;
 }
@@ -699,7 +700,7 @@ body.theme-dark {
   width: 100%;
 }
 .meta-row {
-  font-size: 0.82rem;
+  font-size: 0.58rem;
   line-height: 1.2;
 }
 .meta--full {
@@ -711,7 +712,7 @@ body.theme-dark {
 }
 .meta--compact {
   color: var(--accent-2);
-  font-weight: 600;
+  font-weight: 200;
 } /* pierwszy wiersz ma akcent? możesz zostawić */
 
 .teams {
@@ -931,10 +932,11 @@ body.theme-dark {
   min-width: 170px;
   text-align: center;
   scroll-snap-align: start;
-  transition: background 0.15s ease;
+  transition: none;
 }
 .upcoming-card:hover {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--surface-2); /* Ustaw tło takie samo jak domyślne */
+  cursor: default; /* Ustaw kursor na domyślny, jeśli element nie ma być klikalny */
 }
 
 .upcoming-teams {

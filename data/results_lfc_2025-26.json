@@ -1,5 +1,27 @@
 [
   {
+    "id": "2025-11-05-cl-liv-rma",
+    "date": "2025-11-04",
+    "day": "Wtorek",
+    "competition": "Liga Mistrzów",
+    "round": "4 kolejka",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 1
+    },
+    "away": {
+      "name": "Real Madryt",
+      "short": "RMA",
+      "logo": "/assets/logos/CL/real_madrid.svg",
+      "score": 0
+    },
+    "venue": "Anfield",
+    "status": "FT",
+    "links": { "report": "/felieton/listopad25/02_real/liv-rma.html" }
+  },
+  {
     "id": "2025-11-01-epl-liv-asv",
     "date": "2025-11-01",
     "day": "Sobota",
@@ -19,7 +41,7 @@
     },
     "venue": "Anfield",
     "status": "FT",
-    "links": { "report": "/felieton/2025/01/liv-asv-relacja.html" }
+    "links": { "report": "/felieton/listopad25/01_villa/liv-asv.html" }
   },
 
   {
