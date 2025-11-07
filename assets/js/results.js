@@ -234,13 +234,14 @@
     } – ${away.name ?? ""}">
         <div class="teams">
           <div class="team">
-            <img class="logo" src="${home.logo || ""}" alt="${
-      home.name || ""
-    } logo" width="24" height="24">
-            <span class="name">
+           <span class="name">
               <span class="full-name">${homeName}</span>
               <span class="short-name">${homeShort}</span>
             </span>
+            <img class="logo" src="${home.logo || ""}" alt="${
+      home.name || ""
+    } logo" width="32" height="32">
+           
           </div>
           <div class="score">
             <span>${home.score ?? "-"}</span>
@@ -625,22 +626,30 @@ document.addEventListener("DOMContentLoaded", loadUpcoming);
       }
 
       $wrap.innerHTML = next
-        .map(
-          (m) => `
-        <div class="upcoming-card" title="${m.competition}">
-          <div class="upcoming-teams">
-            <img src="${m.home.logo}" alt="${m.home.name}">
-            <span>vs</span>
-            <img src="${m.away.logo}" alt="${m.away.name}">
-          </div>
-          <div class="upcoming-date">${getDayLabel(m)} • ${m.date}${
-            m.kickoff ? `, ${m.kickoff}` : ""
-          }</div>
+        .map((m) => {
+          // używamy parseDT dostępnego w tej funkcji
+          const dt = parseDT(m.date, m.kickoff);
+          const iso = dt && !isNaN(dt) ? dt.toISOString().slice(0, 19) : "";
+          const dateText = `${m.date}${m.kickoff ? `, ${m.kickoff}` : ""}`;
+          const dayLabel = getDayLabel(m); // funkcja już masz w scope
 
-          <div class="upcoming-comp">${m.competition}</div>
+          return `
+      <div class="upcoming-card" title="${m.competition}">
+        <div class="upcoming-teams">
+          <img src="${m.home.logo}" alt="${m.home.name}">
+          <span>vs</span>
+          <img src="${m.away.logo}" alt="${m.away.name}">
         </div>
-      `
-        )
+
+        <div class="upcoming-date" data-datetime="${iso}">
+          <span class="upcoming-day">${dayLabel}</span>
+          <span class="upcoming-datestring">${dateText}</span>
+        </div>
+
+        <div class="upcoming-comp">${m.competition}</div>
+      </div>
+    `;
+        })
         .join("");
     } catch (e) {
       console.error(e);
@@ -648,4 +657,396 @@ document.addEventListener("DOMContentLoaded", loadUpcoming);
         '<p style="color:var(--muted);padding:0 1rem;">Nie udało się wczytać terminarza.</p>';
     }
   }
+})();
+
+/* === League table loader (manual JSON) ===
+   Expects files:
+   /assets/data/table_premier_2025-26.json
+   /assets/data/table_cl_2025-26.json
+*/
+(function () {
+  const tableRoot = document.getElementById("league-table");
+  const switchBtns = document.querySelectorAll(".table-switch [data-table]");
+  const season =
+    (window.ANFLD_RESULTS && window.ANFLD_RESULTS.season) || "2025-26";
+
+  async function fetchTable(kind) {
+    const paths = [
+      `/assets/data/table_${kind}_${season}.json`,
+      `/data/table_${kind}_${season}.json`,
+    ];
+    for (const p of paths) {
+      try {
+        const r = await fetch(p, { cache: "no-store" });
+        if (!r.ok) continue;
+        return r.json();
+      } catch (e) {
+        /* ignore */
+      }
+    }
+    return null;
+  }
+
+  function renderTable(data) {
+    if (!data || !Array.isArray(data.rows)) {
+      tableRoot.innerHTML = `<div class="empty">Brak danych tabeli. Wgraj JSON do /assets/data/</div>`;
+      return;
+    }
+
+    const header = `
+      <div class="row head" style="font-weight:800; padding:0.35rem 0.4rem; color:var(--muted);">
+        <div class="pos">#</div>
+        <div style="flex:1">Drużyna</div>
+        <div class="p">M</div>
+        <div class="p">W</div>
+        <div class="p">R</div>
+        <div class="p">P</div>
+        <div class="gd">+/-</div>
+        <div class="pts">Pkt</div>
+      </div>
+    `;
+
+    const rows = data.rows
+      .map((r) => {
+        // optional classes
+        const cls =
+          r.pos <= (data.highlightTop || 4)
+            ? "row top"
+            : r.pos > (data.relegationStart || 17)
+            ? "row releg"
+            : "row";
+        return `
+        <div class="${cls}" title="${r.team}">
+          <div class="pos">${r.pos}</div>
+          <div class="team">
+            <img class="logo" src="${r.logo || ""}" alt="${
+          r.team
+        } logo" width="20" height="20">
+            <div class="name">${r.team}</div>
+          </div>
+          <div class="p">${r.played ?? "-"}</div>
+          <div class="p">${r.won ?? "-"}</div>
+          <div class="p">${r.draw ?? "-"}</div>
+          <div class="p">${r.lost ?? "-"}</div>
+          <div class="gd">${r.gd != null ? r.gd : "-"}</div>
+          <div class="pts">${r.points ?? "-"}</div>
+        </div>
+      `;
+      })
+      .join("");
+
+    tableRoot.innerHTML = header + rows;
+  }
+
+  // handle clicks on switch
+  switchBtns.forEach((btn) => {
+    btn.addEventListener("click", async (e) => {
+      const kind = btn.dataset.table;
+      switchBtns.forEach((b) => b.classList.toggle("is-active", b === btn));
+      tableRoot.innerHTML = `<div class="loading">Ładowanie…</div>`;
+      const data = await fetchTable(kind === "cl" ? "cl" : "premier");
+      renderTable(data);
+    });
+  });
+
+  // initial load (premier)
+  document.addEventListener("DOMContentLoaded", async () => {
+    const initial =
+      document.querySelector(".table-switch .tab.is-active")?.dataset.table ||
+      "premier";
+    const data = await fetchTable(initial === "cl" ? "cl" : "premier");
+    renderTable(data);
+  });
+})();
+
+// Mobile: klik/tap na wiersz rozwija szersze statystyki.
+// Bez biblioteki — lekki, uniwersalny.
+(function () {
+  function isMobile() {
+    return window.matchMedia && window.matchMedia("(max-width: 768px)").matches;
+  }
+
+  function attach() {
+    const rows = document.querySelectorAll(".league-table tbody tr");
+    rows.forEach((tr) => {
+      // jeśli details nie istnieje, zbuduj go z ukrytych kolumn (jeśli tabela jest w <table>)
+      if (!tr.querySelector(".details")) {
+        // pobierz staty z komórek o klasach lub z atrybutów data-*
+        const stats = [];
+        const m = tr.querySelector("td.matches, .matches")?.textContent?.trim();
+        const w = tr.querySelector("td.wins, .wins")?.textContent?.trim();
+        const d = tr.querySelector("td.draws, .draws")?.textContent?.trim();
+        const l = tr.querySelector("td.losses, .losses")?.textContent?.trim();
+        const gd = tr
+          .querySelector("td.gd, .gd, .plusminus")
+          ?.textContent?.trim();
+
+        // build string only from available values
+        if (m) stats.push(`M: ${m}`);
+        if (w) stats.push(`W: ${w}`);
+        if (d) stats.push(`R: ${d}`);
+        if (l) stats.push(`L: ${l}`);
+        if (gd) stats.push(`+/-: ${gd}`);
+
+        const details = document.createElement("div");
+        details.className = "details";
+        details.innerHTML = stats
+          .map((s) => `<span class="stat">${s}</span>`)
+          .join("");
+        tr.appendChild(details);
+      }
+
+      // click handler (toggle)
+      tr.addEventListener("click", function (e) {
+        // ignore clicks on links inside row
+        if (e.target.tagName.toLowerCase() === "a") return;
+        // only on mobile
+        if (!isMobile()) return;
+        this.classList.toggle("expanded");
+      });
+    });
+  }
+
+  // reattach on load and on resize (debounced)
+  window.addEventListener("load", attach);
+  let t;
+  window.addEventListener("resize", function () {
+    clearTimeout(t);
+    t = setTimeout(attach, 250);
+  });
+})();
+
+// Responsive: move league-sidebar under results-list on small screens, restore on desktop.
+// Debounce helper
+function debounce(fn, wait) {
+  let t;
+  return function (...args) {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
+
+(function () {
+  const aside = document.querySelector("aside.league-sidebar");
+  const resultsList = document.querySelector(
+    "section#results-list, .results-list, #results-list"
+  );
+  if (!aside || !resultsList) return;
+
+  const originalParent = aside.parentNode;
+  const originalNextSibling = aside.nextElementSibling; // where it was
+
+  function moveAside() {
+    const isMobile = window.innerWidth <= 768;
+    if (isMobile) {
+      // if not already after resultsList -> move it
+      if (resultsList && resultsList.nextElementSibling !== aside) {
+        resultsList.parentNode.insertBefore(
+          aside,
+          resultsList.nextElementSibling
+        );
+        // small hint for accessibility
+        aside.setAttribute("data-moved", "mobile");
+      }
+    } else {
+      // restore to original place if needed
+      if (originalParent && originalParent !== aside.parentNode) {
+        if (
+          originalNextSibling &&
+          originalNextSibling.parentNode === originalParent
+        ) {
+          originalParent.insertBefore(aside, originalNextSibling);
+        } else {
+          originalParent.appendChild(aside);
+        }
+        aside.removeAttribute("data-moved");
+      }
+    }
+  }
+
+  // run on load & resize (debounced)
+  window.addEventListener("load", moveAside);
+  window.addEventListener("resize", debounce(moveAside, 180));
+})();
+
+// Usuwa powszechne ukrycia na mobile
+(function () {
+  const aside = document.querySelector("aside.league-sidebar");
+  if (!aside) return;
+  function clearHiding() {
+    if (window.innerWidth <= 768) {
+      aside.classList.remove("is-hidden", "hidden", "collapsed");
+      aside.removeAttribute("aria-hidden");
+      aside.style.transform = "";
+      aside.style.left = "";
+      aside.style.right = "";
+      aside.style.visibility = "visible";
+      aside.style.opacity = "1";
+      aside.style.display = "block";
+    }
+  }
+  window.addEventListener("load", clearHiding);
+  window.addEventListener("resize", debounce(clearHiding, 150));
+})();
+
+// ROWIŃ widget: pobiera fixtures i table, renderuje 5 ostatnich meczów i top5 drużyn
+(async function buildRowinWidget() {
+  const root = document.getElementById("rowin-root");
+  if (!root) return;
+
+  // helper: bezpieczne fetch + json
+  async function loadJSON(url) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) {
+      console.warn("Rowin: fetch error", url, e);
+      return null;
+    }
+  }
+
+  // helper: parsuj datę z różnych formatów
+  function parseDate(s) {
+    if (!s) return null;
+    // jeśli już ISO:
+    if (/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}/.test(s)) return new Date(s);
+    // "YYYY-MM-DD" + optional time
+    const m = s.match(/(\d{4}-\d{2}-\d{2})(?:[ T,]+(\d{1,2}:\d{2}))?/);
+    if (m) {
+      const t = m[2] ? m[2].padStart(5, "0") : "00:00";
+      return new Date(`${m[1]}T${t}:00`);
+    }
+    const d = new Date(s);
+    return isNaN(d) ? null : d;
+  }
+
+  function formatShortDate(d) {
+    if (!d) return "";
+    // "09.11 17:30" short polish format
+    try {
+      const dd = String(d.getDate()).padStart(2, "0");
+      const mm = String(d.getMonth() + 1).padStart(2, "0");
+      const hh = String(d.getHours()).padStart(2, "0");
+      const min = String(d.getMinutes()).padStart(2, "0");
+      return `${dd}.${mm} ${hh}:${min}`;
+    } catch (e) {
+      return d.toLocaleString();
+    }
+  }
+
+  // załaduj pliki (ścieżki: dostosuj jeśli inne)
+  const fixtures = (await loadJSON("/data/fixtures_lfc_2025-26.json")) || [];
+  const table = (await loadJSON("/data/table_premier_2025-26.json")) || [];
+
+  // wybierz 5 ostatnich spotkań (filtrujemy te z datą, sort malejąco)
+  const matchesWithDate = fixtures
+    .map((f) => ({
+      ...f,
+      _dt: parseDate(f.date || f.datetime || f.kickoff || f.matchDate || ""),
+    }))
+    .filter((x) => x._dt)
+    .sort((a, b) => b._dt - a._dt);
+
+  const last5 = matchesWithDate.slice(0, 5);
+
+  // top5 z tabeli — zakładamy plik jest posortowany (najwyżej najlepsze)
+  const top5 = Array.isArray(table)
+    ? table.slice(0, 5)
+    : table.rows
+    ? table.rows.slice(0, 5)
+    : [];
+
+  // render HTML
+  const html = `
+    <div class="rowin-widget" role="region" aria-label="Rowiń summary">
+      <div class="rowin-head">
+        <h4>Rowiń</h4>
+        <div class="muted">5 ostatnich / Top 5</div>
+      </div>
+
+      <div class="rowin-grid">
+        <div class="mini-card matches-list" aria-live="polite">
+          <strong style="display:block;margin-bottom:0.45rem;font-size:0.92rem;color:var(--muted,#f1f1f1)">Ostatnie mecze</strong>
+          ${
+            last5.length
+              ? last5
+                  .map((m) => {
+                    const homeLogo =
+                      m.home?.logo ||
+                      m.home?.crest ||
+                      "/assets/default-team.png";
+                    const awayLogo =
+                      m.away?.logo ||
+                      m.away?.crest ||
+                      "/assets/default-team.png";
+                    const homeName = m.home?.name || m.home?.team || "Home";
+                    const awayName = m.away?.name || m.away?.team || "Away";
+                    const score = m.score
+                      ? m.score
+                      : m.ft
+                      ? m.ft
+                      : m.result
+                      ? m.result
+                      : "–";
+                    const dt = m._dt
+                      ? formatShortDate(m._dt)
+                      : m.date || m.datetime || "";
+                    return `
+              <div class="match" title="${homeName} vs ${awayName}">
+                <img src="${homeLogo}" alt="${homeName}">
+                <div style="min-width:8px"></div>
+                <div style="flex:0 0 auto;font-weight:600;color:rgba(255,255,255,0.95);width:80px;overflow:hidden;text-overflow:ellipsis">
+                  ${homeName}
+                </div>
+                <div class="vs"> ${score || "vs"} </div>
+                <div style="flex:0 0 auto;font-weight:600;color:rgba(255,255,255,0.95);width:80px;overflow:hidden;text-overflow:ellipsis">
+                  ${awayName}
+                </div>
+                <img src="${awayLogo}" alt="${awayName}" style="margin-left:6px">
+                <div class="meta">${dt}</div>
+              </div>
+            `;
+                  })
+                  .join("")
+              : '<div class="muted">Brak danych</div>'
+          }
+        </div>
+
+        <div class="mini-card table-list" aria-live="polite">
+          <strong style="display:block;margin-bottom:0.45rem;font-size:0.92rem;color:var(--muted,#f1f1f1)">Top 5 tabeli</strong>
+          ${
+            top5.length
+              ? top5
+                  .map((t, idx) => {
+                    // t może mieć różne pola (name, team, club), score/points jako pts / points
+                    const logo =
+                      t.logo ||
+                      t.crest ||
+                      `/assets/logos/${(t.code || t.name || "team")
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}.svg`;
+                    const name =
+                      t.name || t.team || t.club || t.clubName || "Team";
+                    const pts =
+                      t.pts ?? t.points ?? t.Pkt ?? t.points_total ?? "";
+                    const pos = t.position ?? t.pos ?? idx + 1;
+                    return `
+              <div class="team" title="${name}">
+                <div class="pos">${pos}</div>
+                <img src="${logo}" alt="${name}">
+                <div class="name">${name}</div>
+                <div class="pts">${pts}</div>
+              </div>
+            `;
+                  })
+                  .join("")
+              : '<div class="muted">Brak tabeli</div>'
+          }
+        </div>
+      </div>
+    </div>
+  `;
+
+  root.innerHTML = html;
 })();

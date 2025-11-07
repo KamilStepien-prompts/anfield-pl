@@ -70,6 +70,7 @@
     <link rel="stylesheet" href="/assets/css/base.css" />
     <link rel="stylesheet" href="/assets/css/header.css" />
     <link rel="stylesheet" href="/assets/css/results.css" />
+
     <!-- === STRUCTURED DATA (JSON-LD) === -->
     <script type="application/ld+json">
       {
@@ -174,6 +175,24 @@
           <!-- JS wstawi 5 kart -->
         </div>
       </section>
+
+      <!-- === ASIDE (tabela ligowa) === -->
+      <aside class="league-sidebar" aria-label="Tabela rozgrywek">
+        <div class="table-switch" role="tablist" aria-label="Wybierz tabelę">
+          <button
+            class="tab is-active"
+            data-table="premier"
+            role="tab"
+            aria-selected="true"
+          >
+            Premier League
+          </button>
+        </div>
+
+        <div id="league-table" class="league-table" aria-live="polite">
+          <!-- tutaj JS wyrenderuje tabelę -->
+        </div>
+      </aside>
 
       <!-- Pasek sterowania -->
       <section class="controls" aria-label="Filtry wyników">

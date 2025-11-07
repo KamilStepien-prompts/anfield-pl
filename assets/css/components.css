@@ -423,3 +423,57 @@
     gap: 24px;
   }
 }
+
+/* Delikatne akcenty dla felietonu */
+.article .dek {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--muted-70);
+}
+.article h2 {
+  margin-top: 2.2rem;
+}
+.kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: #d0021b;
+}
+.pull {
+  border-left: 4px solid #ff2442;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+  font-style: italic;
+}
+.meta {
+  font-size: 0.9rem;
+  color: var(--muted-60);
+}
+.tag {
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+.read-next ul {
+  list-style: none;
+  padding-left: 0;
+}
+.read-next li {
+  margin: 0.35rem 0;
+}
+.byline {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0.75rem 0 1.25rem;
+}
+.byline img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}

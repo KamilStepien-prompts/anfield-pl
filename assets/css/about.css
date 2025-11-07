@@ -26,20 +26,7 @@ a {
   margin-inline: auto;
   padding: 0 1rem;
 }
-.nav {
-  position: sticky;
-  top: 0;
-  backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, 0.55);
-  border-bottom: 1px solid rgba(225, 29, 72, 0.25);
-  z-index: 40;
-}
-.navwrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.8rem 0;
-}
+
 .brand {
   font-weight: 800;
   letter-spacing: 0.12em;

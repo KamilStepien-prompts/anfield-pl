@@ -8,11 +8,7 @@
 
 DEF 
 
-<li>
-<span class="num">8</span>
-<span class="name">Dominik Szoboszlai</span>
-<span class="pos">RB</span>
-</li>
+
 
 <li>
 <span class="num">5</span>
@@ -34,6 +30,12 @@ DEF
 </li>
 
 MID 
+
+<li>
+<span class="num">8</span>
+<span class="name">Dominik Szoboszlai</span>
+<span class="pos">RB</span>
+</li>
 
 <li>
 <span class="num">10</span
