@@ -1009,7 +1009,8 @@ body.theme-dark {
 
 /* sidebar (domyślnie ukryty na mobile) */
 .league-sidebar {
-  display: none;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -1437,17 +1438,6 @@ body.theme-dark {
   }
 }
 
-/* responsywność: sidebar visible on desktop */
-@media (min-width: 1024px) {
-  .results-layout {
-    display: grid;
-    grid-template-columns: 1fr 320px; /* main + sidebar */
-    align-items: start;
-  }
-  .league-sidebar {
-    display: block;
-  }
-}
 /* ——— odstęp nad tabelą ligową ——— */
 :root {
   --section-gap: 1.25rem;
@@ -1478,4 +1468,13 @@ section#results-list + aside.league-sidebar,
 /* dla symetrii – odsuń też belkę “Najbliższe mecze” od dołu */
 .results-page .upcoming-bar {
   margin-bottom: var(--section-gap);
+}
+/* przycisk jako ostatni element "karty" w obrębie listy */
+.results-list .load-more-wrap {
+  text-align: center;
+  padding: 0.9rem 1rem 1.1rem;
+  border-top: 1px solid var(--line);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+  background: var(--surface);
 }

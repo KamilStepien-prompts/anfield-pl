@@ -8,7 +8,7 @@
     {
       "pos": 1,
       "team": "Arsenal",
-      "short": "Arsenal",
+      "short": "ARS",
       "logo": "/assets/logos/arsenal.svg",
       "played": 10,
       "won": 8,
@@ -22,7 +22,7 @@
     {
       "pos": 2,
       "team": "Manchester City",
-      "short": "Man City",
+      "short": "MCI",
       "logo": "/assets/logos/manchester_city.svg",
       "played": 10,
       "won": 6,
@@ -36,7 +36,7 @@
     {
       "pos": 3,
       "team": "Liverpool",
-      "short": "Liverpool",
+      "short": "LFC",
       "logo": "/assets/logos/liverpool.svg",
       "played": 10,
       "won": 6,
@@ -50,7 +50,7 @@
     {
       "pos": 4,
       "team": "Sunderland",
-      "short": "Sunderland",
+      "short": "SND",
       "logo": "/assets/logos/sunderland.svg",
       "played": 10,
       "won": 5,
@@ -64,7 +64,7 @@
     {
       "pos": 5,
       "team": "Bournemouth",
-      "short": "Bournemouth",
+      "short": "BOU",
       "logo": "/assets/logos/bournemouth.svg",
       "played": 10,
       "won": 5,
@@ -78,7 +78,7 @@
     {
       "pos": 6,
       "team": "Tottenham",
-      "short": "Tottenham",
+      "short": "TOT",
       "logo": "/assets/logos/tottenham.svg",
       "played": 10,
       "won": 5,
@@ -92,7 +92,7 @@
     {
       "pos": 7,
       "team": "Chelsea",
-      "short": "Chelsea",
+      "short": "CHE",
       "logo": "/assets/logos/chelsea.svg",
       "played": 10,
       "won": 5,
@@ -106,7 +106,7 @@
     {
       "pos": 8,
       "team": "Manchester United",
-      "short": "Man United",
+      "short": "MNU",
       "logo": "/assets/logos/manchester_united.svg",
       "played": 10,
       "won": 5,
@@ -120,7 +120,7 @@
     {
       "pos": 9,
       "team": "Crystal Palace",
-      "short": "Crystal Palace",
+      "short": "CPL",
       "logo": "/assets/logos/crystal_palace.svg",
       "played": 10,
       "won": 4,
@@ -134,7 +134,7 @@
     {
       "pos": 10,
       "team": "Brighton",
-      "short": "Brighton",
+      "short": "BRI",
       "logo": "/assets/logos/brighton.svg",
       "played": 10,
       "won": 4,
@@ -148,7 +148,7 @@
     {
       "pos": 11,
       "team": "Aston Villa",
-      "short": "Aston Villa",
+      "short": "AVL",
       "logo": "/assets/logos/aston_villa.svg",
       "played": 10,
       "won": 4,
@@ -162,7 +162,7 @@
     {
       "pos": 12,
       "team": "Brentford",
-      "short": "Brentford",
+      "short": "BRE",
       "logo": "/assets/logos/brentford.svg",
       "played": 10,
       "won": 4,
@@ -176,7 +176,7 @@
     {
       "pos": 13,
       "team": "Newcastle",
-      "short": "Newcastle",
+      "short": "NEW",
       "logo": "/assets/logos/newcastle.svg",
       "played": 10,
       "won": 3,
@@ -190,7 +190,7 @@
     {
       "pos": 14,
       "team": "Everton",
-      "short": "Everton",
+      "short": "EVE",
       "logo": "/assets/logos/everton.svg",
       "played": 10,
       "won": 3,
@@ -204,7 +204,7 @@
     {
       "pos": 15,
       "team": "Fulham",
-      "short": "Fulham",
+      "short": "FUL",
       "logo": "/assets/logos/fulham.svg",
       "played": 10,
       "won": 3,
@@ -218,7 +218,7 @@
     {
       "pos": 16,
       "team": "Leeds",
-      "short": "Leeds",
+      "short": "LEE",
       "logo": "/assets/logos/leeds.svg",
       "played": 10,
       "won": 3,
@@ -232,7 +232,7 @@
     {
       "pos": 17,
       "team": "Burnley",
-      "short": "Burnley",
+      "short": "BUR",
       "logo": "/assets/logos/burnley.svg",
       "played": 10,
       "won": 3,
@@ -246,7 +246,7 @@
     {
       "pos": 18,
       "team": "West Ham",
-      "short": "West Ham",
+      "short": "WHU",
       "logo": "/assets/logos/west_ham.svg",
       "played": 10,
       "won": 2,
@@ -260,7 +260,7 @@
     {
       "pos": 19,
       "team": "Nottingham Forest",
-      "short": "Nottm Forest",
+      "short": "NFO",
       "logo": "/assets/logos/nottingham_forest.svg",
       "played": 10,
       "won": 1,
@@ -273,8 +273,8 @@
     },
     {
       "pos": 20,
-      "team": "Wolverhampton",
-      "short": "Wolves",
+      "team": "Wolves",
+      "short": "WOL",
       "logo": "/assets/logos/wolves.svg",
       "played": 10,
       "won": 0,

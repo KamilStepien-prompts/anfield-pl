@@ -3,11 +3,8 @@
  */
 
 (() => {
-  // -----------------------------
-  // Config & DOM
-  // -----------------------------
   const cfg = Object.assign(
-    { season: "2025-26", perPage: 5 },
+    { season: "2025-26", perPage: 20 },
     window.ANFLD_RESULTS || {}
   );
 
