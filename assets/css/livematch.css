@@ -208,7 +208,9 @@
 .livematch .team--rma {
   border-left: 6px solid rgba(255, 255, 255, 0.993);
 }
-
+.livematch .team--mci {
+  border-left: 6px solid rgba(15, 171, 227, 0.993);
+}
 /* Team header */
 .livematch .team__head {
   display: flex;

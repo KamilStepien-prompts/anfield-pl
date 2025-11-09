@@ -93,7 +93,7 @@ button:focus-visible {
    ============================ */
 .container {
   width: min(var(--container-max), 100%);
-  padding-inline: 16px;
+  padding-inline: 10px;
   margin-inline: auto;
 }
 

@@ -1,24 +1,5 @@
 [
   {
-    "date": "2025-11-09",
-    "day": "Sobota",
-    "kickoff": "17:30",
-    "competition": "Premier League",
-    "home": {
-      "name": "Manchester City",
-      "short": "MCI",
-      "logo": "/assets/logos/manchester_city.svg"
-    },
-    "away": {
-      "name": "Liverpool",
-      "short": "LIV",
-      "logo": "/assets/logos/liverpool.svg"
-    },
-    "venue": "Etihad Stadium",
-    "status": "upcoming"
-  },
-
-  {
     "date": "2025-11-22",
     "day": "Sobota",
     "kickoff": "16:00",

@@ -1,47 +1,47 @@
 [
   {
-    "id": "2025-11-04-liv-rma-reuters",
-    "title": "Mac Allister daje Liverpoolowi zwycięstwo z Realem Madryt",
+    "id": "2025-11-09-mci-liv-reuters",
+    "title": "Manchester City 3:0 Liverpool – prezent na 1000. mecz Guardioli",
     "tag": "Match",
-    "time": "2025-11-04",
-    "excerpt": "Alexis Mac Allister strzelił zwycięską bramkę głową po rzucie wolnym Dominika Szoboszlaia, a Liverpool pokonał Real Madryt 1:0 w fazie grupowej Ligi Mistrzów.",
-    "url": "https://www.reuters.com/sports/soccer/mac-allister-heads-liverpool-champions-league-victory-over-real-madrid-2025-11-04/",
+    "time": "2025-11-09",
+    "excerpt": "City rozbiło Liverpool 3:0 w 1000. meczu Guardioli: Haaland, Nico González i Doku. The Citizens wskakują na 2. miejsce w tabeli.",
+    "url": "https://www.reuters.com/sports/soccer/man-city-ease-3-0-win-over-liverpool-guardiola-celebrates-1000th-game-in-style-2025-11-09/",
     "source": "Reuters"
   },
   {
-    "id": "2025-11-04-liv-rma-official",
-    "title": "Liverpool 1:0 Real Madrid w Champions League",
+    "id": "2025-11-09-mci-liv-guardian-report",
+    "title": "Doku błyszczy, City deklasuje Liverpool 3:0",
     "tag": "Match",
-    "time": "2025-11-04",
-    "excerpt": "Oficjalny raport klubu: Mac Allister rozstrzyga spotkanie na Anfield, Szoboszlai kluczowy przy stałym fragmencie, Courtois kilkukrotnie popisał się interwencjami.",
-    "url": "https://www.liverpoolfc.com/news/mac-allister-wins-it-liverpool-defeat-real-madrid-champions-league",
-    "source": "LiverpoolFC.com"
-  },
-  {
-    "id": "2025-11-04-liv-rma-guardian",
-    "title": "Mac Allister wyłącza Real — relacja z Anfield",
-    "tag": "Analysis",
-    "time": "2025-11-04",
-    "excerpt": "Szczegółowa relacja i analiza przebiegu meczu: Liverpool stworzył więcej szans, a powrót Alexandra-Arnolda do Anfield przeszedł w tle wydarzeń.",
-    "url": "https://www.theguardian.com/football/2025/nov/04/liverpool-real-madrid-champions-league-match-report",
+    "time": "2025-11-09",
+    "excerpt": "Relacja: Haaland trafia po obronionym karnym, do przerwy dokłada Nico, po przerwie show Doku. Anulowany gol Van Dijka po interwencji VAR.",
+    "url": "https://www.theguardian.com/football/2025/nov/09/manchester-city-liverpool-premier-league-match-report",
     "source": "The Guardian"
   },
   {
-    "id": "2025-11-05-slot-honest",
-    "title": "Arne Slot: 'szczera' ocena poprawy zespołu",
-    "tag": "CoachTalk",
-    "time": "2025-11-05",
-    "excerpt": "Arne Slot wyjaśnia na konferencji, dlaczego drużyna poprawiła formę w ostatnich tygodniach — uczciwe i bez upiększeń spojrzenie na pracę zespołu.",
-    "url": "https://www.thisisanfield.com/2025/11/arne-slot-gives-brutally-honest-answer-on-why-liverpool-have-improved/",
-    "source": "This is Anfield"
+    "id": "2025-11-09-mci-liv-skysports",
+    "title": "Man City 3–0 Liverpool – raport i wideo skrótu",
+    "tag": "Highlights",
+    "time": "2025-11-09",
+    "excerpt": "Szybki skrót + analiza: Haaland, Nico González, Doku; City wraca na fotel wicelidera po pewnym zwycięstwie nad mistrzem.",
+    "url": "https://www.skysports.com/football/man-city-vs-liverpool/report/531234",
+    "source": "Sky Sports"
   },
   {
-    "id": "2025-11-05-sky-liv-rma",
-    "title": "Liverpool 1–0 Real — Mac Allister rozstrzyga, Alexander-Arnold wygwizdany",
-    "tag": "Match",
-    "time": "2025-11-05",
-    "excerpt": "Relacja Sky Sports: Mac Allister zdobywa gola, a powrót Trenta Alexander-Arnolda na Anfield został przyjęty gwizdami.",
-    "url": "https://www.skysports.com/football/news/11945/13463536/liverpool-1-0-real-madrid-alexis-mac-allister-wins-it-as-trent-alexander-arnold-is-booed-on-anfield-return",
-    "source": "Sky Sports"
+    "id": "2025-11-09-mci-liv-mancity-official",
+    "title": "Dominujące City na 2. miejscu po sensacyjnej wygranej z Liverpoolem",
+    "tag": "Club",
+    "time": "2025-11-09",
+    "excerpt": "Oficjalny raport: 3:0 w jubileuszowym meczu Guardioli; galeria i 2-minutowy skrót, Ruben Dias: „Żyjemy dla takich spotkań”.",
+    "url": "https://www.mancity.com/news/mens/manchester-city-liverpool-202526-match-report-63898299",
+    "source": "ManCity.com"
+  },
+  {
+    "id": "2025-11-09-slot-post-mci-reuters",
+    "title": "Arne Slot po porażce z City: skupmy się na wynikach, nie na wyścigu po tytuł",
+    "tag": "CoachTalk",
+    "time": "2025-11-09",
+    "excerpt": "Reakcja trenera Liverpoolu po 0:3 na Etihad: konsekwencja i praca nad detalami ważniejsze niż rozmowy o mistrzostwie.",
+    "url": "https://www.reuters.com/sports/soccer/slot-says-liverpool-must-focus-results-not-title-race-following-loss-man-city-2025-11-09/",
+    "source": "Reuters"
   }
 ]

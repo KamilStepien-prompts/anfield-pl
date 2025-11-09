@@ -1376,14 +1376,14 @@ body.theme-dark {
 /* === MOBILE - skróty nazw === */
 @media (max-width: 768px) {
   .league-table .row {
-    gap: 4px;
+    gap: 1px;
     padding: 5px 1px;
-    margin-left: 3px;
+    margin-left: 0px;
   }
 
   .league-table .team {
+    padding: 0px;
     gap: 5px;
-    padding-right: 3px;
   }
 
   .league-table .team .logo {

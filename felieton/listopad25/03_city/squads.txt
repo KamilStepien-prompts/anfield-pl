@@ -1,0 +1,124 @@
+ <!-- Liverpool -->
+            <article
+              class="team team--lfc"
+              aria-label="Liverpool – skład wyjściowy"
+            >
+              <header class="team__head">
+                <h3 class="team__name">Liverpool</h3>
+                <span class="formation">4–2–3–1</span>
+              </header>
+
+              <ul class="squad" role="list">
+                <li>
+                  <span class="num">25</span
+                  ><span class="name">Giorgi Mamardashvili</span
+                  ><span class="pos">GK</span>
+                </li>
+                <li>
+                  <span class="num">26</span
+                  ><span class="name">Connor Bradley</span
+                  ><span class="pos">RB</span>
+                </li>
+                <li>
+                  <span class="num">5</span
+                  ><span class="name">Ibrahima Konaté</span
+                  ><span class="pos">CB</span>
+                </li>
+                <li>
+                  <span class="num">4</span
+                  ><span class="name"
+                    >Virgil van Dijk
+                    <span class="tag tag--c" title="Kapitan">C</span></span
+                  ><span class="pos">CB</span>
+                </li>
+                <li>
+                  <span class="num">26</span
+                  ><span class="name">Andy Robertson</span
+                  ><span class="pos">LB</span>
+                </li>
+
+                <li>
+                  <span class="num">38</span
+                  ><span class="name">Ryan Gravenberch</span
+                  ><span class="pos">CM</span>
+                </li>
+                <li>
+                  <span class="num">10</span
+                  ><span class="name">Alexis Mac Allister</span
+                  ><span class="pos">CM</span>
+                </li>
+                <li>
+                  <span class="num">8</span>
+                  <span class="name">Dominik Szoboszlai</span>
+                  <span class="pos">ACM</span>
+                </li>
+                <li>
+                  <span class="num">11</span
+                  ><span class="name">Mohamed Salah</span
+                  ><span class="pos">RW</span>
+                </li>
+                <li>
+                  <span class="num">9</span
+                  ><span class="name">Florian Wirtz</span
+                  ><span class="pos">LW</span>
+                </li>
+
+                <li>
+                  <span class="num">22</span
+                  ><span class="name">Hugo Ekitike</span
+                  ><span class="pos">ST</span>
+                </li>
+              </ul>
+
+              <details class="bench">
+                <summary>Rezerwowi</summary>
+                <ul role="list">
+                  <li>
+                    <span class="num">28</span
+                    ><span class="name">Freddie Woodman</span
+                    ><span class="pos">GK</span>
+                  </li>
+                  <li>
+                    <span class="num">74</span
+                    ><span class="name">Kornel Miściur</span
+                    ><span class="pos">GK</span>
+                  </li>
+                  <li>
+                    <span class="num">2</span>
+                    <span class="name">Joe Gomez</span
+                    ><span class="pos">CB</span>
+                  </li>
+                  <li>
+                    <span class="num">6</span>
+                    <span class="name">Milos Kerkez</span>
+                    <span class="pos">LB</span>
+                  </li>
+                  <li>
+                    <span class="num">3</span
+                    ><span class="name">Wataru Endō</span
+                    ><span class="pos">CM</span>
+                  </li>
+                  <li>
+                    <span class="num">17</span
+                    ><span class="name">Curtis Jones</span
+                    ><span class="pos">CM</span>
+                  </li>
+                  <li>
+                    <span class="num">18</span>
+                    <span class="name">Cody Gakpo</span
+                    ><span class="pos">LW</span>
+                  </li>
+                  <li>
+                    <span class="num">14</span
+                    ><span class="name">Federico Chiesa</span
+                    ><span class="pos">ST</span>
+                  </li>
+                  <li>
+                    <span class="num">73</span>
+                    <span class="name">Rio Ngumoha</span>
+                    <span class="pos">LS</span>
+                  </li>
+                </ul>
+              </details>
+              <p class="manager">Trener: Arne Slot</p>
+            </article>
