@@ -1,7 +1,7 @@
 {
   "competition": "Premier League",
   "season": "2025-26",
-  "updated": "2025-11-07",
+  "updated": "2025-11-08",
   "highlightTop": 4,
   "relegationStart": 16,
   "rows": [
@@ -10,17 +10,31 @@
       "team": "Arsenal",
       "short": "ARS",
       "logo": "/assets/logos/arsenal.svg",
-      "played": 10,
+      "played": 11,
       "won": 8,
-      "draw": 1,
+      "draw": 2,
       "lost": 1,
-      "gf": 18,
-      "ga": 3,
+      "gf": 20,
+      "ga": 5,
       "gd": 15,
-      "points": 25
+      "points": 26
     },
     {
       "pos": 2,
+      "team": "Chelsea",
+      "short": "CHE",
+      "logo": "/assets/logos/chelsea.svg",
+      "played": 11,
+      "won": 6,
+      "draw": 2,
+      "lost": 3,
+      "gf": 21,
+      "ga": 11,
+      "gd": 10,
+      "points": 20
+    },
+    {
+      "pos": 3,
       "team": "Manchester City",
       "short": "MCI",
       "logo": "/assets/logos/manchester_city.svg",
@@ -34,7 +48,35 @@
       "points": 19
     },
     {
-      "pos": 3,
+      "pos": 4,
+      "team": "Sunderland",
+      "short": "SND",
+      "logo": "/assets/logos/sunderland.svg",
+      "played": 11,
+      "won": 5,
+      "draw": 4,
+      "lost": 2,
+      "gf": 14,
+      "ga": 10,
+      "gd": 4,
+      "points": 19
+    },
+    {
+      "pos": 5,
+      "team": "Tottenham",
+      "short": "TOT",
+      "logo": "/assets/logos/tottenham.svg",
+      "played": 11,
+      "won": 5,
+      "draw": 3,
+      "lost": 3,
+      "gf": 19,
+      "ga": 10,
+      "gd": 9,
+      "points": 18
+    },
+    {
+      "pos": 6,
       "team": "Liverpool",
       "short": "LFC",
       "logo": "/assets/logos/liverpool.svg",
@@ -48,21 +90,7 @@
       "points": 18
     },
     {
-      "pos": 4,
-      "team": "Sunderland",
-      "short": "SND",
-      "logo": "/assets/logos/sunderland.svg",
-      "played": 10,
-      "won": 5,
-      "draw": 3,
-      "lost": 2,
-      "gf": 12,
-      "ga": 8,
-      "gd": 4,
-      "points": 18
-    },
-    {
-      "pos": 5,
+      "pos": 7,
       "team": "Bournemouth",
       "short": "BOU",
       "logo": "/assets/logos/bournemouth.svg",
@@ -76,46 +104,18 @@
       "points": 18
     },
     {
-      "pos": 6,
-      "team": "Tottenham",
-      "short": "TOT",
-      "logo": "/assets/logos/tottenham.svg",
-      "played": 10,
-      "won": 5,
-      "draw": 2,
-      "lost": 3,
-      "gf": 17,
-      "ga": 8,
-      "gd": 9,
-      "points": 17
-    },
-    {
-      "pos": 7,
-      "team": "Chelsea",
-      "short": "CHE",
-      "logo": "/assets/logos/chelsea.svg",
-      "played": 10,
-      "won": 5,
-      "draw": 2,
-      "lost": 3,
-      "gf": 18,
-      "ga": 11,
-      "gd": 7,
-      "points": 17
-    },
-    {
       "pos": 8,
       "team": "Manchester United",
       "short": "MNU",
       "logo": "/assets/logos/manchester_united.svg",
-      "played": 10,
+      "played": 11,
       "won": 5,
-      "draw": 2,
+      "draw": 3,
       "lost": 3,
-      "gf": 17,
-      "ga": 16,
+      "gf": 19,
+      "ga": 18,
       "gd": 1,
-      "points": 17
+      "points": 18
     },
     {
       "pos": 9,
@@ -147,6 +147,20 @@
     },
     {
       "pos": 11,
+      "team": "Everton",
+      "short": "EVE",
+      "logo": "/assets/logos/everton.svg",
+      "played": 11,
+      "won": 3,
+      "draw": 4,
+      "lost": 4,
+      "gf": 12,
+      "ga": 13,
+      "gd": -1,
+      "points": 15
+    },
+    {
+      "pos": 12,
       "team": "Aston Villa",
       "short": "AVL",
       "logo": "/assets/logos/aston_villa.svg",
@@ -160,7 +174,7 @@
       "points": 15
     },
     {
-      "pos": 12,
+      "pos": 13,
       "team": "Brentford",
       "short": "BRE",
       "logo": "/assets/logos/brentford.svg",
@@ -174,7 +188,7 @@
       "points": 13
     },
     {
-      "pos": 13,
+      "pos": 14,
       "team": "Newcastle",
       "short": "NEW",
       "logo": "/assets/logos/newcastle.svg",
@@ -188,31 +202,17 @@
       "points": 12
     },
     {
-      "pos": 14,
-      "team": "Everton",
-      "short": "EVE",
-      "logo": "/assets/logos/everton.svg",
-      "played": 10,
-      "won": 3,
-      "draw": 3,
-      "lost": 4,
-      "gf": 10,
-      "ga": 13,
-      "gd": -3,
-      "points": 12
-    },
-    {
       "pos": 15,
       "team": "Fulham",
       "short": "FUL",
       "logo": "/assets/logos/fulham.svg",
-      "played": 10,
+      "played": 11,
       "won": 3,
       "draw": 2,
-      "lost": 5,
+      "lost": 6,
       "gf": 12,
-      "ga": 14,
-      "gd": -2,
+      "ga": 16,
+      "gd": -4,
       "points": 11
     },
     {
@@ -234,13 +234,13 @@
       "team": "Burnley",
       "short": "BUR",
       "logo": "/assets/logos/burnley.svg",
-      "played": 10,
+      "played": 11,
       "won": 3,
       "draw": 1,
-      "lost": 6,
-      "gf": 12,
-      "ga": 19,
-      "gd": -7,
+      "lost": 7,
+      "gf": 14,
+      "ga": 22,
+      "gd": -8,
       "points": 10
     },
     {
@@ -248,14 +248,14 @@
       "team": "West Ham",
       "short": "WHU",
       "logo": "/assets/logos/west_ham.svg",
-      "played": 10,
-      "won": 2,
+      "played": 11,
+      "won": 3,
       "draw": 1,
       "lost": 7,
-      "gf": 10,
-      "ga": 21,
-      "gd": -11,
-      "points": 7
+      "gf": 13,
+      "ga": 23,
+      "gd": -10,
+      "points": 10
     },
     {
       "pos": 19,
@@ -276,13 +276,13 @@
       "team": "Wolves",
       "short": "WOL",
       "logo": "/assets/logos/wolves.svg",
-      "played": 10,
+      "played": 11,
       "won": 0,
       "draw": 2,
       "lost": 8,
       "gf": 7,
-      "ga": 22,
-      "gd": -15,
+      "ga": 25,
+      "gd": -18,
       "points": 2
     }
   ]

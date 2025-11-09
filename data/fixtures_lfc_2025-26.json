@@ -179,5 +179,23 @@
     },
     "venue": "Anfield",
     "status": "upcoming"
+  },
+  {
+    "date": "2026-01-01",
+    "day": "Czwartek",
+    "kickoff": "18:30",
+    "competition": "Premier League",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg"
+    },
+    "away": {
+      "name": "Leeds United",
+      "short": "LEE",
+      "logo": "/assets/logos/leeds.svg"
+    },
+    "venue": "Anfield",
+    "status": "upcoming"
   }
 ]

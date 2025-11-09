@@ -329,7 +329,6 @@
   }
 
   // Linia ~300
-  // Linia ~300
   function toggleDetails(e) {
     // POPRAWKA: Zatrzymujemy propagację, aby kliknięcie linku nie było traktowane jako kliknięcie karty
     if (e.target.closest(".match-details a")) {
