@@ -1,5 +1,27 @@
 [
   {
+    "id": "2025-11-22-epl-liv-mci",
+    "date": "2025-11-22",
+    "day": "Niedziela",
+    "competition": "Premier League",
+    "round": "12 kolejka",
+    "home": {
+      "name": "Liverpool",
+      "short": "LIV",
+      "logo": "/assets/logos/liverpool.svg",
+      "score": 0
+    },
+    "away": {
+      "name": "Nottingham Forest",
+      "short": "NFO",
+      "logo": "/assets/logos/nottingham_forest.svg",
+      "score": 3
+    },
+    "venue": "Anfield",
+    "status": "FT",
+    "links": { "report": "/felieton/listopad25/04_forest/forest.html" }
+  },
+  {
     "id": "2025-11-08-epl-liv-mci",
     "date": "2025-11-09",
     "day": "Niedziela",

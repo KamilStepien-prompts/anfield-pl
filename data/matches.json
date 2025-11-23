@@ -78,5 +78,13 @@
     "opponent": "Nottingham Forest",
     "home": true,
     "round": "Gameweek 12"
+  },
+  {
+    "id": 11,
+    "competition": "Champions League",
+    "date": "2025-11-26T21:00:00+01:00",
+    "opponent": "PSV Eindhoven",
+    "home": true,
+    "round": "Group Stage - Matchday 5"
   }
 ]

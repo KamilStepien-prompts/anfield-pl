@@ -1,47 +1,38 @@
 [
   {
-    "id": "2025-11-09-mci-liv-reuters",
-    "title": "Manchester City 3:0 Liverpool – prezent na 1000. mecz Guardioli",
-    "tag": "Match",
-    "time": "2025-11-09",
-    "excerpt": "City rozbiło Liverpool 3:0 w 1000. meczu Guardioli: Haaland, Nico González i Doku. The Citizens wskakują na 2. miejsce w tabeli.",
-    "url": "https://www.reuters.com/sports/soccer/man-city-ease-3-0-win-over-liverpool-guardiola-celebrates-1000th-game-in-style-2025-11-09/",
-    "source": "Reuters"
-  },
-  {
-    "id": "2025-11-09-mci-liv-guardian-report",
-    "title": "Doku błyszczy, City deklasuje Liverpool 3:0",
-    "tag": "Match",
-    "time": "2025-11-09",
-    "excerpt": "Relacja: Haaland trafia po obronionym karnym, do przerwy dokłada Nico, po przerwie show Doku. Anulowany gol Van Dijka po interwencji VAR.",
-    "url": "https://www.theguardian.com/football/2025/nov/09/manchester-city-liverpool-premier-league-match-report",
-    "source": "The Guardian"
-  },
-  {
-    "id": "2025-11-09-mci-liv-skysports",
-    "title": "Man City 3–0 Liverpool – raport i wideo skrótu",
-    "tag": "Highlights",
-    "time": "2025-11-09",
-    "excerpt": "Szybki skrót + analiza: Haaland, Nico González, Doku; City wraca na fotel wicelidera po pewnym zwycięstwie nad mistrzem.",
-    "url": "https://www.skysports.com/football/man-city-vs-liverpool/report/531234",
-    "source": "Sky Sports"
-  },
-  {
-    "id": "2025-11-09-mci-liv-mancity-official",
-    "title": "Dominujące City na 2. miejscu po sensacyjnej wygranej z Liverpoolem",
-    "tag": "Club",
-    "time": "2025-11-09",
-    "excerpt": "Oficjalny raport: 3:0 w jubileuszowym meczu Guardioli; galeria i 2-minutowy skrót, Ruben Dias: „Żyjemy dla takich spotkań”.",
-    "url": "https://www.mancity.com/news/mens/manchester-city-liverpool-202526-match-report-63898299",
-    "source": "ManCity.com"
-  },
-  {
-    "id": "2025-11-09-slot-post-mci-reuters",
-    "title": "Arne Slot po porażce z City: skupmy się na wynikach, nie na wyścigu po tytuł",
+    "id": "2025-11-23-slot-kryzys-thisisanfield",
+    "title": "Kryzys Liverpoolu: przyszłość Slota niepewna",
     "tag": "CoachTalk",
-    "time": "2025-11-09",
-    "excerpt": "Reakcja trenera Liverpoolu po 0:3 na Etihad: konsekwencja i praca nad detalami ważniejsze niż rozmowy o mistrzostwie.",
-    "url": "https://www.reuters.com/sports/soccer/slot-says-liverpool-must-focus-results-not-title-race-following-loss-man-city-2025-11-09/",
-    "source": "Reuters"
+    "time": "2025-11-23",
+    "excerpt": "Wiele mediów zgodnie twierdzi, że Arne Slot walczy teraz o posadę trenera po porażce 0:3 z Nottingham Forest.",
+    "url": "https://thisisanfield.com/",
+    "source": "This Is Anfield"
+  },
+  {
+    "id": "2025-11-23-dyche-forest-zwyciestwo",
+    "title": "Sean Dyche po meczu z Liverpoolem: Zwycięstwo Forest",
+    "tag": "CoachTalk",
+    "time": "2025-11-23",
+    "excerpt": "Trener Sean Dyche przyznał, że jest bardzo zadowolony z sobotniego zwycięstwa Nottingham Forest nad The Reds.",
+    "url": "https://nottinghamforest.co.uk/",
+    "source": "Nottingham Forest Official"
+  },
+  {
+    "id": "2025-11-22-van-dijk-reakcja",
+    "title": "Virgil van Dijk reaguje na 'bardzo złą' porażkę z Forest",
+    "tag": "PlayerTalk",
+    "time": "2025-11-22",
+    "excerpt": "Kapitan Liverpoolu, Virgil van Dijk, wypowiedział się po przegranej 0:3 z Nottingham Forest; odniósł się też do kibiców opuszczających Anfield wcześniej.",
+    "url": "https://www.liverpoolecho.co.uk/all-about/liverpool-fc",
+    "source": "Liverpool Echo"
+  },
+  {
+    "id": "2025-11-22-match-report-forest",
+    "title": "Liverpool na kolanach. Porażka 0:3 z Forest!",
+    "tag": "Match",
+    "time": "2025-11-22",
+    "excerpt": "Liverpool przegrał z Nottingham Forest 0:3 na Anfield; drużyna Arne Slota sięga dna, pojawiają się spekulacje o zwolnieniu trenera.",
+    "url": "https://lfc.pl/",
+    "source": "LFC.pl"
   }
 ]

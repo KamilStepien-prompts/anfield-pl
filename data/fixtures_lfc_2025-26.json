@@ -1,23 +1,5 @@
 [
   {
-    "date": "2025-11-22",
-    "day": "Sobota",
-    "kickoff": "16:00",
-    "competition": "Premier League",
-    "home": {
-      "name": "Liverpool",
-      "short": "LIV",
-      "logo": "/assets/logos/liverpool.svg"
-    },
-    "away": {
-      "name": "Nottingham Forest",
-      "short": "NFO",
-      "logo": "/assets/logos/nottingham_forest.svg"
-    },
-    "venue": "Anfield",
-    "status": "upcoming"
-  },
-  {
     "date": "2025-11-26",
     "day": "Środa",
     "kickoff": "21:00",
